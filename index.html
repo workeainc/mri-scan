@@ -29,6 +29,7 @@
       justify-content: center;
       flex-direction: column;
       margin: auto;
+      padding-bottom: 80px;
     }
 
     .f_box_by_n {
@@ -125,16 +126,18 @@
       align-items: center;
       margin: 10px 0px;
     }
-    .nd_box_img{
-      height: 100px;
-      border-radius: 0px 0px 20px 20px;
-      overflow: hidden;
-    
-    }
-    .nd_box_img img{
-      width: 100%;
-      height: 100%;
-    }
+ .nd_box_img {
+  height: 100px;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+
+.nd_box_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* maintain aspect ratio */
+  object-position: center; /* center align */
+}
     .para_by_n{
       font-size: 12px;
       color: #010101;
@@ -235,16 +238,21 @@
     .btn_input{
       width: 100%;
       margin-top: 15px;
+      background-color: #d1f00b;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
     }
     .btn_submit{
-      width: 100%;
-      background-color: #f0a00b;
-      border-radius: 30px;
       padding: 12px 25px;
       font-size: 14px;
       font-weight: 600;
 
     }
+
   </style>
 </head>
 
@@ -260,38 +268,21 @@
             <div class="nd_box_">
           <div class="scnd_line_1">
             <p class="icon_bg">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                  <path stroke-dasharray="64" stroke-dashoffset="64"
-                    d="M8 3c0.5 0 2.5 4.5 2.5 5c0 1 -1.5 2 -2 3c-0.5 1 0.5 2 1.5 3c0.39 0.39 2 2 3 1.5c1 -0.5 2 -2 3 -2c0.5 0 5 2 5 2.5c0 2 -1.5 3.5 -3 4c-1.5 0.5 -2.5 0.5 -4.5 0c-2 -0.5 -3.5 -1 -6 -3.5c-2.5 -2.5 -3 -4 -3.5 -6c-0.5 -2 -0.5 -3 0 -4.5c0.5 -1.5 2 -3 4 -3Z">
-                    <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="64;0" />
-                    <animateTransform id="SVG3Jm2WHSS" fill="freeze" attributeName="transform"
-                      begin="0.6s;SVG3Jm2WHSS.begin+2.7s" dur="0.5s" type="rotate"
-                      values="0 12 12;15 12 12;0 12 12;-12 12 12;0 12 12;12 12 12;0 12 12;-15 12 12;0 12 12" />
-                  </path>
-                  <path stroke-dasharray="4" stroke-dashoffset="4"
-                    d="M15.76 8.28c-0.5 -0.51 -1.1 -0.93 -1.76 -1.24M15.76 8.28c0.49 0.49 0.9 1.08 1.2 1.72">
-                    <animate fill="freeze" attributeName="stroke-dashoffset" begin="SVG3Jm2WHSS.begin+0s" dur="2.7s"
-                      keyTimes="0;0.111;0.259;0.37;1" values="4;0;0;4;4" />
-                  </path>
-                  <path stroke-dasharray="6" stroke-dashoffset="6"
-                    d="M18.67 5.35c-1 -1 -2.26 -1.73 -3.67 -2.1M18.67 5.35c0.99 1 1.72 2.25 2.08 3.65">
-                    <animate fill="freeze" attributeName="stroke-dashoffset" begin="SVG3Jm2WHSS.begin+0.2s" dur="2.7s"
-                      keyTimes="0;0.074;0.185;0.333;0.444;1" values="6;6;0;0;6;6" />
-                  </path>
-                </g>
-              </svg>
+             <i class="fa-solid fa-circle-check"></i>
             </p>
-            <p class="para_by_n">Free follow up & Cancellation</p>
+            <p class="para_by_n">100% Best Prices Guaranteed</p>
           </div>
           <div class="scnd_line_1">
             <p class="icon_bg2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                  d="m12 .44l10 3.5V12c0 4.127-2.533 7.012-4.896 8.803a19.7 19.7 0 0 1-4.65 2.595l-.087.033l-.025.009l-.007.002l-.003.001c-.001 0-.002 0-.332-.943l-.331.944h-.001l-.003-.002l-.007-.002l-.025-.01l-.087-.032a18 18 0 0 1-1.39-.606a20 20 0 0 1-3.26-1.989C4.534 19.012 2 16.127 2 12V3.94zm0 22.06l-.331.944l.331.116l.331-.116zm0-1.072l.009-.004a17.8 17.8 0 0 0 3.887-2.215C18.034 17.59 20 15.223 20 12V5.36l-8-2.8l-8 2.8V12c0 3.223 1.966 5.588 4.104 7.21A17.8 17.8 0 0 0 12 21.428m6.072-13.085l-7.071 7.071l-4.243-4.242l1.415-1.415L11 12.586l5.657-5.657z" />
-              </svg>
+             <i class="fa-solid fa-award"></i>
             </p>
-            <p class="para_by_n">Private and Secure sessions</p>
+            <p class="para_by_n">NABH & NABL Certified Labs</p>
+          </div>
+          <div class="scnd_line_1">
+            <p class="icon_bg2">
+            <i class="fa-solid fa-users"></i>
+            </p>
+            <p class="para_by_n">Trusted by 2 Core+ Users</p>
           </div>
             </div>
             <div class="nd_box_img">
@@ -316,8 +307,8 @@
                     <i class="fa fa-phone"></i>
                     <input type="tel" placeholder="Enter Phone Number">
                   </div>
-                   <div class="btn_input input-box_by_n">
-                    <i class="fa fa-phone"></i> <button class="btn_submit" type="submit">Book on MRI Scan</button>
+                   <div class="btn_input ">
+                      <button class="btn_submit" type="submit"><i class="fa-solid fa-list-check"></i> &nbsp; Book on MRI Scan</button>
                    </div>
                  
                 </div>
@@ -330,8 +321,8 @@
 
          <!-- Floating Buttons -->
           <div class="floating-btns_by_n">
-            <button><i class="fa fa-phone"> </i> Book On Call</button>
-            <button><i class="fab fa-whatsapp"></i> Book On Whatsapp</button>
+            <button><i class="fa fa-phone"> </i> &nbsp; Book On Call</button>
+            <button><i class="fab fa-whatsapp"></i> &nbsp; Book On Whatsapp</button>
           </div>
     </div>
   </div>
