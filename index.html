@@ -126,19 +126,19 @@
       align-items: center;
       margin: 10px 0px;
     }
-.nd_box_img {
-  width: 100%;
+    .nd_box_img {
+  position: relative;      /* relative parent */
   height: 100px;
   border-radius: 0 0 20px 20px;
   overflow: hidden;
 }
 
 .nd_box_img img {
+  
   width: 100%;
   height: 100%;
-  object-fit: cover;    /* fill ke jagah cover */
+  object-fit: cover;       /* safe crop */
   object-position: center;
-  display: block;
 }
 
     .para_by_n{
