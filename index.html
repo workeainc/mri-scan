@@ -4,333 +4,217 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <title>Online Medical Consultations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
     
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: "Roboto", sans-serif;
-      font-optical-sizing: auto;
-      font-style: normal;
     }
-
-    .f_container_by_n {
-      width: 100%;
-      max-width: 600px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      margin: auto;
+    
+    body {
+      background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+      min-height: 100vh;
       padding-bottom: 80px;
     }
-
-    .f_box_by_n {
-      width: 100%;
-      background-color: #012f85;
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      border-radius: 0px 0px 30px 30px;
-      height: 160px;
+    
+    .header-gradient {
+      background: linear-gradient(135deg, #012f85 0%, #004eab 100%);
     }
-    .f_box_by_n h2{
-      font-size: xx-large;
+    
+    .card-shadow {
+      box-shadow: 0 10px 30px rgba(1, 47, 133, 0.15);
     }
-
-    .italic {
-      font-style: italic;
-
+    
+    .floating-shadow {
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
     }
-
-    .yellow_text {
-      color: #f0a00b;
+    
+    .btn-primary {
+      background: linear-gradient(to right, #00c853, #00e676);
+      transition: all 0.3s ease;
     }
-
-    .blue_white {
-      color: #91b3f1;
-    }
-
-    .scnd_box_by_n {
-      background-color: #fff;
-      align-items: center;
-      justify-content: space-between;
-      display: flex;
-      flex-direction: column;
-      padding: 20px 0px 20px 20px;
-      margin: -30px 0px 0px 0px;
-      border-radius: 20px;
-      width: 90%;
-      border: 1px solid #aaa;
-      border-right: 1px solid #91f1cb;
-      border-left: 1px solid #91f1cb;
-      overflow: hidden;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
-
-    }
-    .container_snd_by_n{
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-    }
-
-    .icon_bg2 {
-      background-color: #91f1cb7d;
-      padding: 5px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 35px;
-      height: 35px;
-      border: 1px solid #02ff9a;
-      margin-right: 10px;
-    }
-
-    .icon_bg {
-      background-color: #f1919145;
-      padding: 5px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 35px;
-      height: 35px;
-      border: 1px solid #ff020268;
-      margin-right: 10px;
-
-    }
-
-    .icon_bg2 svg {
-      color: #01a664;
-    }
-
-    .icon_bg svg {
-      color: #d10000;
-    }
-
-    .scnd_line_1 {
-      display: flex;
-      align-items: center;
-      margin: 10px 0px;
-    }
-    .nd_box_img {
-  position: relative;      /* relative parent */
-  height: 100px;
-  border-radius: 0 0 20px 20px;
-  overflow: hidden;
-}
-
-.nd_box_img img {
-  
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       /* safe crop */
-  object-position: center;
-}
-
-    .para_by_n{
-      font-size: 12px;
-      color: #010101;
-    }
-    .form_snd_by_n {
-      width: 100%;
-    }
-    .form_snd_by_n form{
-      margin: 10px 0px;
-      padding: 30px 0px;
-      width: 95%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      flex-direction: column;
-      border-top: 1px solid #91b3f15b;
-    }
-    .heading_by_n{
-      color: #010101;
-      font-size: 16px;
-      font-weight: 500;
-     
-    }
-
-    .form-container_by_n {
-      width: 100%;
-      max-width: 600px;
-    }
-
-    .input-box_by_n {
-      position: relative;
-      margin-top: 15px;
-    }
-
-    .input-box_by_n i {
-      position: absolute;
-      top: 50%;
-      left: 15px;
-      transform: translateY(-50%);
-      color: #999;
-      font-size: 16px;
-    }
-
-    .input-box_by_n input {
-      width: 100%;
-      padding: 12px 15px 12px 45px;
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      font-size: 16px;
-      color: #333;
-      outline: none;
-      transition: 0.3s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-
-    .input-box_by_n input:focus {
-      border-color: #074578;
-      box-shadow: 0 0 6px rgba(7,69,120,0.3);
-    }
-
-    .input-box_by_n input::placeholder {
-      color: #aaa;
-    }
-    /* Floating buttons */
-    .floating-btns_by_n {
-      max-width: 600px;
-      position: fixed;
-      bottom: 2px;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      z-index: 999;
-      border: 1px solid #91f1cb7d;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-      padding: 10px 0px;
-      background-color: #fff;
-      margin: 0 auto;
-    }
-
-    .floating-btns_by_n button {
-      background: rgb(0, 144, 129);
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 50px;
-      font-size: 12px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
-
-    .floating-btns_by_n button:hover {
-      background: #055;
+    
+    .btn-primary:hover {
+      background: linear-gradient(to right, #00e676, #00c853);
       transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 200, 83, 0.4);
     }
-    .btn_input{
+    
+    .btn-secondary {
+      background: linear-gradient(to right, #1976d2, #0d47a1);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary:hover {
+      background: linear-gradient(to right, #0d47a1, #1976d2);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(13, 71, 161, 0.4);
+    }
+    
+    .input-focus:focus {
+      border-color: #012f85;
+      box-shadow: 0 0 0 3px rgba(1, 47, 133, 0.2);
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Fixed image container for iOS compatibility */
+    .nd_box_img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      background: #e6f2ff;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nd_box_img img {
+      position: absolute;
       width: 100%;
-      margin-top: 15px;
-      background-color: #d1f00b;
-      border-radius: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-
+      height: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /* Fallback for object-fit: cover */
+      min-height: 100%;
+      min-width: 100%;
     }
-    .btn_submit{
-      padding: 12px 25px;
-      font-size: 14px;
-      font-weight: 600;
-
+    
+    /* Alternative approach using background-image */
+    .nd_box_img_bg {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e6f2ff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23012f85" /><text x="50%" y="50%" font-family="Arial" font-size="12" fill="white" text-anchor="middle" dy=".3em">Doctor</text></svg>') no-repeat center center;
+      background-size: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-
   </style>
 </head>
 
 <body>
-  <div class="page_by_n">
-    <div class="f_container_by_n">
-      <div class="f_box_by_n">
-        <h2 class="yellow_text italic ">Online consultations</h2>
-        <p class="blue_white">at your own comfort</p>
-      </div>
-      <div class="scnd_box_by_n">
-         <div class="container_snd_by_n">
-            <div class="nd_box_">
-          <div class="scnd_line_1">
-            <p class="icon_bg">
-             <i class="fa-solid fa-circle-check"></i>
-            </p>
-            <p class="para_by_n">100% Best Prices Guaranteed</p>
-          </div>
-          <div class="scnd_line_1">
-            <p class="icon_bg2">
-             <i class="fa-solid fa-award"></i>
-            </p>
-            <p class="para_by_n">NABH & NABL Certified Labs</p>
-          </div>
-          <div class="scnd_line_1">
-            <p class="icon_bg2">
-            <i class="fa-solid fa-users"></i>
-            </p>
-            <p class="para_by_n">Trusted by 2 Core+ Users</p>
-          </div>
+  <div class="max-w-md mx-auto px-4 py-8">
+    <!-- Header Section -->
+    <div class="header-gradient rounded-b-3xl p-6 text-center text-white card-shadow">
+      <h1 class="text-3xl font-bold italic mb-2 text-yellow-300">Online consultations</h1>
+      <p class="text-blue-100">at your own comfort</p>
+    </div>
+
+    <!-- Benefits Card -->
+    <div class="bg-white rounded-2xl mt-[-30px] relative z-10 card-shadow p-5">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="w-full md:w-2/3">
+          <div class="flex items-center my-4">
+            <div class="bg-red-50 rounded-full p-2 border border-red-200 mr-3">
+              <i class="fa-solid fa-circle-check text-red-500"></i>
             </div>
-            <div class="nd_box_img">
-              <img src="doctor.png" alt="">
+            <p class="text-sm text-gray-700">100% Best Prices Guaranteed</p>
+          </div>
+          <div class="flex items-center my-4">
+            <div class="bg-green-50 rounded-full p-2 border border-green-200 mr-3">
+              <i class="fa-solid fa-award text-green-600"></i>
             </div>
-         </div>
-
-
-         <div class="form_snd_by_n">
-            <form action="">
-              <p class="heading_by_n">Instant Appointment</p>
-
-               <div class="form-container_by_n">
-                  <!-- Full Name -->
-                  <div class="input-box_by_n">
-                    <i class="fa fa-user"></i>
-                    <input type="text" placeholder="Enter Full Name">
-                  </div>
-
-                  <!-- Phone Number -->
-                  <div class="input-box_by_n">
-                    <i class="fa fa-phone"></i>
-                    <input type="tel" placeholder="Enter Phone Number">
-                  </div>
-                   <div class="btn_input ">
-                      <button class="btn_submit" type="submit"><i class="fa-solid fa-list-check"></i> &nbsp; Book on MRI Scan</button>
-                   </div>
-                 
-                </div>
-                
-               
-            </form> 
-         </div>
-
+            <p class="text-sm text-gray-700">NABH & NABL Certified Labs</p>
+          </div>
+          <div class="flex items-center my-4">
+            <div class="bg-green-50 rounded-full p-2 border border-green-200 mr-3">
+              <i class="fa-solid fa-users text-green-600"></i>
+            </div>
+            <p class="text-sm text-gray-700">Trusted by 2 Core+ Users</p>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 flex justify-center mt-4 md:mt-0">
+          <!-- Using the fixed image container -->
+          <div class="nd_box_img">
+            <!-- Using an inline SVG as a placeholder since doctor.png might not be available -->
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23012f85' /><text x='50%' y='50%' font-family='Arial' font-size='12' fill='white' text-anchor='middle' dy='.3em'>Doctor</text></svg>" alt="Doctor">
+          </div>
+        </div>
       </div>
 
-         <!-- Floating Buttons -->
-          <div class="floating-btns_by_n">
-            <button><i class="fa fa-phone"> </i> &nbsp; Book On Call</button>
-            <button><i class="fab fa-whatsapp"></i> &nbsp; Book On Whatsapp</button>
+      <!-- Appointment Form -->
+      <div class="mt-6 pt-6 border-t border-gray-100">
+        <h2 class="text-lg font-medium text-gray-800 mb-4">Instant Appointment</h2>
+        <form id="appointmentForm" class="space-y-4">
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fa fa-user text-gray-400"></i>
+            </div>
+            <input type="text" placeholder="Enter Full Name" class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:outline-none input-focus" required>
           </div>
+          
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i class="fa fa-phone text-gray-400"></i>
+            </div>
+            <input type="tel" placeholder="Enter Phone Number" class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:outline-none input-focus" required>
+          </div>
+          
+          <button type="submit" class="w-full py-3 px-4 rounded-xl text-white font-semibold btn-primary pulse">
+            <i class="fa-solid fa-list-check"></i> Book MRI Scan Appointment
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white floating-shadow rounded-t-2xl px-6 py-4 flex justify-center space-x-4">
+      <button class="py-3 px-5 rounded-full text-white text-sm font-medium btn-secondary">
+        <i class="fa fa-phone"></i> Book On Call
+      </button>
+      <button class="py-3 px-5 rounded-full text-white text-sm font-medium" style="background: linear-gradient(to right, #25D366, #128C7E);">
+        <i class="fab fa-whatsapp"></i> Book On WhatsApp
+      </button>
     </div>
   </div>
-  
 
+  <script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = this.querySelector('input[type="text"]').value;
+      const phone = this.querySelector('input[type="tel"]').value;
+      
+      // Simple validation
+      if (!name || !phone) {
+        alert('Please fill in all fields');
+        return;
+      }
+      
+      // Phone validation
+      const phoneRegex = /^[0-9]{10}$/;
+      if (!phoneRegex.test(phone)) {
+        alert('Please enter a valid 10-digit phone number');
+        return;
+      }
+      
+      // In a real application, you would send this data to your server
+      alert(`Thank you ${name}! We will contact you shortly at ${phone} to confirm your appointment.`);
+      
+      // Reset form
+      this.reset();
+    });
+  </script>
 </body>
 
 </html>
