@@ -9,7 +9,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <style>
-    
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
     @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
     * {
@@ -44,18 +45,15 @@
       height: 160px;
     }
     .f_box_by_n h2{
-      font-size: xx-large;
+        font-size: xx-large;
+        font-family: "Georgia", "Times New Roman", serif;
+        font-weight: bold;
+        font-style: italic;
+        color: #fbbf24; /* yellowish color jo image mein hai */
+
     }
 
-    .italic {
-      font-style: italic;
-
-    }
-
-    .yellow_text {
-      color: #f0a00b;
-    }
-
+   
     .blue_white {
       color: #91b3f1;
     }
@@ -66,7 +64,7 @@
       justify-content: space-between;
       display: flex;
       flex-direction: column;
-      padding: 20px 0px 20px 20px;
+      padding: 0px 0px 0px 20px;
       margin: -30px 0px 0px 0px;
       border-radius: 20px;
       width: 90%;
@@ -95,7 +93,7 @@
       justify-content: center;
       width: 35px;
       height: 35px;
-      border: 1px solid #02ff9a;
+      border: 1px solid #02ff9a9e;
       margin-right: 10px;
     }
 
@@ -108,7 +106,7 @@
       justify-content: center;
       width: 35px;
       height: 35px;
-      border: 1px solid #ff020268;
+      border: 1px solid #f191919c;
       margin-right: 10px;
 
     }
@@ -121,7 +119,7 @@
       justify-content: center;
       width: 35px;
       height: 35px;
-      border: 1px solid #ff020268;
+      border: 1px solid #f1eb91ba;
       margin-right: 10px;
 
     }
@@ -159,14 +157,15 @@
 
     .para_by_n{
       font-size: 12px;
-      color: #010101;
+      color: #010101bd;
+      font-weight: 500;
     }
     .form_snd_by_n {
       width: 100%;
     }
     .form_snd_by_n form{
       margin: 10px 0px;
-      padding: 30px 0px;
+      padding: 20px 0px 10px 0px;
       width: 95%;
       display: flex;
       align-items: flex-start;
@@ -178,7 +177,8 @@
       color: #010101;
       font-size: 16px;
       font-weight: 500;
-     
+      width: 100%;
+      text-align: center;     
     }
 
     .form-container_by_n {
@@ -188,7 +188,7 @@
 
     .input-box_by_n {
       position: relative;
-      margin-top: 15px;
+      margin-top: 10px;
     }
 
     .input-box_by_n i {
@@ -196,7 +196,7 @@
       top: 50%;
       left: 15px;
       transform: translateY(-50%);
-      color: #999;
+      color: #91b3f1;
       font-size: 16px;
     }
 
@@ -239,7 +239,7 @@
     }
 
     .floating-btns_by_n button {
-      background: rgb(0, 144, 129);
+      background: linear-gradient(to right, #012f85, #128C7E);
       color: white;
       border: none;
       padding: 12px 25px;
@@ -312,7 +312,7 @@
 
          <div class="form_snd_by_n">
             <form action="">
-              <p class="heading_by_n">Instant Appointment</p>
+              <p class="heading_by_n">Book Instant Appointment</p>
 
                <div class="form-container_by_n">
                   <!-- Full Name -->
