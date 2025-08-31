@@ -319,116 +319,70 @@
 
     }
 
-    :root{
-    --accent: #ff6f61;        /* colored half */
-    --base-border: #e6e6e6;   /* uncolored half */
-    --border-height: 2px;    /* height of bottom border */
-    --loop-duration: 6s;      /* total loop (3s per image) */
+   :root{
+    --accent: #ff6f61;
+    --base-border: #e6e6e6;
+    --border-height: 2px;
   }
 
-  /* Container (pattern: classname_by_n) */
   .classname_by_n {
     position: relative;
-    max-width: 600px;   /* as requested */
+    max-width: 600px;
     width: 100%;
-    height: 80px;
+    height: 100px;
     margin: 20px auto;
     overflow: hidden;
     aspect-ratio: 16/9;
     min-height: 180px;
     box-sizing: border-box;
-
-    /* reserve space for the bottom border so it appears "nichay" */
     padding-bottom: var(--border-height);
+    touch-action: pan-y; /* allow horizontal swipe */
   }
 
-  /* Slide boxes (absolute positioned) */
   .classname_by_n_slide {
     position: absolute;
-    inset: 0;            /* top:0; right:0; bottom:0; left:0 */
+    inset: 0;
     opacity: 0;
-    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  .classname_by_n_slide.active {
+    opacity: 1;
+    z-index: 2;
   }
 
   .classname_by_n_slide img {
     width: 100%;
     height: 100%;
     object-fit: fill;
-    padding: 20px;
     display: block;
+    padding: 20px;
+    user-select: none;
+    -webkit-user-drag: none;
   }
 
-  /* Two slides with separate animations (6s total → 3s per image) */
-  .classname_by_n_slide--1 {
-    animation: show1_by_n var(--loop-duration) infinite;
-    animation-fill-mode: both;
-    animation-timing-function: step-end;
-    z-index: 2;
-  }
-  .classname_by_n_slide--2 {
-    animation: show2_by_n var(--loop-duration) infinite;
-    animation-fill-mode: both;
-    animation-timing-function: step-end;
-    z-index: 1;
-  }
-
-  @keyframes show1_by_n {
-    0%       { opacity: 1; }
-    49.999%  { opacity: 1; }
-    50%      { opacity: 0; }
-    100%     { opacity: 0; }
-  }
-  @keyframes show2_by_n {
-    0%       { opacity: 0; }
-    49.999%  { opacity: 0; }
-    50%      { opacity: 1; }
-    100%     { opacity: 1; }
-  }
-
-  /* Bottom bar (the "border" shown below the image) */
+  /* bottom bar */
   .classname_by_n_border {
     position: absolute;
-    left: 50px;
-    right: 50px;
-    bottom: 0;                      /* sits in the padding area (appears below image) */
+    left: 50px; right: 50px; bottom: 0;
     height: var(--border-height);
-    background: var(--base-border); /* base (uncolored) half */
-    z-index: 30;                    /* above slides */
+    background: var(--base-border);
+    z-index: 5;
     overflow: hidden;
-    border-radius: 4px 4px 0 0;     /* subtle rounding */
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   }
-
-  /* colored half overlay that moves from right -> left */
-  .classname_by_n_border::before{
+  .classname_by_n_border::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 50%;          /* initial: right half colored (50% to 100%) */
     width: 50%;
     height: 100%;
     background: var(--accent);
-    z-index: 31;
-    /* animate position in sync with slides */
-    animation: borderShift_by_n var(--loop-duration) infinite;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: both;
-    /* a little soft shadow so it looks nicer */
-    box-shadow: inset 0 -1px 6px rgba(0,0,0,0.08);
+    transition: left 0.4s ease;
   }
-
-  /* KEYFRAMES: hold on right-half for 0–50% then slide to left-half around 50% */
-  @keyframes borderShift_by_n {
-    0%   { left: 50%; }   /* right half colored (when img1 shows) */
-    47%  { left: 50%; }
-    52%  { left: 0%; }    /* slide to left half around transition */
-    100% { left: 0%; }    /* left half colored (when img2 shows) */
+  .classname_by_n_slide--1.active ~ .classname_by_n_border::before {
+    left: 50%; /* right half */
   }
-
-  /* small responsive tweak */
-  @media (max-width:420px){
-    .classname_by_n { min-height: 140px; aspect-ratio: auto; }
-    :root { --border-height: 2px; }
+  .classname_by_n_slide--2.active ~ .classname_by_n_border::before {
+    left: 0%;  /* left half */
   }
 
   </style>
@@ -503,19 +457,18 @@
             <button><i class="fab fa-whatsapp"></i> &nbsp; Book On Whatsapp</button>
           </div>
 
-  <div class="classname_by_n">
-    <!-- Slide 1 (shows for first 3s of each 6s loop) -->
-    <div class="classname_by_n_slide classname_by_n_slide--1">
-      <!-- demo inline SVG so file works without external images -->
+    <div class="classname_by_n" id="slideshow">
+    <!-- Slide 1 -->
+    <div class="classname_by_n_slide classname_by_n_slide--1 active">
       <img src="img1.webp" alt="Image 1">
     </div>
-
-    <!-- Slide 2 (shows for next 3s) -->
+    <!-- Slide 2 -->
     <div class="classname_by_n_slide classname_by_n_slide--2">
       <img src="img2.webp" alt="Image 2">
     </div>
-     <!-- bottom "border" bar -->
-    <div class="classname_by_n_border" aria-hidden="true"></div>
+
+    <!-- bottom bar -->
+    <div class="classname_by_n_border"></div>
   </div>
 
 
@@ -1409,6 +1362,50 @@
     </script>
 
   
+
+<script>
+  const slides = document.querySelectorAll('.classname_by_n_slide');
+  const container = document.getElementById('slideshow');
+  let current = 0;
+  let timer;
+
+  function showSlide(index){
+    slides.forEach((s,i)=> s.classList.toggle('active', i===index));
+    current = index;
+  }
+  function nextSlide(){
+    showSlide((current+1) % slides.length);
+  }
+  function prevSlide(){
+    showSlide((current-1+slides.length) % slides.length);
+  }
+
+  function startAuto(){
+    timer = setInterval(nextSlide, 3000); // 3s
+  }
+  function stopAuto(){
+    clearInterval(timer);
+  }
+
+  // swipe detection
+  let startX = 0;
+  container.addEventListener('touchstart', e=>{
+    startX = e.touches[0].clientX;
+    stopAuto(); // pause autoplay while swiping
+  });
+  container.addEventListener('touchend', e=>{
+    let endX = e.changedTouches[0].clientX;
+    let diff = endX - startX;
+    if(Math.abs(diff) > 50){ // swipe threshold
+      if(diff > 0){ prevSlide(); } // swipe right → previous
+      else { nextSlide(); }        // swipe left → next
+    }
+    startAuto(); // resume autoplay
+  });
+
+  startAuto();
+</script>
+
   
 
 </body>
