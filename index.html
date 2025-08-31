@@ -30,6 +30,43 @@
      
     }
 
+    .slideshow_container_by_n {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slide_by_n {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      animation: fade_by_n 6s infinite;
+    }
+
+    .slide_by_n:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .slide_by_n:nth-child(2) {
+      animation-delay: 3s;
+    }
+
+    @keyframes fade_by_n {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      45% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .slide_by_n img {
+      width: 100%;
+      display: block;
+    }
+
     .f_container_by_n {
       width: 100%;
       max-width: 600px;
@@ -282,6 +319,69 @@
 
     }
 
+     /* Container (pattern: classname_by_n) */
+  .classname_by_n {
+    position: relative;
+    max-width: 500px;   /* as requested */
+    width: 100%;
+    height: 80px;
+    margin: 20px auto;
+    overflow: hidden;
+    /* optional fixed aspect — remove if you want natural image height */
+    aspect-ratio: 16/9;
+    min-height: 180px;
+  }
+
+  /* Slide boxes */
+  .classname_by_n_slide {
+    position: absolute;
+    inset: 0;            /* top:0; right:0; bottom:0; left:0 */
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .classname_by_n_slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    padding: 25px;
+
+  }
+
+  /* Two slides with separate animations (6s total → 3s per image) */
+  .classname_by_n_slide--1 {
+    animation: show1_by_n 6s infinite;
+    animation-fill-mode: both;
+    animation-timing-function: step-end;
+    z-index: 2;
+  }
+  .classname_by_n_slide--2 {
+    animation: show2_by_n 6s infinite;
+    animation-fill-mode: both;
+    animation-timing-function: step-end;
+    z-index: 1;
+  }
+
+  /* KEYFRAMES: 0–50% = first half (3s), 50–100% = second half (3s) */
+  @keyframes show1_by_n {
+    0%       { opacity: 1; }
+    49.999%  { opacity: 1; }
+    50%      { opacity: 0; }
+    100%     { opacity: 0; }
+  }
+  @keyframes show2_by_n {
+    0%       { opacity: 0; }
+    49.999%  { opacity: 0; }
+    50%      { opacity: 1; }
+    100%     { opacity: 1; }
+  }
+
+  /* small responsive tweak */
+  @media (max-width:420px){
+    .classname_by_n { min-height: 140px; aspect-ratio: auto; }
+  }
+
   </style>
 </head>
 
@@ -353,7 +453,24 @@
             <button><i class="fa fa-phone"> </i> &nbsp; Book On Call</button>
             <button><i class="fab fa-whatsapp"></i> &nbsp; Book On Whatsapp</button>
           </div>
+
+  <div class="classname_by_n">
+    <!-- Slide 1 (shows for first 3s of each 6s loop) -->
+    <div class="classname_by_n_slide classname_by_n_slide--1">
+      <!-- demo inline SVG so file works without external images -->
+      <img src="img1.webp" alt="Image 1">
     </div>
+
+    <!-- Slide 2 (shows for next 3s) -->
+    <div class="classname_by_n_slide classname_by_n_slide--2">
+      <img src="img2.webp" alt="Image 2">
+    </div>
+  </div>
+
+
+    </div>
+ 
+    
 
     	<section class="pt-50 reviewListingSec">
 			<div class="container">
