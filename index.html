@@ -385,6 +385,97 @@
     left: 0%;  /* left half */
   }
 
+
+
+
+  
+  .section_by_naveed{
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section_by_naveed h2{
+    font-size: 28px;
+    margin: 6px 0 6px;
+    color: #111;
+    font-weight: 700;
+  }
+  .section_by_naveed h2 span{ color: var(--accent); }
+
+  .section_by_naveed p{
+    color: #666;
+    margin: 8px 0 22px;
+  }
+
+  /* TAGS container */
+  .tags_by_naveed{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    /* give a little breathing so collapsed hidden area doesn't jump */
+  }
+
+  .tag_by_naveed{
+    padding: 10px 18px;
+    background: var(--tag-bg);
+    border-radius: 28px;
+    box-shadow: 0 6px 18px var(--tag-shadow);
+    font-size: 15px;
+    color: #111;
+    user-select: none;
+    cursor: default;
+    transition: transform .14s ease, box-shadow .14s ease;
+    white-space: nowrap;
+  }
+  .tag_by_naveed:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.09);
+  }
+
+  /* MORE button */
+  .tag_by_naveed.more{
+    color: var(--accent);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .tag_by_naveed.more:focus{
+    outline: 2px solid rgba(0,179,179,0.18);
+    outline-offset: 4px;
+  }
+
+  /* HIDDEN group: initially collapsed with smooth animation */
+  .hidden_by_naveed{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+
+    /* collapse visuals */
+    max-height: 0;           /* collapsed */
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 360ms cubic-bezier(.2,.9,.2,1), opacity 240ms ease-in;
+    /* pointer-events none when collapsed so keyboard/tab doesn't focus hidden items */
+    pointer-events: none;
+  }
+
+  /* when parent container has .expanded, show hidden items */
+  .tags_by_naveed.expanded .hidden_by_naveed{
+    max-height: 1000px;     /* large enough to fit items */
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* responsive tweaks */
+  @media (max-width:520px){
+    .tag_by_naveed{ padding: 9px 14px; font-size: 14px; border-radius: 22px; }
+  }
+
+
+
   </style>
 </head>
 
@@ -470,6 +561,45 @@
     <!-- bottom bar -->
     <div class="classname_by_n_border"></div>
   </div>
+
+
+  
+  <div class="section_by_naveed">
+    <h2>Our Presence <span>across Delhi</span></h2>
+    <p>Get an Assured discount in 25+ scan centers near you</p>
+
+    <div class="tags_by_naveed" id="tagsContainer_by_naveed">
+      <!-- visible tags -->
+      <div class="tag_by_naveed">Hauz Khas</div>
+      <div class="tag_by_naveed">Dwarka</div>
+      <div class="tag_by_naveed">Karol Bagh</div>
+      <div class="tag_by_naveed">Green Park</div>
+      <div class="tag_by_naveed">Connaught Place</div>
+      <div class="tag_by_naveed">Greater Kailash</div>
+      <div class="tag_by_naveed">Lajpat Nagar</div>
+      <div class="tag_by_naveed">Jor Bagh</div>
+
+      <!-- hidden tags (start collapsed) -->
+      <div class="hidden_by_naveed" id="hidden_by_naveed">
+        <div class="tag_by_naveed">Saket</div>
+        <div class="tag_by_naveed">Vasant Kunj</div>
+        <div class="tag_by_naveed">Rohini</div>
+        <div class="tag_by_naveed">Janakpuri</div>
+        <div class="tag_by_naveed">Okhla</div>
+        <div class="tag_by_naveed">Shahdara</div>
+        <div class="tag_by_naveed">Patel Nagar</div>
+        <div class="tag_by_naveed">Punjabi Bagh</div>
+        <div class="tag_by_naveed">Tilak Nagar</div>
+        <div class="tag_by_naveed">Mayur Vihar</div>
+      </div>
+
+      <!-- "more" toggle -->
+      <div class="tag_by_naveed more" id="toggleMore_by_naveed" role="button" tabindex="0" aria-expanded="false">
+        + more
+      </div>
+    </div>
+  </div>
+
 
 
     </div>
@@ -1404,6 +1534,47 @@
   });
 
   startAuto();
+</script>
+
+
+
+
+<script>
+  (function(){
+    const tagsContainer = document.getElementById('tagsContainer_by_naveed');
+    const hiddenGroup = document.getElementById('hidden_by_naveed');
+    const toggleBtn = document.getElementById('toggleMore_by_naveed');
+
+    // count hidden tags to build correct "+N more"
+    const hiddenCount = hiddenGroup ? hiddenGroup.querySelectorAll('.tag_by_naveed').length : 0;
+
+    // if no hidden items, hide the toggle button
+    if(hiddenCount === 0){
+      toggleBtn.style.display = 'none';
+    } else {
+      toggleBtn.textContent = `+${hiddenCount} more`;
+    }
+
+    function setExpandedState(expanded){
+      tagsContainer.classList.toggle('expanded', expanded);
+      toggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      toggleBtn.textContent = expanded ? 'Show less' : `+${hiddenCount} more`;
+    }
+
+    // click handler
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = tagsContainer.classList.contains('expanded');
+      setExpandedState(!isExpanded);
+    });
+
+    // keyboard accessibility: Enter / Space toggles
+    toggleBtn.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        toggleBtn.click();
+      }
+    });
+  })();
 </script>
 
   

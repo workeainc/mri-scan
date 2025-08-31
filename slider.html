@@ -3,132 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Swipe Slideshow</title>
+<title>Presence — show more (by_naveed)</title>
 <style>
   :root{
-    --accent: #ff6f61;
-    --base-border: #e6e6e6;
-    --border-height: 12px;
+    --accent: #00b3b3;
+    --bg: #fffaf8;
+    --tag-bg: #fff;
+    --tag-shadow: rgba(0,0,0,0.06);
   }
 
-  .classname_by_n {
-    position: relative;
-    max-width: 600px;
-    width: 100%;
-    margin: 20px auto;
-    overflow: hidden;
-    background: #000;
-    aspect-ratio: 16/9;
-    min-height: 180px;
-    box-sizing: border-box;
-    padding-bottom: var(--border-height);
-    touch-action: pan-y; /* allow horizontal swipe */
+  body {
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    margin: 0;
+    padding: 24px;
   }
 
-  .classname_by_n_slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-  .classname_by_n_slide.active {
-    opacity: 1;
-    z-index: 2;
-  }
-
-  .classname_by_n_slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    user-select: none;
-    -webkit-user-drag: none;
-  }
-
-  /* bottom bar */
-  .classname_by_n_border {
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: var(--border-height);
-    background: var(--base-border);
-    z-index: 5;
-    overflow: hidden;
-  }
-  .classname_by_n_border::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: var(--accent);
-    transition: left 0.4s ease;
-  }
-  .classname_by_n_slide--1.active ~ .classname_by_n_border::before {
-    left: 50%; /* right half */
-  }
-  .classname_by_n_slide--2.active ~ .classname_by_n_border::before {
-    left: 0%;  /* left half */
-  }
 </style>
 </head>
 <body>
-
-  <div class="classname_by_n" id="slideshow">
-    <!-- Slide 1 -->
-    <div class="classname_by_n_slide classname_by_n_slide--1 active">
-      <img src="img1.jpg" alt="Image 1">
-    </div>
-    <!-- Slide 2 -->
-    <div class="classname_by_n_slide classname_by_n_slide--2">
-      <img src="img2.jpg" alt="Image 2">
-    </div>
-
-    <!-- bottom bar -->
-    <div class="classname_by_n_border"></div>
-  </div>
-
-<script>
-  const slides = document.querySelectorAll('.classname_by_n_slide');
-  const container = document.getElementById('slideshow');
-  let current = 0;
-  let timer;
-
-  function showSlide(index){
-    slides.forEach((s,i)=> s.classList.toggle('active', i===index));
-    current = index;
-  }
-  function nextSlide(){
-    showSlide((current+1) % slides.length);
-  }
-  function prevSlide(){
-    showSlide((current-1+slides.length) % slides.length);
-  }
-
-  function startAuto(){
-    timer = setInterval(nextSlide, 3000); // 3s
-  }
-  function stopAuto(){
-    clearInterval(timer);
-  }
-
-  // swipe detection
-  let startX = 0;
-  container.addEventListener('touchstart', e=>{
-    startX = e.touches[0].clientX;
-    stopAuto(); // pause autoplay while swiping
-  });
-  container.addEventListener('touchend', e=>{
-    let endX = e.changedTouches[0].clientX;
-    let diff = endX - startX;
-    if(Math.abs(diff) > 50){ // swipe threshold
-      if(diff > 0){ prevSlide(); } // swipe right → previous
-      else { nextSlide(); }        // swipe left → next
-    }
-    startAuto(); // resume autoplay
-  });
-
-  startAuto();
-</script>
 
 </body>
 </html>
