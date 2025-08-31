@@ -23,16 +23,11 @@ a {
 }
 .boxes_row_byn{
     display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0px;
 }
 .col_m6_byn{
     width: 33%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .customeOverlayPopup{
   position: fixed;
