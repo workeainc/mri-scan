@@ -319,20 +319,30 @@
 
     }
 
-     /* Container (pattern: classname_by_n) */
+    :root{
+    --accent: #ff6f61;        /* colored half */
+    --base-border: #e6e6e6;   /* uncolored half */
+    --border-height: 5px;    /* height of bottom border */
+    --loop-duration: 6s;      /* total loop (3s per image) */
+  }
+
+  /* Container (pattern: classname_by_n) */
   .classname_by_n {
     position: relative;
-    max-width: 500px;   /* as requested */
+    max-width: 600px;   /* as requested */
     width: 100%;
     height: 80px;
     margin: 20px auto;
     overflow: hidden;
-    /* optional fixed aspect — remove if you want natural image height */
     aspect-ratio: 16/9;
     min-height: 180px;
+    box-sizing: border-box;
+
+    /* reserve space for the bottom border so it appears "nichay" */
+    padding-bottom: var(--border-height);
   }
 
-  /* Slide boxes */
+  /* Slide boxes (absolute positioned) */
   .classname_by_n_slide {
     position: absolute;
     inset: 0;            /* top:0; right:0; bottom:0; left:0 */
@@ -344,26 +354,24 @@
     width: 100%;
     height: 100%;
     object-fit: fill;
-    display: block;
     padding: 20px;
-
+    display: block;
   }
 
   /* Two slides with separate animations (6s total → 3s per image) */
   .classname_by_n_slide--1 {
-    animation: show1_by_n 6s infinite;
+    animation: show1_by_n var(--loop-duration) infinite;
     animation-fill-mode: both;
     animation-timing-function: step-end;
     z-index: 2;
   }
   .classname_by_n_slide--2 {
-    animation: show2_by_n 6s infinite;
+    animation: show2_by_n var(--loop-duration) infinite;
     animation-fill-mode: both;
     animation-timing-function: step-end;
     z-index: 1;
   }
 
-  /* KEYFRAMES: 0–50% = first half (3s), 50–100% = second half (3s) */
   @keyframes show1_by_n {
     0%       { opacity: 1; }
     49.999%  { opacity: 1; }
@@ -377,9 +385,50 @@
     100%     { opacity: 1; }
   }
 
+  /* Bottom bar (the "border" shown below the image) */
+  .classname_by_n_border {
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    bottom: 0;                      /* sits in the padding area (appears below image) */
+    height: var(--border-height);
+    background: var(--base-border); /* base (uncolored) half */
+    z-index: 30;                    /* above slides */
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;     /* subtle rounding */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+
+  /* colored half overlay that moves from right -> left */
+  .classname_by_n_border::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;          /* initial: right half colored (50% to 100%) */
+    width: 50%;
+    height: 100%;
+    background: var(--accent);
+    z-index: 31;
+    /* animate position in sync with slides */
+    animation: borderShift_by_n var(--loop-duration) infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    /* a little soft shadow so it looks nicer */
+    box-shadow: inset 0 -1px 6px rgba(0,0,0,0.08);
+  }
+
+  /* KEYFRAMES: hold on right-half for 0–50% then slide to left-half around 50% */
+  @keyframes borderShift_by_n {
+    0%   { left: 50%; }   /* right half colored (when img1 shows) */
+    47%  { left: 50%; }
+    52%  { left: 0%; }    /* slide to left half around transition */
+    100% { left: 0%; }    /* left half colored (when img2 shows) */
+  }
+
   /* small responsive tweak */
   @media (max-width:420px){
     .classname_by_n { min-height: 140px; aspect-ratio: auto; }
+    :root { --border-height: 10px; }
   }
 
   </style>
@@ -465,6 +514,8 @@
     <div class="classname_by_n_slide classname_by_n_slide--2">
       <img src="img2.webp" alt="Image 2">
     </div>
+     <!-- bottom "border" bar -->
+    <div class="classname_by_n_border" aria-hidden="true"></div>
   </div>
 
 
