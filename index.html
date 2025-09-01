@@ -484,53 +484,76 @@
 
 
   
-  .why_by_naveed{
-    max-width:600px;
-    margin:20px auto;
-    padding: 0px 20px;
+.healthians-container_byn {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fffaf5;
+  border-radius: 20px;
+  border: 1px solid #ffe6d5;
+  max-width: 1100px;
+  margin: 0px auto;
+}
+
+.healthians-container_byn h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 20px;
+}
+
+.healthians-container_byn .highlight_byn {
+  color: #00a9ad;
+}
+
+.features_byn {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.feature-box_byn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-box_byn img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+}
+
+.feature-box_byn p {
+  font-size: 16px;
+  color: #1d1d1f;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .features_byn {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 15px;
   }
 
-  .why_by_naveed h2{
-    font-size:20px;
-    font-weight:700;
-    color:#111;
-    margin-bottom:20px;
-    text-align:center;
-  }
-  .why_by_naveed h2 span{
-    color:#01a3a4;   /* teal blue */
+  .feature-box_byn {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
   }
 
-  .grid_by_naveed{
-    display:grid;
-    grid-template-columns: repeat(2,1fr); /* default: 2 columns (mobile) */
-    gap:10px 10px;
+  .feature-box_byn img {
+    margin-bottom: 0;
+    width: 36px;
+    height: 36px;
   }
 
-  .item_by_naveed{
-    display:flex;
-    align-items:flex-start;
-    gap:12px;
+  .feature-box_byn p {
+    font-size: 15px;
   }
-  .icon_by_naveed{
-    font-size:30px;
-    flex-shrink:0;
-    line-height:1;
-  }
-  .text_by_naveed{
-    font-size:13px;
-    font-weight:600;
-    line-height:1.3;
-    color:#222;
-  }
-
-  /* Desktop breakpoint */
-  @media(min-width:900px){
-    .grid_by_naveed{
-      grid-template-columns: repeat(4,1fr); /* desktop: 4 columns */
-      gap:20px 2px;
-    }
-  }
+}
 
   </style>
 </head>
@@ -656,38 +679,32 @@
     </div>
   </div>
 
+</div>
+  
 
-   <div class="why_by_naveed">
-    <h2>Why Choose <span>True Reports</span></h2>
-    <div class="grid_by_naveed">
-      
-      <div class="item_by_naveed">
-        <div class="icon_by_naveed">🛡️</div>
-        <div class="text_by_naveed">100% Report Accuracy</div>
-      </div>
-
-      <div class="item_by_naveed">
-        <div class="icon_by_naveed">💰</div>
-        <div class="text_by_naveed">Money Back Guarantee</div>
-      </div>
-
-      <div class="item_by_naveed">
-        <div class="icon_by_naveed">📜</div>
-        <div class="text_by_naveed">Government Certified Labs</div>
-      </div>
-
-      <div class="item_by_naveed">
-        <div class="icon_by_naveed">📅</div>
-        <div class="text_by_naveed">Schedule Priority Slots</div>
-      </div>
-
+<div class="healthians-container_byn">
+  <h2>Why Choose <span class="highlight_byn">True Reports</span></h2>
+  <div class="features_byn">
+    <div class="feature-box_byn">
+      <img src="images/report_accuracy.svg" alt="Report Accuracy">
+      <p><strong>100% Report</strong><br>Accuracy</p>
+    </div>
+    <div class="feature-box_byn">
+      <img src="images/money-back.svg" alt="Money Back">
+      <p><strong>Money Back</strong><br>Guarantee</p>
+    </div>
+    <div class="feature-box_byn">
+      <img src="images/goverment-certified.svg" alt="Government Certified">
+      <p><strong>Government</strong><br>Certified Labs</p>
+    </div>
+    <div class="feature-box_byn">
+      <img src="images/slots.svg" alt="Priority Slots">
+      <p><strong>Schedule Priority</strong><br>Slots</p>
     </div>
   </div>
+</div>
 
-
-
-
-    </div>
+    
  
     
 
