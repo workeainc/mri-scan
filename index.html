@@ -762,7 +762,11 @@
                   <!-- Phone Number -->
                   <div class="input-box_by_n">
                     <i class="fa fa-phone"></i>
-                    <input type="tel" id="form_phone" placeholder="Enter Phone Number">
+                   <input type="tel" id="form_phone" placeholder="Enter Phone Number"
+       pattern="[6-9][0-9]{9}" 
+       maxlength="10"
+       required>
+
                   </div>
                    <div class="btn_input ">
                       <button class="btn_submit" id="submitForm" type="submit"><i class="fa-solid fa-list-check"></i> &nbsp; Get Instant CallBack</button>
