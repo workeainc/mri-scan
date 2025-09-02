@@ -1678,48 +1678,59 @@
   </script>
 
 
-  <script>
-    $(document).ready(function () {
+ <script>
+  $(document).ready(function () {
 
-      // Handle form submission
-      $('#appointmentForm').on('submit', function (e) {
-        e.preventDefault(); // Prevent default form submission
+    let userIP = "";
+    let userCity = "";
 
-        // Get form values
-        var name = $('#form_name').val();
-        var phone = $('#form_phone').val();
-
-        // Basic validation
-        if (!name || !phone) {
-          Swal.fire('Error', 'Please fill in all required fields', 'error');
-          return;
-        }
-
-        // Show loading state
-        $('#submitForm').prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> Processing...');
-
-        // Make API request
-        $.post('https://babalrukn.com/api.php', {
-          name: name,
-          phone: phone
-        })
-          .done(function (response) {
-            if (response.status === 'success') {
-              $("#resp_form").css("display", "flex");
-              $('#appointmentForm')[0].reset();
-            } else {
-              Swal.fire('Error', response.message, 'error');
-            }
-          })
-          .fail(function () {
-            Swal.fire('Error', 'An error occurred while submitting the form. Please try again.', 'error');
-          })
-          .always(function () {
-            $('#submitForm').prop('disabled', false).html('<i class="fa-solid fa-list-check"></i> &nbsp; Get Instant CallBack');
-          });
-      });
+    // Pehle user ka IP aur City nikal lo
+    $.get("https://ipapi.co/json/", function (data) {
+      userIP = data.ip;
+      userCity = data.city;
     });
-  </script>
+
+    // Handle form submission
+    $('#appointmentForm').on('submit', function (e) {
+      e.preventDefault(); // Prevent default form submission
+
+      // Get form values
+      var name = $('#form_name').val();
+      var phone = $('#form_phone').val();
+
+      // Basic validation
+      if (!name || !phone) {
+        Swal.fire('Error', 'Please fill in all required fields', 'error');
+        return;
+      }
+
+      // Show loading state
+      $('#submitForm').prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> Processing...');
+
+      // Make API request
+      $.post('https://babalrukn.com/api.php', {
+        name: name,
+        phone: phone,
+        ip: userIP,
+        city: userCity
+      })
+        .done(function (response) {
+          if (response.status === 'success') {
+            $("#resp_form").css("display", "flex");
+            $('#appointmentForm')[0].reset();
+          } else {
+            Swal.fire('Error', response.message, 'error');
+          }
+        })
+        .fail(function () {
+          Swal.fire('Error', 'An error occurred while submitting the form. Please try again.', 'error');
+        })
+        .always(function () {
+          $('#submitForm').prop('disabled', false).html('<i class="fa-solid fa-list-check"></i> &nbsp; Get Instant CallBack');
+        });
+    });
+  });
+</script>
 
 
 
