@@ -1684,19 +1684,20 @@
   <!-- Yahan user ka city & ip show hoga -->
   <div id="userLocation" style="margin-top:10px; font-weight:bold; color:#074578;"></div>
 
+<!-- User location frontend pe show karne ke liye -->
+<div id="userLocation" style="margin-top:10px; font-weight:bold; color:#074578;"></div>
+
 <script>
   $(document).ready(function () {
 
-    let userIP = "";
     let userCity = "";
 
-    // IP aur City fetch karna
+    // Sirf City + Region fetch karna
     $.get("https://ipapi.co/json/", function (data) {
-      userIP = data.ip;
-      userCity = data.city;
+      userCity = data.city + ", " + data.region;
 
       // Frontend pe show karna
-      $("#userLocation").html("📍 Your City: " + userCity + " | 🌐 IP: " + userIP);
+      $("#userLocation").html("📍 Your Location: " + userCity);
     });
 
     // Handle form submission
@@ -1713,11 +1714,10 @@
 
       $('#submitForm').prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> Processing...');
 
-      // 👇 Ab backend ko city & ip bhi bhejna
+      // Backend ko sirf name, phone aur city bhejna
       $.post('https://babalrukn.com/api.php', {
         name: name,
         phone: phone,
-        ip: userIP,
         city: userCity
       })
         .done(function (response) {
