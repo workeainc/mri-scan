@@ -204,9 +204,9 @@
 }
 
     .para_by_n{
-      font-size: 12px;
+      font-size: 13px;
       color: #010101bd;
-      font-weight: 600;
+      font-weight: 700;
     }
     .form_snd_by_n {
       width: 100%;
@@ -224,15 +224,13 @@
     .heading_by_n{
       color: #010101;
       font-size: 16px !important;
-      font-weight: 500 !important;
+      font-weight: 600 !important;
       width: 100%;
       text-align: center;  
       margin-bottom: 0 !important;   
       margin-top: 10px;
     }
-    .heading_by_n span{
-      color: #009b9b;
-    }
+  
 
     .form-container_by_n {
       width: 100%;
@@ -575,6 +573,107 @@
   }
 }
 
+
+
+/* ========== POPUP OVERLAY ========== */
+.by_progley_popup_wrapper {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* ========== POPUP BOX ========== */
+.by_progley_popup_box {
+  position: relative;
+  width: 90%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 20px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* ========== CLOSE BUTTON ========== */
+.by_progley_close_btn {
+  position: absolute;
+  top: -46px;
+  right: 0px;
+  width: 36px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #000000;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== GREEN DOT TEXT ========== */
+.by_progley_dot_text {
+  font-size: 14px;
+  color: #2e7d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.by_progley_green_dot {
+  width: 10px;
+  height: 10px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+}
+
+/* ========== MAIN TEXT ========== */
+.by_progley_main_text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b2b2b;
+  line-height: 1.6;
+  margin-bottom: 26px;
+}
+
+/* ========== CTA BUTTON ========== */
+.by_progley_cta_btn {
+  background-color: #f15a29;
+  color: #fff;
+  font-size: 17px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.by_progley_cta_btn:hover {
+  background-color: #d84f22;
+}
+
+.by_progley_icon {
+  font-size: 18px;
+}
+.bluecolor{
+  color: #00a9ad;
+}
+
   </style>
 </head>
 
@@ -731,8 +830,8 @@
     	<section class="pt-50 reviewListingSec">
 			<div class="container">
 				<div class="text_center_byn mb-20 section-title">
-					<h2 class="text_center_byn title">
-						<span class="icon"><img src="images/google.png" class="img-fluid" alt=""></span> <span class="txt">- Reviews (4.9/5 Rating)</span>
+					<h2 class="text_center_byn section_by_naveedd sect title">
+						<span class="icon"><img src="images/google.png" class="img-fluid" alt=""></span>  &nbsp; -  &nbsp; Reviews<span class="bluecolor"> &nbsp; (4.9/5 Rating)</span>
 					</h2>
 				</div>
 				<div class="reviewListingSecinner">
@@ -1096,7 +1195,7 @@
   	<section class="pt-60 partnerSec">
 			<div class="container">
 				<div class="text-center mb-40 section_by_naveedd section-title">
-            <h2>750+ Scan<span class="highlight_byn"> Centers & Labs</span></h2>
+            <h2><span class="highlight_byn">750+ </span>Scan Centers & Labs</h2>
 
 				</div>
 				<div class="partnerSecinner">
@@ -1153,9 +1252,7 @@
 							<div class="col-lg-3 col-md-3 col-sm-6 col-12 columnBox web-foter-block">
 								<div class="web-foter-block-innner">
 									<div class="mb-10 footerAboutArea">
-										<a href="https://kidzz.in/lab" class="footerLogo"> <img src="images/logo.png" class="img-fluid " alt=""> </a>
-										<p class="mb-0 tagLine">Making healthcare understandable, accessible &
-											affordable</p>
+										<p class="mb-0 tagLine text-center">India’s No.1 Trusted Healthcare Platform</p>
 									</div>
 								</div>
 							</div>
@@ -1186,38 +1283,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-12 columnBox web-foter-block">
-								<div class=" web-foter-block-innner">
-									<h4 class="title">Useful Links</h4>
-									<ul class="footerLinks">
-										<li><a href="https://kidzz.in/lab/mri-scan">MRI Scan</a></li>
-										<li><a href="https://kidzz.in/lab/ct-scan">CT Scan</a></li>
-										<li><a href="https://kidzz.in/lab/pet-ct-scan">PET-CT Scan</a></li>
-										<li><a href="https://kidzz.in/lab/blood-test">Blood Test</a></li>
-										<li><a href="https://kidzz.in/lab/ultrasound">Ultrasound</a></li>
-										<li><a href="https://kidzz.in/lab/about-us">About Us</a></li>
-										<li><a href="https://kidzz.in/lab/terms-and-conditions">Terms and Conditions</a></li>
-										<li><a href="https://kidzz.in/lab/privacy-policy">Privacy Policy</a></li>
-										<li><a href="https://kidzz.in/lab/refund-policy">Refund and Cancellation</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-12 columnBox web-foter-block">
-								<div class="web-foter-block-innner">
-									<div class="footerContactArea">
-										<h4 class="title">Contact Us</h4>
-										<p class=""><strong>Email:</strong> <a href="mailto:support@truereports.in">support@truereports.in</a></p>
-										<p class="mb-0"><strong>Telephone:</strong> <a href="tel:+917982113707">+91 7982113707</a></p>
-									</div>
-									<div class="footerContactArea">
-										<ul class="mb-20 footerSocialLinks">
-											<li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-											<li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
+						
+						<div class="section_by_naveedd">
+                 <h2><span class="highlight_byn">Disclaimer</span></h2>
+
+              
+              <p class="para_by_n p-20"> em ipsum dolor sit amet consectetur adipisicing elit. Sint ratione vitae corporis nihil nostrum quisquam, libero quae quam dolores animi.</p>
+            </div>
 
 
 						</div>
@@ -1246,6 +1318,30 @@
 		
 	
 	</footer>        
+
+   <!-- Popup -->
+  <div class="by_progley_popup_wrapper" id="by_progley_popup">
+    <div class="by_progley_popup_box">
+      <button class="by_progley_close_btn" id="by_progley_close_btn">×</button>
+
+
+      <p class="by_progley_dot_text">
+        <span class="by_progley_green_dot"></span>
+        <span>10k+ users have benefitted in the last 24 hrs</span>
+      </p>
+
+      <p class="by_progley_main_text">
+        Talk to our Health Advisor for
+        attractive discounts on your
+        booking
+      </p>
+
+      <button class="by_progley_cta_btn">
+       <i class="fa fa-phone"> </i>
+        Call to Book Now
+      </button>
+    </div>
+  </div>
   
   </div>
     <script src="js/jquery-3.6.4.min.js"></script>
@@ -1260,6 +1356,24 @@
 <!-- js-cookie must be loaded before the script that uses Cookies.get -->
 <script src="js/js.cookie.min.js"></script>
 
+
+<script>
+    // Show popup after 3 seconds
+window.addEventListener('load', function () {
+  setTimeout(() => {
+    const popup = document.getElementById('by_progley_popup');
+    popup.style.display = 'flex';
+  }, 3000);
+});
+
+// Close popup when '×' button is clicked
+document.getElementById('by_progley_close_btn').addEventListener('click', function () {
+  const popup = document.getElementById('by_progley_popup');
+  popup.style.display = 'none';
+});
+
+
+</script>
 
 <script>
     $(document).ready(function () {
