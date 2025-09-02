@@ -1380,9 +1380,9 @@
   
 
     <!-- Popup -->
-  <div class="by_progley_popup_wrapper" id="">
+  <div class="by_progley_popup_wrapper" id="resp_form">
     <div class="by_progley_popup_box">
-      <button class="by_progley_close_btn" id="">×</button>
+      <button class="by_progley_close_btn" id="resp_form_close">×</button>
 
 
       <p class="by_progley_dot_text">
@@ -1391,7 +1391,7 @@
       </p>
 
       <p class="by_progley_main_text">
-        Thankyou for choosing True Reports. Our team will get in touch with you now.Book Instant Appointment in 2 Min
+        Thankyou for choosing True Reports. Our team will get in touch with you now. Book Instant Appointment in 2 Min
       </p>
 
       <button class="by_progley_cta_btn">
@@ -1430,6 +1430,10 @@ window.addEventListener('load', function () {
 document.getElementById('by_progley_close_btn').addEventListener('click', function () {
   const popup = document.getElementById('by_progley_popup');
   popup.style.display = 'none';
+});
+
+$("#resp_form_close").click(function(){
+  $("#resp_form").hide();
 });
 
 
@@ -1600,8 +1604,7 @@ $(document).ready(function() {
     })
     .done(function(response) {
       if (response.status === 'success') {
-        Swal.fire('Success', response.message, 'success');
-        // Optionally reset the form
+        $("#resp_form").css("display", "flex");
         $('#appointmentForm')[0].reset();
       } else {
         Swal.fire('Error', response.message, 'error');
@@ -1611,7 +1614,6 @@ $(document).ready(function() {
       Swal.fire('Error', 'An error occurred while submitting the form. Please try again.', 'error');
     })
     .always(function() {
-      // Re-enable button
       $('#submitForm').prop('disabled', false).html('<i class="fa-solid fa-list-check"></i> &nbsp; Get Instant CallBack');
     });
   });
