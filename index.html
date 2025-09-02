@@ -1495,10 +1495,13 @@
           Book Instant Appointment on WhatsApp
         </p>
 
-        <button class="by_progley_cta_btn">
-          <i class="fab fa-whatsapp"></i>
-          Book on Whatsapp
-        </button>
+        <a href="https://wa.me/917982113707?text=Hello%20True%20Reports,%20I%20want%20to%20book%20Test" target="_blank">
+          <button class="by_progley_cta_btn">
+            <i class="fab fa-whatsapp"></i>
+            Book on Whatsapp
+          </button>
+        </a>
+
       </div>
     </div>
 
@@ -1678,36 +1681,39 @@
   </script>
 
 
- <script>
+  <!-- Yahan user ka city & ip show hoga -->
+  <div id="userLocation" style="margin-top:10px; font-weight:bold; color:#074578;"></div>
+
+<script>
   $(document).ready(function () {
 
     let userIP = "";
     let userCity = "";
 
-    // Pehle user ka IP aur City nikal lo
+    // IP aur City fetch karna
     $.get("https://ipapi.co/json/", function (data) {
       userIP = data.ip;
       userCity = data.city;
+
+      // Frontend pe show karna
+      $("#userLocation").html("📍 Your City: " + userCity + " | 🌐 IP: " + userIP);
     });
 
     // Handle form submission
     $('#appointmentForm').on('submit', function (e) {
-      e.preventDefault(); // Prevent default form submission
+      e.preventDefault();
 
-      // Get form values
       var name = $('#form_name').val();
       var phone = $('#form_phone').val();
 
-      // Basic validation
       if (!name || !phone) {
         Swal.fire('Error', 'Please fill in all required fields', 'error');
         return;
       }
 
-      // Show loading state
       $('#submitForm').prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> Processing...');
 
-      // Make API request
+      // 👇 Ab backend ko city & ip bhi bhejna
       $.post('https://babalrukn.com/api.php', {
         name: name,
         phone: phone,
@@ -1731,6 +1737,7 @@
     });
   });
 </script>
+
 
 
 
