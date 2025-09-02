@@ -4,30 +4,29 @@
 <head>
 
   <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>True Reports | Home</title>
-	<meta name="csrf-token" content="NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA">    
-	<link rel="stylesheet" href="css/uicons-solid-rounded.css">
-	<link rel="stylesheet" href="css/all.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/jquery.fancybox.css">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/swiper.min.css">
-	<link rel="stylesheet" href="css/swiper-bundle.min.css">
-	<link rel="stylesheet" type="text/css" href="css/slick.css">
-	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/rs-spacing-min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/responsive.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>True Reports | Home</title>
+  <meta name="csrf-token" content="NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA">
+  <link rel="stylesheet" href="css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" type="text/css" href="css/slick.css">
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/rs-spacing-min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <style>
-  
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-     
+
     }
 
     .slideshow_container_by_n {
@@ -55,11 +54,25 @@
     }
 
     @keyframes fade_by_n {
-      0% { opacity: 0; }
-      5% { opacity: 1; }
-      45% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 0; }
+      0% {
+        opacity: 0;
+      }
+
+      5% {
+        opacity: 1;
+      }
+
+      45% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
     }
 
     .slide_by_n img {
@@ -90,18 +103,20 @@
       border-radius: 0px 0px 30px 30px;
       height: 500px;
     }
-    .f_box_by_n h2{
-        font-size: 24px;
-        font-family: "Georgia", "Times New Roman", serif;
-        font-weight: bold;
-        color: #fbb724; /* yellowish color jo image mein hai */
-        background-color: #029e9e;
-        padding: 5px 15px;
-        border-radius: 5px;
+
+    .f_box_by_n h2 {
+      font-size: 24px;
+      font-family: "Georgia", "Times New Roman", serif;
+      font-weight: bold;
+      color: #fbb724;
+      /* yellowish color jo image mein hai */
+      background-color: #029e9e;
+      padding: 5px 15px;
+      border-radius: 5px;
 
     }
 
-   
+
     .blue_white {
       color: #aec9fb;
     }
@@ -124,7 +139,8 @@
 
 
     }
-    .container_snd_by_n{
+
+    .container_snd_by_n {
       width: 100%;
       display: flex;
       align-items: center;
@@ -134,7 +150,7 @@
 
     .icon_bg2 {
       background-color: #07fa9923;
-      padding: 5px;
+      padding: 2px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -145,9 +161,24 @@
       margin-right: 10px;
     }
 
+    .icon_bg2 img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .icon_bg img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .icon_bg3 img {
+      width: 100%;
+      height: 100%;
+    }
+
     .icon_bg {
       background-color: #f7070725;
-      padding: 5px;
+      padding: 2px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -158,9 +189,10 @@
       margin-right: 10px;
 
     }
+
     .icon_bg3 {
       background-color: #f1eb9145;
-      padding: 5px;
+      padding: 2px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -179,6 +211,7 @@
     .icon_bg i {
       color: #d10000de;
     }
+
     .icon_bg3 i {
       color: #fbbf24;
     }
@@ -188,30 +221,35 @@
       align-items: center;
       margin: 0px 0px !important;
     }
+
     .nd_box_img {
-  position: relative;      /* relative parent */
-  height: 100px;
-  border-radius: 0 0 20px 20px;
-  overflow: hidden;
-}
+      position: relative;
+      /* relative parent */
+      height: 100px;
+      border-radius: 0 0 20px 20px;
+      overflow: hidden;
+    }
 
-.nd_box_img img {
-  
-  width: 100px;
-  height: 100%;
-  object-fit: contain;       /* safe crop */
-  object-position: center;
-}
+    .nd_box_img img {
 
-    .para_by_n{
+      width: 100px;
+      height: 100%;
+      object-fit: contain;
+      /* safe crop */
+      object-position: center;
+    }
+
+    .para_by_n {
       font-size: 13px;
       color: #010101bd;
       font-weight: 700;
     }
+
     .form_snd_by_n {
       width: 100%;
     }
-    .form_snd_by_n form{
+
+    .form_snd_by_n form {
       margin: 0px 0px;
       padding: 10px 0px 10px 0px;
       width: 95%;
@@ -221,16 +259,17 @@
       flex-direction: column;
       border-top: 1px solid #91b3f15b;
     }
-    .heading_by_n{
+
+    .heading_by_n {
       color: #010101;
       font-size: 16px !important;
       font-weight: 600 !important;
       width: 100%;
-      text-align: center;  
-      margin-bottom: 0 !important;   
+      text-align: center;
+      margin-bottom: 0 !important;
       margin-top: 10px;
     }
-  
+
 
     .form-container_by_n {
       width: 100%;
@@ -261,17 +300,18 @@
       outline: none;
       transition: 0.3s;
       font-weight: 600;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     }
 
     .input-box_by_n input:focus {
       border-color: #074578;
-      box-shadow: 0 0 6px rgba(7,69,120,0.3);
+      box-shadow: 0 0 6px rgba(7, 69, 120, 0.3);
     }
 
     .input-box_by_n input::placeholder {
       color: #aaa;
     }
+
     /* Floating buttons */
     .floating-btns_by_n {
       max-width: 600px;
@@ -297,20 +337,24 @@
       font-size: 16px;
       cursor: pointer;
       font-weight: 600;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       transition: 0.3s;
     }
-     .orange_byn{
+
+    .orange_byn {
       background-color: #00b3b3 !important;
-     }
-     .orange_bn{
-      background-color: #f15a29 !important ;
-     }
+    }
+
+    .orange_bn {
+      background-color: #f15a29 !important;
+    }
+
     .floating-btns_by_n button:hover {
       background: #055;
       transform: translateY(-2px);
     }
-    .btn_input button{
+
+    .btn_input button {
       width: 100%;
       margin-top: 15px;
       background-color: #fbbf24;
@@ -323,6 +367,7 @@
 
 
     }
+
     .btn_submit {
       padding: 12px 25px;
       font-size: 14px;
@@ -330,379 +375,405 @@
 
     }
 
-   :root{
-    --accent: #ff6f61;
-    --base-border: #e6e6e6;
-    --border-height: 2px;
-      
-    --accent2: #00b3b3;
-    --bg: #fffaf8;
-    --tag-bg: #fff;
-    --tag-shadow: rgba(0,0,0,0.06);
-  
-  }
+    :root {
+      --accent: #ff6f61;
+      --base-border: #e6e6e6;
+      --border-height: 2px;
 
-  .classname_by_n {
-    position: relative;
-    max-width: 600px;
-    width: 100%;
-    height: 120px;
-    margin: 20px auto;
-    overflow: hidden;
-    aspect-ratio: 16/9;
-    min-height: 120px;
-    box-sizing: border-box;
-    padding-bottom: var(--border-height);
-    touch-action: pan-y; /* allow horizontal swipe */
-  }
+      --accent2: #00b3b3;
+      --bg: #fffaf8;
+      --tag-bg: #fff;
+      --tag-shadow: rgba(0, 0, 0, 0.06);
 
-  .classname_by_n_slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-  .classname_by_n_slide.active {
-    opacity: 1;
-    z-index: 2;
-  }
+    }
 
-  .classname_by_n_slide img {
-    width: 100%;
-    height: 100px;
-    object-fit: fill;
-    display: block;
-    padding: 0px 20px;
-    user-select: none;
-    -webkit-user-drag: none;
-  }
+    .classname_by_n {
+      position: relative;
+      max-width: 600px;
+      width: 100%;
+      height: 120px;
+      margin: 20px auto;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      min-height: 120px;
+      box-sizing: border-box;
+      padding-bottom: var(--border-height);
+      touch-action: pan-y;
+      /* allow horizontal swipe */
+    }
 
-  /* bottom bar */
-  .classname_by_n_border {
-    position: absolute;
-    left: 50px; right: 50px; bottom: 0;
-    height: var(--border-height);
-    background: var(--base-border);
-    z-index: 5;
-    overflow: hidden;
-  }
-  .classname_by_n_border::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: var(--accent);
-    transition: left 0.4s ease;
-  }
-  .classname_by_n_slide--1.active ~ .classname_by_n_border::before {
-    left: 50%; /* right half */
-  }
-  .classname_by_n_slide--2.active ~ .classname_by_n_border::before {
-    left: 0%;  /* left half */
-  }
+    .classname_by_n_slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
 
+    .classname_by_n_slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
 
+    .classname_by_n_slide img {
+      width: 100%;
+      height: 100px;
+      object-fit: fill;
+      display: block;
+      padding: 0px 20px;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
 
+    /* bottom bar */
+    .classname_by_n_border {
+      position: absolute;
+      left: 50px;
+      right: 50px;
+      bottom: 0;
+      height: var(--border-height);
+      background: var(--base-border);
+      z-index: 5;
+      overflow: hidden;
+    }
 
-  
-  .section_by_naveed{
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-  }
+    .classname_by_n_border::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: var(--accent);
+      transition: left 0.4s ease;
+    }
 
-  .section_by_naveed h2{
-    font-size: 22px;
-    margin: 6px 0 6px;
-    color: #111;
-    font-weight: 700;
-  }
-  .section_by_naveed h2 span{ color: var(--accent2); }
+    .classname_by_n_slide--1.active~.classname_by_n_border::before {
+      left: 50%;
+      /* right half */
+    }
 
-  .section_by_naveedd h2{
-    text-align: center;
-    font-size: 22px;
-    margin: 6px 0 6px;
-    color: #111;
-    font-weight: 700;
-  }
-  .section_by_naveedd h2 span{ color: var(--accent2); }
-
-  .section_by_naveed p{
-    color: #666;
-    margin: 8px 0 22px;
-  }
-
-  /* TAGS container */
-  .tags_by_naveed{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    align-items: center;
-    /* give a little breathing so collapsed hidden area doesn't jump */
-  }
-
-  .tag_by_naveed{
-    padding: 10px 18px;
-    background: var(--tag-bg);
-    border-radius: 28px;
-    box-shadow: 0 6px 18px var(--tag-shadow);
-    font-size: 15px;
-    color: #111;
-    user-select: none;
-    cursor: default;
-    transition: transform .14s ease, box-shadow .14s ease;
-    white-space: nowrap;
-  }
-  .tag_by_naveed:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.09);
-  }
-
-  /* MORE button */
-  .tag_by_naveed.more{
-    color: var(--accent2);
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .tag_by_naveed.more:focus{
-    outline: 2px solid rgba(0,179,179,0.18);
-    outline-offset: 4px;
-  }
-
-  /* HIDDEN group: initially collapsed with smooth animation */
-  .hidden_by_naveed{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-
-    /* collapse visuals */
-    max-height: 0;           /* collapsed */
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 360ms cubic-bezier(.2,.9,.2,1), opacity 240ms ease-in;
-    /* pointer-events none when collapsed so keyboard/tab doesn't focus hidden items */
-    pointer-events: none;
-  }
-
-  /* when parent container has .expanded, show hidden items */
-  .tags_by_naveed.expanded .hidden_by_naveed{
-    max-height: 1000px;     /* large enough to fit items */
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* responsive tweaks */
-  @media (max-width:520px){
-    .tag_by_naveed{ padding: 9px 14px; font-size: 14px; border-radius: 22px; }
-  }
+    .classname_by_n_slide--2.active~.classname_by_n_border::before {
+      left: 0%;
+      /* left half */
+    }
 
 
 
-  
-.healthians-container_byn {
-  padding: 20px 20px;
-  text-align: center;
-  background-color: #fffaf5;
-  border-radius: 20px;
-  border: 1px solid #ffe6d5;
-  max-width: 1100px;
-  margin: 0px auto;
-}
-
-.healthians-container_byn h2 {
-  font-size: 22px;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 20px;
-}
-
-.healthians-container_byn .highlight_byn {
-  color: #00a9ad;
-}
-
-.features_byn {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-.feature-box_byn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.feature-box_byn img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 12px;
-}
-
-.feature-box_byn p {
-  font-size: 12px;
-  color: #1d1d1f;
-  margin: 0;
-  line-height: 1.4;
-}
-
-@media (max-width: 768px) {
-  .features_byn {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px 15px;
-  }
-
-  .feature-box_byn {
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    gap: 10px;
-  }
-
-  .feature-box_byn img {
-    margin-bottom: 0;
-    width: 36px;
-    height: 36px;
-  }
-
-  .feature-box_byn p {
-    font-size: 12px;
-  }
-}
 
 
+    .section_by_naveed {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
 
-/* ========== POPUP OVERLAY ========== */
-.by_progley_popup_wrapper {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.4);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
+    .section_by_naveed h2 {
+      font-size: 22px;
+      margin: 6px 0 6px;
+      color: #111;
+      font-weight: 700;
+    }
 
-/* ========== POPUP BOX ========== */
-.by_progley_popup_box {
-  position: relative;
-  width: 90%;
-  max-width: 420px;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 28px 20px 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  text-align: center;
-}
+    .section_by_naveed h2 span {
+      color: var(--accent2);
+    }
 
-/* ========== CLOSE BUTTON ========== */
-.by_progley_close_btn {
-  position: absolute;
-  top: -46px;
-  right: 0px;
-  width: 36px;
-  height: 36px;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 50%;
-  font-size: 24px;
-  color: #000000;
-  line-height: 1;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-}
+    .section_by_naveedd h2 {
+      text-align: center;
+      font-size: 22px;
+      margin: 6px 0 6px;
+      color: #111;
+      font-weight: 700;
+    }
 
-/* ========== GREEN DOT TEXT ========== */
-.by_progley_dot_text {
-  font-size: 12px;
-  color: #2e7d32;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-bottom: 20px;
-}
+    .section_by_naveedd h2 span {
+      color: var(--accent2);
+    }
 
-.by_progley_green_dot {
-  width: 10px;
-  height: 10px;
-  background-color: #2ecc71;
-  border-radius: 50%;
-}
+    .section_by_naveed p {
+      color: #666;
+      margin: 8px 0 22px;
+    }
 
-/* ========== MAIN TEXT ========== */
-.by_progley_main_text {
-  font-size: 16px;
-  font-weight: 600;
-  color: #2b2b2b;
-  line-height: 1.6;
-  margin-bottom: 26px;
-}
+    /* TAGS container */
+    .tags_by_naveed {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      /* give a little breathing so collapsed hidden area doesn't jump */
+    }
 
-/* ========== CTA BUTTON ========== */
-.by_progley_cta_btn {
-  background-color: #f15a29;
-  color: #fff;
-  font-size: 17px;
-  padding: 14px 22px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
+    .tag_by_naveed {
+      padding: 10px 18px;
+      background: var(--tag-bg);
+      border-radius: 28px;
+      box-shadow: 0 6px 18px var(--tag-shadow);
+      font-size: 15px;
+      color: #111;
+      user-select: none;
+      cursor: default;
+      transition: transform .14s ease, box-shadow .14s ease;
+      white-space: nowrap;
+    }
 
-.by_progley_cta_btn:hover {
-  background-color: #d84f22;
-}
+    .tag_by_naveed:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+    }
 
-.by_progley_icon {
-  font-size: 18px;
-}
-.bluecolor{
-  color: #00a9ad;
-}
+    /* MORE button */
+    .tag_by_naveed.more {
+      color: var(--accent2);
+      font-weight: 700;
+      cursor: pointer;
+    }
 
-.header_progley{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
-.logo_progley{
-  width: 150px;
+    .tag_by_naveed.more:focus {
+      outline: 2px solid rgba(0, 179, 179, 0.18);
+      outline-offset: 4px;
+    }
 
-}
-.logo_progley img{
-  width: 100%;
-}
+    /* HIDDEN group: initially collapsed with smooth animation */
+    .hidden_by_naveed {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
 
-.flobtns_by_n button{
-  background-color: #00b3b3;
-  width: 35px !important;
-  height: 35px !important;
-  border-radius: 50%;
-  border: none;
-  font-size: 16px;
-  color: #fff;
-  margin-left: 8px;
-  
-}
+      /* collapse visuals */
+      max-height: 0;
+      /* collapsed */
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 360ms cubic-bezier(.2, .9, .2, 1), opacity 240ms ease-in;
+      /* pointer-events none when collapsed so keyboard/tab doesn't focus hidden items */
+      pointer-events: none;
+    }
 
+    /* when parent container has .expanded, show hidden items */
+    .tags_by_naveed.expanded .hidden_by_naveed {
+      max-height: 1000px;
+      /* large enough to fit items */
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* responsive tweaks */
+    @media (max-width:520px) {
+      .tag_by_naveed {
+        padding: 9px 14px;
+        font-size: 14px;
+        border-radius: 22px;
+      }
+    }
+
+
+
+
+    .healthians-container_byn {
+      padding: 20px 20px;
+      text-align: center;
+      background-color: #fffaf5;
+      border-radius: 20px;
+      border: 1px solid #ffe6d5;
+      max-width: 1100px;
+      margin: 0px auto;
+    }
+
+    .healthians-container_byn h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .healthians-container_byn .highlight_byn {
+      color: #00a9ad;
+    }
+
+    .features_byn {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .feature-box_byn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature-box_byn img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 12px;
+    }
+
+    .feature-box_byn p {
+      font-size: 12px;
+      color: #1d1d1f;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .features_byn {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 15px;
+      }
+
+      .feature-box_byn {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 10px;
+      }
+
+      .feature-box_byn img {
+        margin-bottom: 0;
+        width: 36px;
+        height: 36px;
+      }
+
+      .feature-box_byn p {
+        font-size: 12px;
+      }
+    }
+
+
+
+    /* ========== POPUP OVERLAY ========== */
+    .by_progley_popup_wrapper {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* ========== POPUP BOX ========== */
+    .by_progley_popup_box {
+      position: relative;
+      width: 90%;
+      max-width: 420px;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 28px 20px 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    /* ========== CLOSE BUTTON ========== */
+    .by_progley_close_btn {
+      position: absolute;
+      top: -46px;
+      right: 0px;
+      width: 36px;
+      height: 36px;
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 50%;
+      font-size: 24px;
+      color: #000000;
+      line-height: 1;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ========== GREEN DOT TEXT ========== */
+    .by_progley_dot_text {
+      font-size: 12px;
+      color: #2e7d32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .by_progley_green_dot {
+      width: 10px;
+      height: 10px;
+      background-color: #2ecc71;
+      border-radius: 50%;
+    }
+
+    /* ========== MAIN TEXT ========== */
+    .by_progley_main_text {
+      font-size: 16px;
+      font-weight: 600;
+      color: #2b2b2b;
+      line-height: 1.6;
+      margin-bottom: 26px;
+    }
+
+    /* ========== CTA BUTTON ========== */
+    .by_progley_cta_btn {
+      background-color: #f15a29;
+      color: #fff;
+      font-size: 17px;
+      padding: 14px 22px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .by_progley_cta_btn:hover {
+      background-color: #d84f22;
+    }
+
+    .by_progley_icon {
+      font-size: 18px;
+    }
+
+    .bluecolor {
+      color: #00a9ad;
+    }
+
+    .header_progley {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .logo_progley {
+      width: 150px;
+
+    }
+
+    .logo_progley img {
+      width: 100%;
+    }
+
+    .flobtns_by_n button {
+      background-color: #00b3b3;
+      width: 35px !important;
+      height: 35px !important;
+      border-radius: 50%;
+      border: none;
+      font-size: 16px;
+      color: #fff;
+      margin-left: 8px;
+
+    }
   </style>
 </head>
 
@@ -714,1019 +785,1052 @@
           <div class="logo_progley">
             <img src="images/logo.png" alt="">
           </div>
-           <div class="flobtns_by_n">
-            <button class="orange_bn"><i class="fa fa-phone"> </i></button>
-            <button class=""><i class="fab fa-whatsapp"></i></button>
+          <div class="flobtns_by_n">
+            <a href="tel:7982113707">
+              <button class="orange_bn">
+                <i class="fa fa-phone"></i>
+
+              </button>
+            </a>
+            <a href="https://wa.me/917982113707?text=Hello%20True%20Reports,%20I%20want%20to%20book%20Test"
+              target="_blank">
+              <button class="by_progley_whatsapp_btn">
+                <i class="fab fa-whatsapp"></i>
+              </button>
+            </a>
+
           </div>
         </div>
         <h2 class="yellow_text">Premium MRI Scans</h2>
       </div>
       <div class="scnd_box_by_n">
-         <div class="container_snd_by_n">
-            <div class="nd_box_">
-          <div class="scnd_line_1">
-            <p class="icon_bg">
-            <i class="fa-solid fa-x-ray mri-icon"></i>
-            </p>
-            <p class="para_by_n">MRI Scan @ ₹ 3,650</p>
-          </div>
-          <div class="scnd_line_1">
-            <p class="icon_bg2">
-             <i class="fa-solid fa-tags discount-icon"></i>
-            </p>
-            <p class="para_by_n">Get Flat 50% Off</p>
-          </div>
-          <div class="scnd_line_1">
-            <p class="icon_bg3">
-            <i class="fa-solid fa-money"></i>
-            </p>
-            <p class="para_by_n">Best Prices Guaranteed</p>
-          </div>
+        <div class="container_snd_by_n">
+          <div class="nd_box_">
+            <div class="scnd_line_1">
+              <p class="icon_bg">
+                <img src="images/mridis.png" alt="Priority Slots">
+              </p>
+              <p class="para_by_n">MRI Scan @ ₹ 3,650</p>
             </div>
-            <div class="nd_box_img">
-              <img src="doctor.png" alt="">
+            <div class="scnd_line_1">
+              <p class="icon_bg2">
+                <!-- <i class="fa-solid fa-tags discount-icon"></i> -->
+                <img src="images/discount.png" alt="Priority Slots">
+              </p>
+              <p class="para_by_n">Get Flat 50% Off</p>
             </div>
-         </div>
+            <div class="scnd_line_1">
+              <p class="icon_bg3">
+                <!-- <i class="fa-solid fa-money"></i> -->
+                <img src="images/guarantee.png" alt="Priority Slots">
+              </p>
+              <p class="para_by_n">Best Prices Guaranteed</p>
+            </div>
+          </div>
+          <div class="nd_box_img">
+            <img src="doctor.png" alt="">
+          </div>
+        </div>
 
 
-         <div class="form_snd_by_n">
-            <form action="" id="appointmentForm">
-              <p class="heading_by_n">Book Instant <span> Appointment</span></p>
+        <div class="form_snd_by_n">
+          <form action="" id="appointmentForm">
+            <p class="heading_by_n">Book Instant <span> Appointment</span></p>
 
-               <div class="form-container_by_n">
-                  <!-- Full Name -->
-                  <div class="input-box_by_n">
-                    <i class="fa fa-user"></i>
-                    <input type="text" id="form_name" placeholder="Enter Full Name">
+            <div class="form-container_by_n">
+              <!-- Full Name -->
+              <div class="input-box_by_n">
+                <i class="fa fa-user"></i>
+                <input type="text" id="form_name" placeholder="Enter Full Name">
+              </div>
+
+              <!-- Phone Number -->
+              <div class="input-box_by_n">
+                <i class="fa fa-phone"></i>
+                <input type="tel" id="form_phone" placeholder="Enter Phone Number" pattern="[6-9][0-9]{9}"
+                  maxlength="10" required>
+
+              </div>
+              <div class="btn_input ">
+                <button class="btn_submit" id="submitForm" type="submit"><i class="fa-solid fa-list-check"></i> &nbsp;
+                  Get Instant CallBack</button>
+              </div>
+
+            </div>
+
+
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Floating Buttons -->
+      <div class="floating-btns_by_n">
+        <a href="https://wa.me/917982113707?text=Hello%20True%20Reports,%20I%20want%20to%20book%20Test" target="_blank">
+          <button class="orange_byn">
+            <i class="fab fa-whatsapp"></i> &nbsp; Whatsapp Us
+          </button>
+        </a>
+
+        <a href="tel:7982113707">
+          <button class="by_progley_cta_btn">
+            <i class="fa fa-phone"></i> &nbsp;
+            Call Us Now
+          </button>
+        </a>
+      </div>
+
+      <div class="classname_by_n" id="slideshow">
+        <!-- Slide 1 -->
+        <div class="classname_by_n_slide classname_by_n_slide--1 active">
+          <img src="img1.webp" alt="Image 1">
+        </div>
+        <!-- Slide 2 -->
+        <div class="classname_by_n_slide classname_by_n_slide--2">
+          <img src="img2.webp" alt="Image 2">
+        </div>
+
+        <!-- bottom bar -->
+        <div class="classname_by_n_border"></div>
+      </div>
+
+
+
+      <div class="section_by_naveed">
+        <h2>Our Presence <span>across Delhi</span></h2>
+        <p>Get an Assured discount in 25+ scan centers near you</p>
+
+        <div class="tags_by_naveed" id="tagsContainer_by_naveed">
+          <!-- visible tags -->
+          <div class="tag_by_naveed">Hauz Khas</div>
+          <div class="tag_by_naveed">Dwarka</div>
+          <div class="tag_by_naveed">Karol Bagh</div>
+          <div class="tag_by_naveed">Green Park</div>
+          <div class="tag_by_naveed">Connaught Place</div>
+          <div class="tag_by_naveed">Greater Kailash</div>
+          <div class="tag_by_naveed">Lajpat Nagar</div>
+          <div class="tag_by_naveed">Jor Bagh</div>
+
+          <!-- hidden tags (start collapsed) -->
+          <div class="hidden_by_naveed" id="hidden_by_naveed">
+            <div class="tag_by_naveed">Saket</div>
+            <div class="tag_by_naveed">Vasant Kunj</div>
+            <div class="tag_by_naveed">Rohini</div>
+            <div class="tag_by_naveed">Janakpuri</div>
+            <div class="tag_by_naveed">Okhla</div>
+            <div class="tag_by_naveed">Shahdara</div>
+            <div class="tag_by_naveed">Patel Nagar</div>
+            <div class="tag_by_naveed">Punjabi Bagh</div>
+            <div class="tag_by_naveed">Tilak Nagar</div>
+            <div class="tag_by_naveed">Mayur Vihar</div>
+          </div>
+
+          <!-- "more" toggle -->
+          <div class="tag_by_naveed more" id="toggleMore_by_naveed" role="button" tabindex="0" aria-expanded="false">
+            + more
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="healthians-container_byn">
+      <h2>Why Choose <span class="highlight_byn">True Reports</span></h2>
+
+      <div class="features_byn">
+        <div class="feature-box_byn">
+          <img src="images/stamp.png" alt="Report Accuracy">
+          <p><strong>100% Report</strong><br>Accuracy</p>
+        </div>
+        <div class="feature-box_byn">
+          <img src="images/discount.png" alt="Money Back">
+          <p><strong>Best Prices</strong><br>Guaranteed</p>
+        </div>
+        <div class="feature-box_byn">
+          <img src="images/approved.png" alt="Government Certified">
+          <p><strong>NABL Approved</strong><br>Labs</p>
+        </div>
+        <div class="feature-box_byn">
+          <img src="images/energetic.png" alt="Priority Slots">
+          <p><strong>2 Cr+ Happy </strong><br>Users</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <section class="pt-50 reviewListingSec">
+      <div class="container">
+        <div class="text_center_byn mb-20 section-title">
+          <h2 style="font-size: 21px;" class="text_center_byn section_by_naveedd sect title">
+            <span class="icon "><img src="images/google.png" class="img-fluid" alt=""></span> &nbsp; Reviews<span
+              class="bluecolor"> &nbsp; (4.9/5 Rating)</span>
+          </h2>
+        </div>
+        <div class="reviewListingSecinner">
+          <div class="owl-carousel owl-theme reviewTestimonialSlider">
+
+            <div class="reviewTestimonialItem">
+              <div class="reviewTestimonialIteminnner">
+                <div class="d-flex reviewUserInfoArea">
+                  <div class="reviewUserThumbnail">
+                    <img src="images/userThumbnail.webp" class="img-fluid " alt="">
                   </div>
-
-                  <!-- Phone Number -->
-                  <div class="input-box_by_n">
-                    <i class="fa fa-phone"></i>
-                   <input type="tel" id="form_phone" placeholder="Enter Phone Number"
-       pattern="[6-9][0-9]{9}" 
-       maxlength="10"
-       required>
-
+                  <div class="reviewUserInfo">
+                    <h4 class="userName">Naveen Kumar</h4>
+                    <p class="userDesignation">Booked an MRI Scan for my mother through MFine app
+                    </p>
                   </div>
-                   <div class="btn_input ">
-                      <button class="btn_submit" id="submitForm" type="submit"><i class="fa-solid fa-list-check"></i> &nbsp; Get Instant CallBack</button>
-                   </div>
-                 
                 </div>
-                
-               
-            </form> 
-         </div>
+                <div class="reviewStarCountArea">
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                </div>
+                <div class="reviewContentArea">
+                  <p class="mb-0">
+                    I have been ordering my mom’s medicines from mfine for more than six months now.
+                    I order online and she gets her medicines the very next day in our house in
+                    Bihar.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-      </div>
+            <div class="reviewTestimonialItem">
+              <div class="reviewTestimonialIteminnner">
+                <div class="d-flex reviewUserInfoArea">
+                  <div class="reviewUserThumbnail">
+                    <img src="images/userThumbnail.webp" class="img-fluid " alt="">
+                  </div>
+                  <div class="reviewUserInfo">
+                    <h4 class="userName">Naveen Kumar</h4>
+                    <p class="userDesignation">Booked an MRI Scan for my mother through MFine app
+                    </p>
+                  </div>
+                </div>
+                <div class="reviewStarCountArea">
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                </div>
+                <div class="reviewContentArea">
+                  <p class="mb-0">
+                    Wasn’t confident about blood tests at home before but MFine’s lab technician
+                    maintained all hygiene standards. The samples are checked in NABL labs. Happy
+                    with the experience.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-         <!-- Floating Buttons -->
-          <div class="floating-btns_by_n">
-            <button class="orange_byn"><i class="fab fa-whatsapp"></i> &nbsp; Whatsapp Us</button>
-            <button><i class="fa fa-phone"> </i> &nbsp; Call Us Now</button>
-          </div>
+            <div class="reviewTestimonialItem">
+              <div class="reviewTestimonialIteminnner">
+                <div class="d-flex reviewUserInfoArea">
+                  <div class="reviewUserThumbnail">
+                    <img src="images/userThumbnail.webp" class="img-fluid " alt="">
+                  </div>
+                  <div class="reviewUserInfo">
+                    <h4 class="userName">Naveen Kumar</h4>
+                    <p class="userDesignation">Booked an MRI Scan for my mother through MFine app
+                    </p>
+                  </div>
+                </div>
+                <div class="reviewStarCountArea">
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                </div>
+                <div class="reviewContentArea">
+                  <p class="mb-0">
+                    My x-ray experience at home with mfine was really peaceful. I got my reports in
+                    few hours and the doctor consultation after that was helpful. I will definitely
+                    recommend mfine.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-    <div class="classname_by_n" id="slideshow">
-    <!-- Slide 1 -->
-    <div class="classname_by_n_slide classname_by_n_slide--1 active">
-      <img src="img1.webp" alt="Image 1">
-    </div>
-    <!-- Slide 2 -->
-    <div class="classname_by_n_slide classname_by_n_slide--2">
-      <img src="img2.webp" alt="Image 2">
-    </div>
-
-    <!-- bottom bar -->
-    <div class="classname_by_n_border"></div>
-  </div>
-
-
-  
-  <div class="section_by_naveed">
-    <h2>Our Presence <span>across Delhi</span></h2>
-    <p>Get an Assured discount in 25+ scan centers near you</p>
-
-    <div class="tags_by_naveed" id="tagsContainer_by_naveed">
-      <!-- visible tags -->
-      <div class="tag_by_naveed">Hauz Khas</div>
-      <div class="tag_by_naveed">Dwarka</div>
-      <div class="tag_by_naveed">Karol Bagh</div>
-      <div class="tag_by_naveed">Green Park</div>
-      <div class="tag_by_naveed">Connaught Place</div>
-      <div class="tag_by_naveed">Greater Kailash</div>
-      <div class="tag_by_naveed">Lajpat Nagar</div>
-      <div class="tag_by_naveed">Jor Bagh</div>
-
-      <!-- hidden tags (start collapsed) -->
-      <div class="hidden_by_naveed" id="hidden_by_naveed">
-        <div class="tag_by_naveed">Saket</div>
-        <div class="tag_by_naveed">Vasant Kunj</div>
-        <div class="tag_by_naveed">Rohini</div>
-        <div class="tag_by_naveed">Janakpuri</div>
-        <div class="tag_by_naveed">Okhla</div>
-        <div class="tag_by_naveed">Shahdara</div>
-        <div class="tag_by_naveed">Patel Nagar</div>
-        <div class="tag_by_naveed">Punjabi Bagh</div>
-        <div class="tag_by_naveed">Tilak Nagar</div>
-        <div class="tag_by_naveed">Mayur Vihar</div>
-      </div>
-
-      <!-- "more" toggle -->
-      <div class="tag_by_naveed more" id="toggleMore_by_naveed" role="button" tabindex="0" aria-expanded="false">
-        + more
-      </div>
-    </div>
-  </div>
-
-</div>
-  
-
-<div class="healthians-container_byn">
-  <h2>Why Choose <span class="highlight_byn">True Reports</span></h2>
-  
-  <div class="features_byn">
-    <div class="feature-box_byn">
-      <img src="images/report_accuracy.svg" alt="Report Accuracy">
-      <p><strong>100% Report</strong><br>Accuracy</p>
-    </div>
-    <div class="feature-box_byn">
-      <img src="images/money-back.svg" alt="Money Back">
-      <p><strong>Best Prices</strong><br>Guaranteed</p>
-    </div>
-    <div class="feature-box_byn">
-      <img src="images/goverment-certified.svg" alt="Government Certified">
-      <p><strong>NABL Approved</strong><br>Labs</p>
-    </div>
-    <div class="feature-box_byn">
-      <img src="images/slots.svg" alt="Priority Slots">
-      <p><strong>2 Cr+ Happy </strong><br>Users</p>
-    </div>
-  </div>
-</div>
-
-    
- 
-    
-
-    	<section class="pt-50 reviewListingSec">
-			<div class="container">
-				<div class="text_center_byn mb-20 section-title">
-					<h2 style="font-size: 21px;" class="text_center_byn section_by_naveedd sect title">
-						<span class="icon "><img src="images/google.png" class="img-fluid" alt=""></span>  &nbsp; Reviews<span class="bluecolor"> &nbsp; (4.9/5 Rating)</span>
-					</h2>
-				</div>
-				<div class="reviewListingSecinner">
-					<div class="owl-carousel owl-theme reviewTestimonialSlider">
-
-						<div class="reviewTestimonialItem">
-							<div class="reviewTestimonialIteminnner">
-								<div class="d-flex reviewUserInfoArea">
-									<div class="reviewUserThumbnail">
-										<img src="images/userThumbnail.webp" class="img-fluid " alt="">
-									</div>
-									<div class="reviewUserInfo">
-										<h4 class="userName">Naveen Kumar</h4>
-										<p class="userDesignation">Booked an MRI Scan for my mother through MFine app
-										</p>
-									</div>
-								</div>
-								<div class="reviewStarCountArea">
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-								</div>
-								<div class="reviewContentArea">
-									<p class="mb-0">
-										I have been ordering my mom’s medicines from mfine for more than six months now.
-										I order online and she gets her medicines the very next day in our house in
-										Bihar.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="reviewTestimonialItem">
-							<div class="reviewTestimonialIteminnner">
-								<div class="d-flex reviewUserInfoArea">
-									<div class="reviewUserThumbnail">
-										<img src="images/userThumbnail.webp" class="img-fluid " alt="">
-									</div>
-									<div class="reviewUserInfo">
-										<h4 class="userName">Naveen Kumar</h4>
-										<p class="userDesignation">Booked an MRI Scan for my mother through MFine app
-										</p>
-									</div>
-								</div>
-								<div class="reviewStarCountArea">
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-								</div>
-								<div class="reviewContentArea">
-									<p class="mb-0">
-										Wasn’t confident about blood tests at home before but MFine’s lab technician
-										maintained all hygiene standards. The samples are checked in NABL labs. Happy
-										with the experience.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="reviewTestimonialItem">
-							<div class="reviewTestimonialIteminnner">
-								<div class="d-flex reviewUserInfoArea">
-									<div class="reviewUserThumbnail">
-										<img src="images/userThumbnail.webp" class="img-fluid " alt="">
-									</div>
-									<div class="reviewUserInfo">
-										<h4 class="userName">Naveen Kumar</h4>
-										<p class="userDesignation">Booked an MRI Scan for my mother through MFine app
-										</p>
-									</div>
-								</div>
-								<div class="reviewStarCountArea">
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-								</div>
-								<div class="reviewContentArea">
-									<p class="mb-0">
-										My x-ray experience at home with mfine was really peaceful. I got my reports in
-										few hours and the doctor consultation after that was helpful. I will definitely
-										recommend mfine.
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="reviewTestimonialItem">
-							<div class="reviewTestimonialIteminnner">
-								<div class="d-flex reviewUserInfoArea">
-									<div class="reviewUserThumbnail">
-										<img src="images/userThumbnail.webp" class="img-fluid " alt="">
-									</div>
-									<div class="reviewUserInfo">
-										<h4 class="userName">Naveen Kumar</h4>
-										<p class="userDesignation">28 yrs old, Delhi</p>
-									</div>
-								</div>
-								<div class="reviewStarCountArea">
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-									<span class="fa-solid fa-star star"></span>
-								</div>
-								<div class="reviewContentArea">
-									<p class="mb-0">
-										I have been ordering my mom’s medicines from mfine for more than six months now.
-										I order online and she gets her medicines the very next day in our house in
-										Bihar.
-									</p>
-								</div>
-							</div>
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-    
-		<section class=" faqSec">
-			<div class="container">
-				<div class="text-center section_by_naveedd section-title">
-        <h2>FAQ<span class="highlight_byn">s</span></h2>
-
-				</div>
-				<div class="faqSeciner">
-					<div class="faqAccordian">
-
-						<div class="faqAccordianItem">
-							<div class="faqAccordianHeader ">
-								<h5 class="title">What is True Reports?</h5>
-								<span class="icon"></span>
-							</div>
-							<div class="faqAccordianBody" style="">
-								<p class="mb-0">True Reports is India's leading and one of the fastest growing medicine
-									delivery apps, trusted by lakhs of Indian households for online medicine purchases!
-									From authentic information about the medicine to doorstep delivery we have
-									everything covered!
-									You can find affordable substitutes for your medicines from the top 1% of medicine
-									manufacturers and experience the convenience of home delivery with guaranteed
-									savings.
-									Your search for the most trusted app for medicine delivery ends here!</p>
-							</div>
-						</div>
-
-						<div class="faqAccordianItem">
-							<div class="faqAccordianHeader ">
-								<h5 class="title">Why buy medicines from True Reports?</h5>
-								<span class="icon"></span>
-							</div>
-							<div class="faqAccordianBody" style="">
-								<ul style="">
-									<li>Order medicines online from anywhere</li>
-									<li>Get medicines delivered to your doorstep</li>
-									<li>Buy all medicines from one place</li>
-									<li>Choose from 1.2+ lakhs medicines</li>
-									<li>Serve over 22k+ pin codes</li>
-									<li>No need to wait in a queue</li>
-									<li>User friendly: very easy to order</li>
-									<li>Get genuine medicine information</li>
-									<li>Read health tips and articles</li>
-									<li>Buy high-quality substitutes at affordable rates</li>
-									<li>Easily add affordable substitutes to your cart</li>
-									<li>Avail best prices, up to 51% guaranteed savings</li>
-									<li>Available 24x7</li>
-									<li> Express free delivery (for selected pin codes)
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="faqAccordianItem">
-							<div class="faqAccordianHeader ">
-								<h5 class="title">Why buy medicines from True Reports?</h5>
-								<span class="icon"></span>
-							</div>
-							<div class="faqAccordianBody" style="">
-								<ul style="">
-									<li>Order medicines online from anywhere</li>
-									<li>Get medicines delivered to your doorstep</li>
-									<li>Buy all medicines from one place</li>
-									<li>Choose from 1.2+ lakhs medicines</li>
-									<li>Serve over 22k+ pin codes</li>
-									<li>No need to wait in a queue</li>
-									<li>User friendly: very easy to order</li>
-									<li>Get genuine medicine information</li>
-									<li>Read health tips and articles</li>
-									<li>Buy high-quality substitutes at affordable rates</li>
-									<li>Easily add affordable substitutes to your cart</li>
-									<li>Avail best prices, up to 51% guaranteed savings</li>
-									<li>Available 24x7</li>
-									<li> Express free delivery (for selected pin codes)
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="faqAccordianItem">
-							<div class="faqAccordianHeader ">
-								<h5 class="title">Why buy medicines from True Reports?</h5>
-								<span class="icon"></span>
-							</div>
-							<div class="faqAccordianBody" style="">
-								<ul style="">
-									<li>Order medicines online from anywhere</li>
-									<li>Get medicines delivered to your doorstep</li>
-									<li>Buy all medicines from one place</li>
-									<li>Choose from 1.2+ lakhs medicines</li>
-									<li>Serve over 22k+ pin codes</li>
-									<li>No need to wait in a queue</li>
-									<li>User friendly: very easy to order</li>
-									<li>Get genuine medicine information</li>
-									<li>Read health tips and articles</li>
-									<li>Buy high-quality substitutes at affordable rates</li>
-									<li>Easily add affordable substitutes to your cart</li>
-									<li>Avail best prices, up to 51% guaranteed savings</li>
-									<li>Available 24x7</li>
-									<li> Express free delivery (for selected pin codes)
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<section class="">
-			<div class="container">
-				<div class="">
-
-				</div>
-			</div>
-		</section>
-
-		<section class="">
-			<div class="container">
-				<div class="">
-
-				</div>
-			</div>
-		</section>
-
-		<section class="">
-			<div class="container">
-				<div class="">
-					<div class="row rowBox">
-						<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 columnBox ">
-						</div>
-						<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 columnBox">
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<div class="cartPageSummeryArea chhoselabSummeryArea landingPageMobileVersion" id="landingPageMobileVersion" style="display:none;">
-			<div class="botoomCartBtnsArea">
-				<div class="d-flex justify-content-between botoomCartBtnsAreainner">
-					<div class="leftPart">
-						<div class="packagesCountArea">
-							<p class="mb-0 ttl">Tests/Packages added</p>
-							<div class="count">1 <span class="viewcart" onclick="openPopupById('testAddedPopup')">View Cart <i class="fa-regular fa-angle-up"></i></span></div>
-						</div>
-					</div>
-					<div class="rightPart">
-						<a href="https://kidzz.in/lab/booking-schedule" class="payBtn continueBtn">Choose Lab</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<!-- test checking popup -->
-		<div class="customeOverlayPopup" id="overlay_testAddedPopup"></div>
-		<div class="customePopup testAddedPopup" id="testAddedPopup">
-			<div class="customePopupWrapper">
-				<div class="customePopupinner">
-					<!--<span class="closePopupBtn" onclick="closePopupById('testAddedPopup')">-->
-					<!--	<img src="https://kidzz.in/lab/assets/frontend/images/cross_icon.svg" class="">-->
-					<!--</span>-->
-					<form>
-						<div class="customePopupHeader">
-							<h4 class="mb-0 title">Test/Packages added</h4>
-						</div>
-						<div class="customePopupBody">
-							<div class="testAddedListingArea">
-								<div class="testAddedList">
-									<div class="testAddedListItem">
-										<div class="d-flex justify-content-between testAddedListIteminner">
-											<div class="d-flex leftPart">
-												<div class="thumanil">
-													<img src="images/test.jpg" class="img-fluid " alt="">
-												</div>
-												<div class="content">
-													<h4 class="title">MRI Brain(MRI)</h4>
-													<p class="mb-0">Contains 1 test</p>
-												</div>
-											</div>
-											<div class="rightPart">
-												<a href="#" class="deleteBtn">
-												    <img src="images/bin_24px.svg" class="img-fluid" alt=""> 
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="customePopupFooter">
-							<div class="customePopupBtnArea">
-								<a href="https://kidzz.in/lab/tests/filter" class="customePopupBgBtn">Add more tests</a>
-							</div>
-						</div>
-				</form></div>
-			</div>
-		</div>
-		
-		<!--  alert popup -->
-		<div class="customeOverlayPopup customeOverlayAlertPopup" id="overlay_alertPopup"></div>
-    	<div class="customePopup addPatientPopup alertPopup" id="alertPopup">
-    		<div class="customePopupWrapper">
-    			<div class="customePopupinner">
-    				<span class="closePopupBtn" onclick="closePopupById('alertPopup')">
-    					<img src="images/cross_icon.svg" class="">
-    				</span>
-    				
-    					<div class="customePopupBody">
-    						<div class="alertPopupContentArea">
-    							<div class="icon">
-    								<img src="images/alert-icon.png" class="img-fluid" alt="">
-    							</div>
-    							<div class="content">
-    								<h4 class="ttl">Alert!</h4>
-    								<p class="mb-0 para" id="alert_msg">Radiology and Pthology tests can not be booked toghter.If you wish
-    									to add Blood Group ABO & Rh Factor, all your radiology tests will be replaced.</p>
-    							</div>
-    						</div>
-    
-    					</div>
-    					<div class="customePopupFooter" id="customePopupFooterdsd">
-    						<div class="customePopupBtnArea">
-    							<a href="javascript:void(0);" class="customePopupBgBtn" id="replace_btn">Yes, replace</a>
-    						</div>
-    						<div class="customePopupFooterBtmContentArea" onclick="closePopupById('alertPopup')">
-    							<a href="javascript:void(0);"><p class="mb-0 noAddedText"><strong>No,keep my added tests</strong></p></a>
-    						</div>
-    					</div>
-    				
-    			</div>
-    		</div>
-    	</div>
-	</main>
-
-  	<section class="pt-60 partnerSec">
-			<div class="container">
-				<div class="text-center mb-40 section_by_naveedd section-title">
-            <h2><span class="highlight_byn">750+ </span>Scan Centers & Labs</h2>
-
-				</div>
-				<div class="partnerSecinner">
-					<div class="swiper-container marquee-right">
-						<div class="swiper-wrapper">
-
-							<div class="swiper-slide">
-								<div class="partnerLogoBox">
-									<img src="images/images.png" class="img-fluid " alt="">
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="partnerLogoBox">
-									<img src="images/nueclear-healthcare.webp" class="img-fluid " alt="">
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="partnerLogoBox">
-									<img src="images/redclif-labs.png" class="img-fluid " alt="">
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="partnerLogoBox">
-									<img src="images/small-logo.png" class="img-fluid " alt="">
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="partnerLogoBox">
-									<img src="images/logo%20%281%29.png" class="img-fluid " alt="">
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="partnerLogoBox">
-									<img src="images/logo_1.png" class="img-fluid " alt="">
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="partnerLogoBox">
-									<img src="images/d_plus_logo.png" class="img-fluid " alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-    
-             <footer class="web-foter">
-		<div class="desktop-web-foter">
-			<div class="web-top-foter">
-				<div class="container">
-					<div class="web-top-foter-inner">
-						<div class="row rowBox">
-							<div class="col-lg-3 col-md-3 col-sm-6 col-12 columnBox web-foter-block">
-								<div class="web-foter-block-innner">
-									<div class="mb-10 footerAboutArea">
-										<p class="mb-0 tagLine text-center">India’s No.1 Trusted Healthcare Platform</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-12 columnBox web-foter-block">
-								<div class="web-foter-block-innner">
-									<div class="fooetrCounterArea">
-										<div class="boxes_row_byn">
-											<div class="col-lg-6 col-md-6 col-sm-6 col_m6_byn columnBox2 fooetrCounterBlock">
-												<div class="fooetrCounterBlockinner">
-													<h4>2 Cr+</h4>
-													<p class="mb-0">Happy Users</p>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col_m6_byn columnBox2 fooetrCounterBlock">
-												<div class="fooetrCounterBlockinner">
-													<h4>650+</h4>
-													<p class="mb-0">Scans Done Daily</p>
-												</div>
-											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6 col_m6_byn columnBox2 fooetrCounterBlock">
-												<div class="fooetrCounterBlockinner">
-													<h4>75+</h4>
-													<p class="mb-0">Cities Coverd</p>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-							</div>
-						
-						<div class="">
-                 <h2><span style="color: black; font-size: 16px;">Disclaimer</span></h2>
-
-              
-              <p style="font-size: 12px; font-weight: 400;" class=" mb-20"> em ipsum dolor sit amet consectetur adipisicing elit. Sint ratione vitae corporis nihil nostrum quisquam, libero quae quam dolores animi.</p>
+            <div class="reviewTestimonialItem">
+              <div class="reviewTestimonialIteminnner">
+                <div class="d-flex reviewUserInfoArea">
+                  <div class="reviewUserThumbnail">
+                    <img src="images/userThumbnail.webp" class="img-fluid " alt="">
+                  </div>
+                  <div class="reviewUserInfo">
+                    <h4 class="userName">Naveen Kumar</h4>
+                    <p class="userDesignation">28 yrs old, Delhi</p>
+                  </div>
+                </div>
+                <div class="reviewStarCountArea">
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                  <span class="fa-solid fa-star star"></span>
+                </div>
+                <div class="reviewContentArea">
+                  <p class="mb-0">
+                    I have been ordering my mom’s medicines from mfine for more than six months now.
+                    I order online and she gets her medicines the very next day in our house in
+                    Bihar.
+                  </p>
+                </div>
+              </div>
             </div>
 
 
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="web-bottom-foter">
-				<div class="container">
-					<div class="web-bottom-foter-inner">
-						<p class="mb-45 copyWrightText">Copyright © 2025 True Reports. All Rights Reserved.</p>
-
-					</div>
-				</div>
-			</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
-		</div>
-		<div class="mobile-web-foter">
-			<div class="">
-				<div class="">
-				</div>
-			</div>
-		</div>
 
+    <section class=" faqSec">
+      <div class="container">
+        <div class="text-center section_by_naveedd section-title">
+          <h2>FAQ<span class="highlight_byn">s</span></h2>
 
-		
-	
-	</footer>        
+        </div>
+        <div class="faqSeciner">
+          <div class="faqAccordian">
 
-   <!-- Popup -->
-  <div class="by_progley_popup_wrapper" id="by_progley_popup">
-    <div class="by_progley_popup_box">
-      <button class="by_progley_close_btn" id="by_progley_close_btn">×</button>
+            <div class="faqAccordianItem">
+              <div class="faqAccordianHeader ">
+                <h5 class="title">What is True Reports?</h5>
+                <span class="icon"></span>
+              </div>
+              <div class="faqAccordianBody" style="">
+                <p class="mb-0">True Reports is India's leading and one of the fastest growing medicine
+                  delivery apps, trusted by lakhs of Indian households for online medicine purchases!
+                  From authentic information about the medicine to doorstep delivery we have
+                  everything covered!
+                  You can find affordable substitutes for your medicines from the top 1% of medicine
+                  manufacturers and experience the convenience of home delivery with guaranteed
+                  savings.
+                  Your search for the most trusted app for medicine delivery ends here!</p>
+              </div>
+            </div>
 
+            <div class="faqAccordianItem">
+              <div class="faqAccordianHeader ">
+                <h5 class="title">Why buy medicines from True Reports?</h5>
+                <span class="icon"></span>
+              </div>
+              <div class="faqAccordianBody" style="">
+                <ul style="">
+                  <li>Order medicines online from anywhere</li>
+                  <li>Get medicines delivered to your doorstep</li>
+                  <li>Buy all medicines from one place</li>
+                  <li>Choose from 1.2+ lakhs medicines</li>
+                  <li>Serve over 22k+ pin codes</li>
+                  <li>No need to wait in a queue</li>
+                  <li>User friendly: very easy to order</li>
+                  <li>Get genuine medicine information</li>
+                  <li>Read health tips and articles</li>
+                  <li>Buy high-quality substitutes at affordable rates</li>
+                  <li>Easily add affordable substitutes to your cart</li>
+                  <li>Avail best prices, up to 51% guaranteed savings</li>
+                  <li>Available 24x7</li>
+                  <li> Express free delivery (for selected pin codes)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="faqAccordianItem">
+              <div class="faqAccordianHeader ">
+                <h5 class="title">Why buy medicines from True Reports?</h5>
+                <span class="icon"></span>
+              </div>
+              <div class="faqAccordianBody" style="">
+                <ul style="">
+                  <li>Order medicines online from anywhere</li>
+                  <li>Get medicines delivered to your doorstep</li>
+                  <li>Buy all medicines from one place</li>
+                  <li>Choose from 1.2+ lakhs medicines</li>
+                  <li>Serve over 22k+ pin codes</li>
+                  <li>No need to wait in a queue</li>
+                  <li>User friendly: very easy to order</li>
+                  <li>Get genuine medicine information</li>
+                  <li>Read health tips and articles</li>
+                  <li>Buy high-quality substitutes at affordable rates</li>
+                  <li>Easily add affordable substitutes to your cart</li>
+                  <li>Avail best prices, up to 51% guaranteed savings</li>
+                  <li>Available 24x7</li>
+                  <li> Express free delivery (for selected pin codes)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="faqAccordianItem">
+              <div class="faqAccordianHeader ">
+                <h5 class="title">Why buy medicines from True Reports?</h5>
+                <span class="icon"></span>
+              </div>
+              <div class="faqAccordianBody" style="">
+                <ul style="">
+                  <li>Order medicines online from anywhere</li>
+                  <li>Get medicines delivered to your doorstep</li>
+                  <li>Buy all medicines from one place</li>
+                  <li>Choose from 1.2+ lakhs medicines</li>
+                  <li>Serve over 22k+ pin codes</li>
+                  <li>No need to wait in a queue</li>
+                  <li>User friendly: very easy to order</li>
+                  <li>Get genuine medicine information</li>
+                  <li>Read health tips and articles</li>
+                  <li>Buy high-quality substitutes at affordable rates</li>
+                  <li>Easily add affordable substitutes to your cart</li>
+                  <li>Avail best prices, up to 51% guaranteed savings</li>
+                  <li>Available 24x7</li>
+                  <li> Express free delivery (for selected pin codes)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <p class="by_progley_dot_text">
-        <span class="by_progley_green_dot"></span>
-        <span>Avail Best Discounted Prices on Scans</span>
-      </p>
+    <section class="">
+      <div class="container">
+        <div class="">
 
-      <p class="by_progley_main_text">
-        Talk to our Health Expert for Best discounts on your booking
-      </p>
+        </div>
+      </div>
+    </section>
 
-      <button class="by_progley_cta_btn">
-       <i class="fa fa-phone"> </i>
-        Call to Book Now
-      </button>
+    <section class="">
+      <div class="container">
+        <div class="">
+
+        </div>
+      </div>
+    </section>
+
+    <section class="">
+      <div class="container">
+        <div class="">
+          <div class="row rowBox">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 columnBox ">
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 columnBox">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cartPageSummeryArea chhoselabSummeryArea landingPageMobileVersion" id="landingPageMobileVersion"
+      style="display:none;">
+      <div class="botoomCartBtnsArea">
+        <div class="d-flex justify-content-between botoomCartBtnsAreainner">
+          <div class="leftPart">
+            <div class="packagesCountArea">
+              <p class="mb-0 ttl">Tests/Packages added</p>
+              <div class="count">1 <span class="viewcart" onclick="openPopupById('testAddedPopup')">View Cart <i
+                    class="fa-regular fa-angle-up"></i></span></div>
+            </div>
+          </div>
+          <div class="rightPart">
+            <a href="https://kidzz.in/lab/booking-schedule" class="payBtn continueBtn">Choose Lab</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  
+
+    <!-- test checking popup -->
+    <div class="customeOverlayPopup" id="overlay_testAddedPopup"></div>
+    <div class="customePopup testAddedPopup" id="testAddedPopup">
+      <div class="customePopupWrapper">
+        <div class="customePopupinner">
+          <!--<span class="closePopupBtn" onclick="closePopupById('testAddedPopup')">-->
+          <!--	<img src="https://kidzz.in/lab/assets/frontend/images/cross_icon.svg" class="">-->
+          <!--</span>-->
+          <form>
+            <div class="customePopupHeader">
+              <h4 class="mb-0 title">Test/Packages added</h4>
+            </div>
+            <div class="customePopupBody">
+              <div class="testAddedListingArea">
+                <div class="testAddedList">
+                  <div class="testAddedListItem">
+                    <div class="d-flex justify-content-between testAddedListIteminner">
+                      <div class="d-flex leftPart">
+                        <div class="thumanil">
+                          <img src="images/test.jpg" class="img-fluid " alt="">
+                        </div>
+                        <div class="content">
+                          <h4 class="title">MRI Brain(MRI)</h4>
+                          <p class="mb-0">Contains 1 test</p>
+                        </div>
+                      </div>
+                      <div class="rightPart">
+                        <a href="#" class="deleteBtn">
+                          <img src="images/bin_24px.svg" class="img-fluid" alt="">
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="customePopupFooter">
+              <div class="customePopupBtnArea">
+                <a href="https://kidzz.in/lab/tests/filter" class="customePopupBgBtn">Add more tests</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--  alert popup -->
+    <div class="customeOverlayPopup customeOverlayAlertPopup" id="overlay_alertPopup"></div>
+    <div class="customePopup addPatientPopup alertPopup" id="alertPopup">
+      <div class="customePopupWrapper">
+        <div class="customePopupinner">
+          <span class="closePopupBtn" onclick="closePopupById('alertPopup')">
+            <img src="images/cross_icon.svg" class="">
+          </span>
+
+          <div class="customePopupBody">
+            <div class="alertPopupContentArea">
+              <div class="icon">
+                <img src="images/alert-icon.png" class="img-fluid" alt="">
+              </div>
+              <div class="content">
+                <h4 class="ttl">Alert!</h4>
+                <p class="mb-0 para" id="alert_msg">Radiology and Pthology tests can not be booked toghter.If you wish
+                  to add Blood Group ABO & Rh Factor, all your radiology tests will be replaced.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="customePopupFooter" id="customePopupFooterdsd">
+            <div class="customePopupBtnArea">
+              <a href="javascript:void(0);" class="customePopupBgBtn" id="replace_btn">Yes, replace</a>
+            </div>
+            <div class="customePopupFooterBtmContentArea" onclick="closePopupById('alertPopup')">
+              <a href="javascript:void(0);">
+                <p class="mb-0 noAddedText"><strong>No,keep my added tests</strong></p>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </main>
+
+    <section class="pt-60 partnerSec">
+      <div class="container">
+        <div class="text-center mb-40 section_by_naveedd section-title">
+          <h2><span class="highlight_byn">750+ </span>Scan Centers & Labs</h2>
+
+        </div>
+        <div class="partnerSecinner">
+          <div class="swiper-container marquee-right">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="partnerLogoBox">
+                  <img src="images/images.png" class="img-fluid " alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnerLogoBox">
+                  <img src="images/nueclear-healthcare.webp" class="img-fluid " alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnerLogoBox">
+                  <img src="images/redclif-labs.png" class="img-fluid " alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnerLogoBox">
+                  <img src="images/small-logo.png" class="img-fluid " alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnerLogoBox">
+                  <img src="images/logo%20%281%29.png" class="img-fluid " alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnerLogoBox">
+                  <img src="images/logo_1.png" class="img-fluid " alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnerLogoBox">
+                  <img src="images/d_plus_logo.png" class="img-fluid " alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="web-foter">
+      <div class="desktop-web-foter">
+        <div class="web-top-foter">
+          <div class="container">
+            <div class="web-top-foter-inner">
+              <div class="row rowBox">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12 columnBox web-foter-block">
+                  <div class="web-foter-block-innner">
+                    <div class="mb-10 footerAboutArea">
+                      <p class="mb-0 tagLine text-center">India’s No.1 Trusted Healthcare Platform</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12 columnBox web-foter-block">
+                  <div class="web-foter-block-innner">
+                    <div class="fooetrCounterArea">
+                      <div class="boxes_row_byn">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col_m6_byn columnBox2 fooetrCounterBlock">
+                          <div class="fooetrCounterBlockinner">
+                            <h4>2 Cr+</h4>
+                            <p class="mb-0">Happy Users</p>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col_m6_byn columnBox2 fooetrCounterBlock">
+                          <div class="fooetrCounterBlockinner">
+                            <h4>650+</h4>
+                            <p class="mb-0">Scans Done Daily</p>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col_m6_byn columnBox2 fooetrCounterBlock">
+                          <div class="fooetrCounterBlockinner">
+                            <h4>75+</h4>
+                            <p class="mb-0">Cities Coverd</p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="">
+                  <h2><span style="color: black; font-size: 16px;">Disclaimer</span></h2>
+
+
+                  <p style="font-size: 12px; font-weight: 400;" class=" mb-20"> em ipsum dolor sit amet consectetur
+                    adipisicing elit. Sint ratione vitae corporis nihil nostrum quisquam, libero quae quam dolores
+                    animi.</p>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="web-bottom-foter">
+          <div class="container">
+            <div class="web-bottom-foter-inner">
+              <p class="mb-45 copyWrightText">Copyright © 2025 True Reports. All Rights Reserved.</p>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="mobile-web-foter">
+        <div class="">
+          <div class="">
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </footer>
 
     <!-- Popup -->
-  <div class="by_progley_popup_wrapper" id="resp_form">
-    <div class="by_progley_popup_box">
-      <button class="by_progley_close_btn" id="resp_form_close">×</button>
+    <div class="by_progley_popup_wrapper" id="by_progley_popup">
+      <div class="by_progley_popup_box">
+        <button class="by_progley_close_btn" id="by_progley_close_btn">×</button>
 
 
-      <p class="by_progley_dot_text">
-        <span class="by_progley_green_dot"></span>
-        <span>Thankyou for choosing True Reports !!</span>
-      </p>
+        <p class="by_progley_dot_text">
+          <span class="by_progley_green_dot"></span>
+          <span>Avail Best Discounted Prices on Scans</span>
+        </p>
 
-      <p class="by_progley_main_text">
-        Our Health Expert will get in touch with you now.
-        Book Instant Appointment on WhatsApp
-      </p>
+        <p class="by_progley_main_text">
+          Talk to our Health Expert for Best discounts on your booking
+        </p>
 
-      <button class="by_progley_cta_btn">
-      <i class="fab fa-whatsapp"></i> 
-        Book on Whatsapp
-      </button>
+        <a href="tel:7982113707">
+          <button class="by_progley_cta_btn">
+            <i class="fa fa-phone"></i>
+            Call to Book Now
+          </button>
+        </a>
+
+      </div>
     </div>
-  </div>
+
+
+    <!-- Popup -->
+    <div class="by_progley_popup_wrapper" id="resp_form">
+      <div class="by_progley_popup_box">
+        <button class="by_progley_close_btn" id="resp_form_close">×</button>
+
+
+        <p class="by_progley_dot_text">
+          <span class="by_progley_green_dot"></span>
+          <span>Thankyou for choosing True Reports !!</span>
+        </p>
+
+        <p class="by_progley_main_text">
+          Our Health Expert will get in touch with you now.
+          Book Instant Appointment on WhatsApp
+        </p>
+
+        <button class="by_progley_cta_btn">
+          <i class="fab fa-whatsapp"></i>
+          Book on Whatsapp
+        </button>
+      </div>
+    </div>
 
 
 
   </div>
-    <script src="js/jquery-3.6.4.min.js"></script>
-<script src="js/jquery.fancybox.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/swiper.min.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="js/main.js"></script>
-<!-- js-cookie must be loaded before the script that uses Cookies.get -->
-<script src="js/js.cookie.min.js"></script>
+  <script src="js/jquery-3.6.4.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/main.js"></script>
+  <!-- js-cookie must be loaded before the script that uses Cookies.get -->
+  <script src="js/js.cookie.min.js"></script>
 
 
-<script>
+  <script>
     // Show popup after 3 seconds
-window.addEventListener('load', function () {
-  setTimeout(() => {
-    const popup = document.getElementById('by_progley_popup');
-    popup.style.display = 'flex';
-  }, 3000);
-});
+    window.addEventListener('load', function () {
+      setTimeout(() => {
+        const popup = document.getElementById('by_progley_popup');
+        popup.style.display = 'flex';
+      }, 3000);
+    });
 
-// Close popup when '×' button is clicked
-document.getElementById('by_progley_close_btn').addEventListener('click', function () {
-  const popup = document.getElementById('by_progley_popup');
-  popup.style.display = 'none';
-});
+    // Close popup when '×' button is clicked
+    document.getElementById('by_progley_close_btn').addEventListener('click', function () {
+      const popup = document.getElementById('by_progley_popup');
+      popup.style.display = 'none';
+    });
 
-$("#resp_form_close").click(function(){
-  $("#resp_form").hide();
-});
+    $("#resp_form_close").click(function () {
+      $("#resp_form").hide();
+    });
 
 
-</script>
+  </script>
 
-<script>
+  <script>
     $(document).ready(function () {
-        // Logout
-        var logoutRoute = "https://kidzz.in/lab/logout";
+      // Logout
+      var logoutRoute = "https://kidzz.in/lab/logout";
 
-        $('#logout-button').on('click', function () {
-            $.get(logoutRoute, function (resp) {
-                if (resp.type === 'success') {
-                    Swal.fire({
-                        text: resp.msg,
-                        icon: "success",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-
-                    setTimeout(function () {
-                        window.location = resp.redirect_path;
-                    }, 2000);
-                }
+      $('#logout-button').on('click', function () {
+        $.get(logoutRoute, function (resp) {
+          if (resp.type === 'success') {
+            Swal.fire({
+              text: resp.msg,
+              icon: "success",
+              showConfirmButton: false,
+              timer: 1500
             });
+
+            setTimeout(function () {
+              window.location = resp.redirect_path;
+            }, 2000);
+          }
         });
-        
-        // $.ajax({
-        //     url: 'https://kidzz.in/lab/get-random-tests',
-        //     method: 'GET',
-        //     success: function (data) {
-        //         if (data.length > 0) {
-        //             let index = 0;
-        //             let catSpan = $('#categoryPlaceholder');
-        
-        //             // Set first category
-        //             catSpan.text(data[index]);
-        
-        //             // Rotate every 3 sec
-        //             setInterval(() => {
-        //                 index = (index + 1) % data.length;
-        
-        //                 catSpan.fadeOut(400, function() {
-        //                     catSpan.text(data[index]);
-        //                     catSpan.fadeIn(400);
-        //                 });
-        //             }, 3000);
-        //         }
-        //     }
-        // });
-        
-        // Redirect on click (input field or button)
-        // $('#searchInput, .searcBtn').on('click', function () {
-        $('.searchMedicineFormArea').on('click', function () {
-            window.location.href = "https://kidzz.in/lab/tests/filter"; // Redirect to filter page
-        });
+      });
+
+      // $.ajax({
+      //     url: 'https://kidzz.in/lab/get-random-tests',
+      //     method: 'GET',
+      //     success: function (data) {
+      //         if (data.length > 0) {
+      //             let index = 0;
+      //             let catSpan = $('#categoryPlaceholder');
+
+      //             // Set first category
+      //             catSpan.text(data[index]);
+
+      //             // Rotate every 3 sec
+      //             setInterval(() => {
+      //                 index = (index + 1) % data.length;
+
+      //                 catSpan.fadeOut(400, function() {
+      //                     catSpan.text(data[index]);
+      //                     catSpan.fadeIn(400);
+      //                 });
+      //             }, 3000);
+      //         }
+      //     }
+      // });
+
+      // Redirect on click (input field or button)
+      // $('#searchInput, .searcBtn').on('click', function () {
+      $('.searchMedicineFormArea').on('click', function () {
+        window.location.href = "https://kidzz.in/lab/tests/filter"; // Redirect to filter page
+      });
     });
-</script>
+  </script>
 
-<script>
-(function ($) {
-  const ROUTES = {
-    check: "https://kidzz.in/lab/cart/check-tests",
-    cart: "https://kidzz.in/lab/cart",
-    filter: "https://kidzz.in/lab/tests/filter",
-    schedule: "https://kidzz.in/lab/booking-schedule"
-  };
+  <script>
+    (function ($) {
+      const ROUTES = {
+        check: "https://kidzz.in/lab/cart/check-tests",
+        cart: "https://kidzz.in/lab/cart",
+        filter: "https://kidzz.in/lab/tests/filter",
+        schedule: "https://kidzz.in/lab/booking-schedule"
+      };
 
-  const POLL_MS = 2000;
+      const POLL_MS = 2000;
 
-  function resolveTarget(res) {
-    if (!res || res.is_empty) return ROUTES.filter;            // empty cart
-    if (res.has_blood_test)      return ROUTES.cart;           // any blood test
-    if (res.has_lab_test)        return res.lab_selected
-                                        ? ROUTES.cart
-                                        : ROUTES.schedule;     // lab tests only
-    return ROUTES.filter;
-  }
-
-  function refreshCartLink($links) {
-    return $.ajax({
-      url: ROUTES.check,
-      method: 'GET',
-      dataType: 'json',
-      cache: false
-    })
-    .done(function (res) {
-      const target = resolveTarget(res);
-      $links.attr('href', target);
-      // optional: keep badge in sync if your backend returns count
-      if (typeof res?.count === 'number') {
-        const $badge = $('.cart-count');
-        $badge.text(res.count).toggle(res.count > 0);
+      function resolveTarget(res) {
+        if (!res || res.is_empty) return ROUTES.filter;            // empty cart
+        if (res.has_blood_test) return ROUTES.cart;           // any blood test
+        if (res.has_lab_test) return res.lab_selected
+          ? ROUTES.cart
+          : ROUTES.schedule;     // lab tests only
+        return ROUTES.filter;
       }
-    })
-    .fail(function () {
-      $links.attr('href', ROUTES.filter);
-    });
-  }
 
-  $(function () {
-    const $links = $('.cart_btn a');
-    if (!$links.length) return;
-
-    // Remove any old click handlers from previous inits
-    $(document).off('click.cartredir', '.cart_btn a');
-
-    // Click fallback: ensure up-to-date destination even between polls
-    $(document).on('click.cartredir', '.cart_btn a', function (e) {
-      const $a = $(this);
-      // If href is still empty or "#", refresh and then navigate
-      const href = ($a.attr('href') || '').trim();
-      if (!href || href === '#') {
-        e.preventDefault();
-        refreshCartLink($a).always(function () {
-          const finalHref = ($a.attr('href') || ROUTES.filter);
-          window.location.assign(finalHref);
-        });
-      }
-      // otherwise, let the browser navigate normally
-    });
-
-    // Initial set + poll every 2s (single global timer)
-    refreshCartLink($links);
-    if (!window.__cartRedirTimer) {
-      window.__cartRedirTimer = setInterval(function () {
-        // re-select to handle dynamic DOM changes
-        refreshCartLink($('.cart_btn a'));
-      }, POLL_MS);
-    }
-
-    // Clean up on page hide/unload
-    window.addEventListener('pagehide', function () {
-      if (window.__cartRedirTimer) {
-        clearInterval(window.__cartRedirTimer);
-        window.__cartRedirTimer = null;
-      }
-    });
-  });
-})(jQuery);
-</script>
-
-
-<script>
-$(document).ready(function() {
-  
-  // Handle form submission
-  $('#appointmentForm').on('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
-    
-    // Get form values
-    var name = $('#form_name').val();
-    var phone = $('#form_phone').val();
-    
-    // Basic validation
-    if (!name || !phone) {
-      Swal.fire('Error', 'Please fill in all required fields', 'error');
-      return;
-    }
-    
-    // Show loading state
-    $('#submitForm').prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> Processing...');
-    
-    // Make API request
-    $.post('https://babalrukn.com/api.php', {
-      name: name,
-      phone: phone
-    })
-    .done(function(response) {
-      if (response.status === 'success') {
-        $("#resp_form").css("display", "flex");
-        $('#appointmentForm')[0].reset();
-      } else {
-        Swal.fire('Error', response.message, 'error');
-      }
-    })
-    .fail(function() {
-      Swal.fire('Error', 'An error occurred while submitting the form. Please try again.', 'error');
-    })
-    .always(function() {
-      $('#submitForm').prop('disabled', false).html('<i class="fa-solid fa-list-check"></i> &nbsp; Get Instant CallBack');
-    });
-  });
-});
-</script>
-
-
-
-
-
-
-        <script>
-      
-            
-            
-                    
-
-          // ───── Toggle add/remove ─────
-          $(document).on('click', '.cartBtn.add-to-cart', function(e) {
-          e.preventDefault();
-            const $btn = $(this);
-            const id   = $btn.data('id');
-            if (!id) return;
-        
-            const isSel = $btn.hasClass('selected');
-            pendingTestId   = id;
-            const url   = isSel
-              ? "https://kidzz.in/lab/tests/remove-from-session"
-              : "https://kidzz.in/lab/tests/add-to-session";
-        
-            $.post(url, { _token: "NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA", test_id: id })
-              .done(res => {
-                if (res.success) {
-                  // swap state
-                  $btn.toggleClass('selected not-selected')
-                      .find('i').toggleClass('fa-plus-large fa-check');
-                  $btn.find('.action-label')
-                      .text(isSel ? 'Add' : 'Remove');
-                  updateCartCount();
-                } else {
-                  openPopupById('alertPopup');
-                    $("#alertPopup .para").text(res.message);
-                  loadLatest();
-                }
-              })
-              .fail(() => Swal.fire('','Could not update selection.','error'));
+      function refreshCartLink($links) {
+        return $.ajax({
+          url: ROUTES.check,
+          method: 'GET',
+          dataType: 'json',
+          cache: false
+        })
+          .done(function (res) {
+            const target = resolveTarget(res);
+            $links.attr('href', target);
+            // optional: keep badge in sync if your backend returns count
+            if (typeof res?.count === 'number') {
+              const $badge = $('.cart-count');
+              $badge.text(res.count).toggle(res.count > 0);
+            }
+          })
+          .fail(function () {
+            $links.attr('href', ROUTES.filter);
           });
-        
-        
-            // ────────── 7) “Yes, replace” handler ──────────
-            $('.alertPopup .customePopupBgBtn').on('click', async function () {
-                try {
-                    // remove all existing
-                    const sessionIds = await $.get("https://kidzz.in/lab/tests/session");
-                    for (let id of sessionIds) {
-                        await ajaxPost("https://kidzz.in/lab/tests/remove-from-session", {
-                            _token: "NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA",
-                            test_id: id
-                        });
-                    }
-                    // add the pending one
-                    await ajaxPost("https://kidzz.in/lab/tests/add-to-session", {
-                        _token: "NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA",
-                        test_id: pendingTestId
-                    });
-                    loadLatest();
-                    updateCartCount();
-                    closePopupById('alertPopup');
-                } catch (err) {
-                    Swal.fire('','Could not replace tests. Please try again.','error');
-                }
+      }
+
+      $(function () {
+        const $links = $('.cart_btn a');
+        if (!$links.length) return;
+
+        // Remove any old click handlers from previous inits
+        $(document).off('click.cartredir', '.cart_btn a');
+
+        // Click fallback: ensure up-to-date destination even between polls
+        $(document).on('click.cartredir', '.cart_btn a', function (e) {
+          const $a = $(this);
+          // If href is still empty or "#", refresh and then navigate
+          const href = ($a.attr('href') || '').trim();
+          if (!href || href === '#') {
+            e.preventDefault();
+            refreshCartLink($a).always(function () {
+              const finalHref = ($a.attr('href') || ROUTES.filter);
+              window.location.assign(finalHref);
             });
-            
-            
-          // ───── Update cart badge & bar ─────
-          function updateCartCount() {
-            $.get("https://kidzz.in/lab/tests/session")
-            .done(function(cart) {
-              const n = Array.isArray(cart) ? cart.length : 0;
-              // 1) Mobile bar count
-              $('.packagesCountArea .count')
-                .html(`${n} <span class="viewcart">View cart <i class="fa-solid fa-angle-up"></i></span>`);
-              // show/hide mobile bar
-              $('.landingPageMobileVersion').toggle(n > 0);
-        
-              // 2) Header cart icon badge
-              $('.cart-count-badge')
-                .text(n)
-                .toggleClass('d-none', n === 0);
-                
-                highlightSelectedTests(cart);
-               
-            });
+          }
+          // otherwise, let the browser navigate normally
+        });
+
+        // Initial set + poll every 2s (single global timer)
+        refreshCartLink($links);
+        if (!window.__cartRedirTimer) {
+          window.__cartRedirTimer = setInterval(function () {
+            // re-select to handle dynamic DOM changes
+            refreshCartLink($('.cart_btn a'));
+          }, POLL_MS);
         }
-        
-        
-          // ───── Load popup tests ─────
-          function loadPopupTests() {
-            $.get("https://kidzz.in/lab/tests/session/data")
-              .done(tests => {
-                const $list = $('#testAddedPopup .testAddedList').empty();
-                if (!tests.length) {
-                  $list.html('<p class="text-center">No tests added yet.</p>');
-                  return;
-                }
-                tests.forEach(test => {
-                  $list.append(`
+
+        // Clean up on page hide/unload
+        window.addEventListener('pagehide', function () {
+          if (window.__cartRedirTimer) {
+            clearInterval(window.__cartRedirTimer);
+            window.__cartRedirTimer = null;
+          }
+        });
+      });
+    })(jQuery);
+  </script>
+
+
+  <script>
+    $(document).ready(function () {
+
+      // Handle form submission
+      $('#appointmentForm').on('submit', function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Get form values
+        var name = $('#form_name').val();
+        var phone = $('#form_phone').val();
+
+        // Basic validation
+        if (!name || !phone) {
+          Swal.fire('Error', 'Please fill in all required fields', 'error');
+          return;
+        }
+
+        // Show loading state
+        $('#submitForm').prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> Processing...');
+
+        // Make API request
+        $.post('https://babalrukn.com/api.php', {
+          name: name,
+          phone: phone
+        })
+          .done(function (response) {
+            if (response.status === 'success') {
+              $("#resp_form").css("display", "flex");
+              $('#appointmentForm')[0].reset();
+            } else {
+              Swal.fire('Error', response.message, 'error');
+            }
+          })
+          .fail(function () {
+            Swal.fire('Error', 'An error occurred while submitting the form. Please try again.', 'error');
+          })
+          .always(function () {
+            $('#submitForm').prop('disabled', false).html('<i class="fa-solid fa-list-check"></i> &nbsp; Get Instant CallBack');
+          });
+      });
+    });
+  </script>
+
+
+
+
+
+
+  <script>
+
+
+
+
+
+    // ───── Toggle add/remove ─────
+    $(document).on('click', '.cartBtn.add-to-cart', function (e) {
+      e.preventDefault();
+      const $btn = $(this);
+      const id = $btn.data('id');
+      if (!id) return;
+
+      const isSel = $btn.hasClass('selected');
+      pendingTestId = id;
+      const url = isSel
+        ? "https://kidzz.in/lab/tests/remove-from-session"
+        : "https://kidzz.in/lab/tests/add-to-session";
+
+      $.post(url, { _token: "NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA", test_id: id })
+        .done(res => {
+          if (res.success) {
+            // swap state
+            $btn.toggleClass('selected not-selected')
+              .find('i').toggleClass('fa-plus-large fa-check');
+            $btn.find('.action-label')
+              .text(isSel ? 'Add' : 'Remove');
+            updateCartCount();
+          } else {
+            openPopupById('alertPopup');
+            $("#alertPopup .para").text(res.message);
+            loadLatest();
+          }
+        })
+        .fail(() => Swal.fire('', 'Could not update selection.', 'error'));
+    });
+
+
+    // ────────── 7) “Yes, replace” handler ──────────
+    $('.alertPopup .customePopupBgBtn').on('click', async function () {
+      try {
+        // remove all existing
+        const sessionIds = await $.get("https://kidzz.in/lab/tests/session");
+        for (let id of sessionIds) {
+          await ajaxPost("https://kidzz.in/lab/tests/remove-from-session", {
+            _token: "NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA",
+            test_id: id
+          });
+        }
+        // add the pending one
+        await ajaxPost("https://kidzz.in/lab/tests/add-to-session", {
+          _token: "NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA",
+          test_id: pendingTestId
+        });
+        loadLatest();
+        updateCartCount();
+        closePopupById('alertPopup');
+      } catch (err) {
+        Swal.fire('', 'Could not replace tests. Please try again.', 'error');
+      }
+    });
+
+
+    // ───── Update cart badge & bar ─────
+    function updateCartCount() {
+      $.get("https://kidzz.in/lab/tests/session")
+        .done(function (cart) {
+          const n = Array.isArray(cart) ? cart.length : 0;
+          // 1) Mobile bar count
+          $('.packagesCountArea .count')
+            .html(`${n} <span class="viewcart">View cart <i class="fa-solid fa-angle-up"></i></span>`);
+          // show/hide mobile bar
+          $('.landingPageMobileVersion').toggle(n > 0);
+
+          // 2) Header cart icon badge
+          $('.cart-count-badge')
+            .text(n)
+            .toggleClass('d-none', n === 0);
+
+          highlightSelectedTests(cart);
+
+        });
+    }
+
+
+    // ───── Load popup tests ─────
+    function loadPopupTests() {
+      $.get("https://kidzz.in/lab/tests/session/data")
+        .done(tests => {
+          const $list = $('#testAddedPopup .testAddedList').empty();
+          if (!tests.length) {
+            $list.html('<p class="text-center">No tests added yet.</p>');
+            return;
+          }
+          tests.forEach(test => {
+            $list.append(`
                     <div class="testAddedListItem" data-id="${test.id}">
                       <div class="d-flex justify-content-between testAddedListIteminner">
                         <div class="d-flex leftPart">
@@ -1745,188 +1849,188 @@ $(document).ready(function() {
                         </div>
                       </div>
                     </div>`);
-                });
-              });
-          }
-        
-          // ───── Show popup on cart-bar click ─────
-          $('.packagesCountArea').on('click', function() {
-            loadPopupTests();
-            openPopupById('testAddedPopup');
           });
-        
-          // ───── Remove from popup ─────
-          $(document).on('click', '.deleteBtn', function(e) {
-            e.preventDefault();
-            const id = $(this).data('id');
-            $.post("https://kidzz.in/lab/tests/remove-from-session", {
-              _token: "NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA",
-              test_id: id
-            })
-            .done(res => {
-              if (res.success) {
-                loadPopupTests();
-                updateCartCount();
-                closePopupById('testAddedPopup');
-                
-                // also update list button state if visible
-                const $btn = $(`.chooseLabTopSearchistingListItem[data-id="${id}"] .add-to-session`);
-                if ($btn.length) {
-                  $btn.removeClass('selected').addClass('not-selected')
-                      .find('i').toggleClass('fa-check fa-plus-large');
-                  $btn.find('.action-label').text('Add');
-                }
-              } else {
-                Swal.fire('Error','Could not remove test.','error');
-              }
-            })
-            .fail(() => Swal.fire('Error','Could not remove test.','error'));
-          });
-        
-          // ───── Continue button ─────
-          $('#continueToBooking').on('click', function() {
-            $.get("https://kidzz.in/lab/get-session-flags")
-              .done(res => {
-                if (res.has_blood_test && res.has_normal_test) {
-                  Swal.fire('Test Type Conflict','Please remove one type to continue.','error');
-                } else if (res.has_blood_test) {
-                  openPopupById('loginPopup');
-                } else if (res.has_normal_test) {
-                  window.location.href = "https://kidzz.in/lab/booking-schedule";
-                } else {
-                  Swal.fire('No Test Selected','Please add at least one test.','warning');
-                }
-              });
-          });
-        
-          // ───── Initial load ─────
-          loadLatest();
-          updateCartCount();
-        
-          // ───── Popup helpers ─────
-          window.openPopupById = function(id) {
-            $('#' + id).addClass('open');
-            $('#overlay_' + id).addClass('open');
-            $('body').addClass('pageBodyhiden');
-          };
-          window.closePopupById = function(id) {
-            $('#' + id).removeClass('open');
-            $('#overlay_' + id).removeClass('open');
-            $('body').removeClass('pageBodyhiden');
-          };
         });
-        
-        // ───── Highlight selected tests in the grid ─────
-        function highlightSelectedTests(sessionIds) {
-            // make sure they're strings, for easy comparison
-            const ids = sessionIds.map(String);
-            
-            // loop over every Add button in the slider
-            $('.scanCategorySlider .cartBtn').each(function() {
-                const $btn = $(this);
-                const id = String($btn.data('id'));
-                
-                if (ids.includes(id)) {
-                    $btn.addClass('selected')
-                        .removeClass('not-selected')
-                        .text('Remove');  // Change text to "Added"
-                } else {
-                    $btn.removeClass('selected')
-                        .addClass('not-selected')
-                        .text('Add');    // Change text to "Add"
-                }
-            });
+    }
+
+    // ───── Show popup on cart-bar click ─────
+    $('.packagesCountArea').on('click', function () {
+      loadPopupTests();
+      openPopupById('testAddedPopup');
+    });
+
+    // ───── Remove from popup ─────
+    $(document).on('click', '.deleteBtn', function (e) {
+      e.preventDefault();
+      const id = $(this).data('id');
+      $.post("https://kidzz.in/lab/tests/remove-from-session", {
+        _token: "NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA",
+        test_id: id
+      })
+        .done(res => {
+          if (res.success) {
+            loadPopupTests();
+            updateCartCount();
+            closePopupById('testAddedPopup');
+
+            // also update list button state if visible
+            const $btn = $(`.chooseLabTopSearchistingListItem[data-id="${id}"] .add-to-session`);
+            if ($btn.length) {
+              $btn.removeClass('selected').addClass('not-selected')
+                .find('i').toggleClass('fa-check fa-plus-large');
+              $btn.find('.action-label').text('Add');
+            }
+          } else {
+            Swal.fire('Error', 'Could not remove test.', 'error');
+          }
+        })
+        .fail(() => Swal.fire('Error', 'Could not remove test.', 'error'));
+    });
+
+    // ───── Continue button ─────
+    $('#continueToBooking').on('click', function () {
+      $.get("https://kidzz.in/lab/get-session-flags")
+        .done(res => {
+          if (res.has_blood_test && res.has_normal_test) {
+            Swal.fire('Test Type Conflict', 'Please remove one type to continue.', 'error');
+          } else if (res.has_blood_test) {
+            openPopupById('loginPopup');
+          } else if (res.has_normal_test) {
+            window.location.href = "https://kidzz.in/lab/booking-schedule";
+          } else {
+            Swal.fire('No Test Selected', 'Please add at least one test.', 'warning');
+          }
+        });
+    });
+
+    // ───── Initial load ─────
+    loadLatest();
+    updateCartCount();
+
+    // ───── Popup helpers ─────
+    window.openPopupById = function (id) {
+      $('#' + id).addClass('open');
+      $('#overlay_' + id).addClass('open');
+      $('body').addClass('pageBodyhiden');
+    };
+    window.closePopupById = function (id) {
+      $('#' + id).removeClass('open');
+      $('#overlay_' + id).removeClass('open');
+      $('body').removeClass('pageBodyhiden');
+    };
+        });
+
+    // ───── Highlight selected tests in the grid ─────
+    function highlightSelectedTests(sessionIds) {
+      // make sure they're strings, for easy comparison
+      const ids = sessionIds.map(String);
+
+      // loop over every Add button in the slider
+      $('.scanCategorySlider .cartBtn').each(function () {
+        const $btn = $(this);
+        const id = String($btn.data('id'));
+
+        if (ids.includes(id)) {
+          $btn.addClass('selected')
+            .removeClass('not-selected')
+            .text('Remove');  // Change text to "Added"
+        } else {
+          $btn.removeClass('selected')
+            .addClass('not-selected')
+            .text('Add');    // Change text to "Add"
         }
-
-    </script>
-
-  
-
-<script>
-  const slides = document.querySelectorAll('.classname_by_n_slide');
-  const container = document.getElementById('slideshow');
-  let current = 0;
-  let timer;
-
-  function showSlide(index){
-    slides.forEach((s,i)=> s.classList.toggle('active', i===index));
-    current = index;
-  }
-  function nextSlide(){
-    showSlide((current+1) % slides.length);
-  }
-  function prevSlide(){
-    showSlide((current-1+slides.length) % slides.length);
-  }
-
-  function startAuto(){
-    timer = setInterval(nextSlide, 3000); // 3s
-  }
-  function stopAuto(){
-    clearInterval(timer);
-  }
-
-  // swipe detection
-  let startX = 0;
-  container.addEventListener('touchstart', e=>{
-    startX = e.touches[0].clientX;
-    stopAuto(); // pause autoplay while swiping
-  });
-  container.addEventListener('touchend', e=>{
-    let endX = e.changedTouches[0].clientX;
-    let diff = endX - startX;
-    if(Math.abs(diff) > 50){ // swipe threshold
-      if(diff > 0){ prevSlide(); } // swipe right → previous
-      else { nextSlide(); }        // swipe left → next
-    }
-    startAuto(); // resume autoplay
-  });
-
-  startAuto();
-</script>
-
-
-
-
-<script>
-  (function(){
-    const tagsContainer = document.getElementById('tagsContainer_by_naveed');
-    const hiddenGroup = document.getElementById('hidden_by_naveed');
-    const toggleBtn = document.getElementById('toggleMore_by_naveed');
-
-    // count hidden tags to build correct "+N more"
-    const hiddenCount = hiddenGroup ? hiddenGroup.querySelectorAll('.tag_by_naveed').length : 0;
-
-    // if no hidden items, hide the toggle button
-    if(hiddenCount === 0){
-      toggleBtn.style.display = 'none';
-    } else {
-      toggleBtn.textContent = `+${hiddenCount} more`;
+      });
     }
 
-    function setExpandedState(expanded){
-      tagsContainer.classList.toggle('expanded', expanded);
-      toggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-      toggleBtn.textContent = expanded ? 'Show less' : `+${hiddenCount} more`;
+  </script>
+
+
+
+  <script>
+    const slides = document.querySelectorAll('.classname_by_n_slide');
+    const container = document.getElementById('slideshow');
+    let current = 0;
+    let timer;
+
+    function showSlide(index) {
+      slides.forEach((s, i) => s.classList.toggle('active', i === index));
+      current = index;
+    }
+    function nextSlide() {
+      showSlide((current + 1) % slides.length);
+    }
+    function prevSlide() {
+      showSlide((current - 1 + slides.length) % slides.length);
     }
 
-    // click handler
-    toggleBtn.addEventListener('click', () => {
-      const isExpanded = tagsContainer.classList.contains('expanded');
-      setExpandedState(!isExpanded);
+    function startAuto() {
+      timer = setInterval(nextSlide, 3000); // 3s
+    }
+    function stopAuto() {
+      clearInterval(timer);
+    }
+
+    // swipe detection
+    let startX = 0;
+    container.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+      stopAuto(); // pause autoplay while swiping
     });
-
-    // keyboard accessibility: Enter / Space toggles
-    toggleBtn.addEventListener('keydown', (e) => {
-      if(e.key === 'Enter' || e.key === ' '){
-        e.preventDefault();
-        toggleBtn.click();
+    container.addEventListener('touchend', e => {
+      let endX = e.changedTouches[0].clientX;
+      let diff = endX - startX;
+      if (Math.abs(diff) > 50) { // swipe threshold
+        if (diff > 0) { prevSlide(); } // swipe right → previous
+        else { nextSlide(); }        // swipe left → next
       }
+      startAuto(); // resume autoplay
     });
-  })();
-</script>
 
-  
+    startAuto();
+  </script>
+
+
+
+
+  <script>
+    (function () {
+      const tagsContainer = document.getElementById('tagsContainer_by_naveed');
+      const hiddenGroup = document.getElementById('hidden_by_naveed');
+      const toggleBtn = document.getElementById('toggleMore_by_naveed');
+
+      // count hidden tags to build correct "+N more"
+      const hiddenCount = hiddenGroup ? hiddenGroup.querySelectorAll('.tag_by_naveed').length : 0;
+
+      // if no hidden items, hide the toggle button
+      if (hiddenCount === 0) {
+        toggleBtn.style.display = 'none';
+      } else {
+        toggleBtn.textContent = `+${hiddenCount} more`;
+      }
+
+      function setExpandedState(expanded) {
+        tagsContainer.classList.toggle('expanded', expanded);
+        toggleBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        toggleBtn.textContent = expanded ? 'Show less' : `+${hiddenCount} more`;
+      }
+
+      // click handler
+      toggleBtn.addEventListener('click', () => {
+        const isExpanded = tagsContainer.classList.contains('expanded');
+        setExpandedState(!isExpanded);
+      });
+
+      // keyboard accessibility: Enter / Space toggles
+      toggleBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleBtn.click();
+        }
+      });
+    })();
+  </script>
+
+
 
 </body>
 
