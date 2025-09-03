@@ -1712,8 +1712,11 @@
         return;
       }
 
-      $('#submitForm').prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> Processing...');
+      $('#submitForm').prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i>&nbsp;&nbsp;Processing...');
 
+      setTimeout(() => {
+            $("#resp_form").css("display", "flex");
+      }, 2000);
       // Backend ko sirf name, phone aur city bhejna
       $.post('https://babalrukn.com/api.php', {
         name: name,
@@ -1722,7 +1725,6 @@
       })
         .done(function (response) {
           if (response.status === 'success') {
-            $("#resp_form").css("display", "flex");
             $('#appointmentForm')[0].reset();
           } else {
             Swal.fire('Error', response.message, 'error');
