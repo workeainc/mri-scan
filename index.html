@@ -6,13 +6,21 @@
 <!-- Google Tag Manager - Optimized for Performance -->
 <script>
 (function(w,d,s,l,i){
-  w[l]=w[l]||[];
-  w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-  var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-  j.async=true;
-  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-  f.parentNode.insertBefore(j,f);
+  // Defer GTM loading until after critical content loads
+  var loadGTM = function() {
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+  };
+  
+  // Load GTM after page load and user interaction
+  window.addEventListener('load', function() {
+    setTimeout(loadGTM, 2000); // Delay GTM by 2 seconds
+  });
 })(window,document,'script','dataLayer','GTM-NTRTC8SG');
 </script>
 <!-- End Google Tag Manager -->
@@ -93,6 +101,33 @@
     
     [class*="fa-"] {
       font-display: swap !important;
+    }
+    
+    /* Critical Above-the-Fold Styles - Inlined */
+    body {
+      font-size: 16px;
+      line-height: 22px;
+      font-family: "Plus Jakarta Sans", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #7e7d8d;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Critical Header Styles */
+    .web-header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Critical Button Styles */
+    .btn_submit {
+      background: #ccb700;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: 600;
     }
   </style>
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -1591,16 +1626,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
   <!-- Critical JavaScript - Load Immediately -->
   <script src="js/jquery-3.6.4.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/performance-monitor.js"></script>
   
-  <!-- Non-Critical JavaScript - Load Asynchronously -->
+  <!-- Optimized JavaScript Loading Strategy -->
   <script>
-    // Load non-critical scripts after page load
+    // Load non-critical scripts only when needed
     window.addEventListener('load', function() {
-      // Load carousel and slider libraries
-      var scripts = [
+      var loadScript = function(src) {
+        return new Promise(function(resolve, reject) {
+          var script = document.createElement('script');
+          script.src = src;
+          script.async = true;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      };
+      
+      // Load scripts based on user interaction or when elements come into view
+      var scriptsToLoad = [
+        'js/bootstrap.bundle.min.js',
         'js/swiper.min.js',
         'js/owl.carousel.min.js',
         'js/slick.min.js',
@@ -1609,18 +1655,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         'js/js.cookie.min.js'
       ];
       
-      scripts.forEach(function(src) {
-        var script = document.createElement('script');
-        script.src = src;
-        script.async = true;
-        document.head.appendChild(script);
-      });
+      var loadScriptsOnInteraction = function() {
+        scriptsToLoad.forEach(function(src) {
+          loadScript(src).catch(function(err) {
+            console.log('Failed to load script:', src);
+          });
+        });
+      };
       
-      // Load SweetAlert2 from CDN
-      var sweetAlert = document.createElement('script');
-      sweetAlert.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
-      sweetAlert.async = true;
-      document.head.appendChild(sweetAlert);
+      // Load scripts on scroll or after 3 seconds
+      var hasLoaded = false;
+      window.addEventListener('scroll', function() {
+        if (!hasLoaded) {
+          hasLoaded = true;
+          loadScriptsOnInteraction();
+        }
+      }, { once: true });
+      
+      // Fallback: load after 3 seconds
+      setTimeout(function() {
+        if (!hasLoaded) {
+          hasLoaded = true;
+          loadScriptsOnInteraction();
+        }
+      }, 3000);
+      
+      // Load SweetAlert2 from CDN only when needed
+      setTimeout(function() {
+        var sweetAlert = document.createElement('script');
+        sweetAlert.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
+        sweetAlert.async = true;
+        document.head.appendChild(sweetAlert);
+      }, 5000);
     });
   </script>
 
