@@ -17,14 +17,16 @@ const CACHE_LIFETIMES = {
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/css/style.ultra-min.css',
-  '/css/uicons-solid-rounded.min.css',
-  '/css/font-display-optimization.css',
+  '/css/critical.css',
   '/css/bootstrap.min.css',
+  '/css/font-display-optimization.css',
   '/css/responsive.css',
   '/js/main.js',
   '/js/performance-monitor.js',
+  '/images/logo.webp',
   '/images/logo.png',
+  '/doctor.webp',
+  '/doctor.png',
   '/images/mri.png',
   '/images/discount.png',
   '/images/guarantee.png',
@@ -32,13 +34,22 @@ const STATIC_ASSETS = [
   '/img2.webp'
 ];
 
-// Large assets to cache on-demand only
-const LARGE_ASSETS = [
-  '/images/logo_1.png',
-  '/doctor.png',
-  '/images/redclif-labs.png',
-  '/css/fonts/fa-solid-900.woff2',
-  '/css/fonts/fa-brands-400.woff2'
+// Large CSS assets to cache on-demand only
+const LARGE_CSS_ASSETS = [
+  '/css/style.css',
+  '/css/all.css',
+  '/css/font-awesome.min.css',
+  '/css/jquery.fancybox.css',
+  '/css/swiper.min.css',
+  '/css/swiper-bundle.min.css',
+  '/css/slick.css',
+  '/css/slick-theme.css',
+  '/css/rs-spacing-min.css',
+  '/css/owl.carousel.min.css',
+  '/css/jquery-ui.min.css',
+  '/css/animate.min.css',
+  '/css/uicons-solid-rounded.min.css',
+  '/css/style.ultra-min.css'
 ];
 
 // Long-term cacheable assets (fonts, images, etc.)
@@ -117,6 +128,8 @@ self.addEventListener('fetch', event => {
         // Determine caching strategy based on request type
         if (isStaticAsset(event.request)) {
           return fetchAndCache(event.request, STATIC_CACHE);
+        } else if (isLargeCSSAsset(event.request)) {
+          return fetchAndCache(event.request, DYNAMIC_CACHE);
         } else if (isLongTermAsset(event.request)) {
           return fetchAndCache(event.request, LONG_TERM_CACHE);
         } else {
@@ -131,6 +144,12 @@ self.addEventListener('fetch', event => {
       })
   );
 });
+
+// Helper function to determine if request is for large CSS asset
+function isLargeCSSAsset(request) {
+  const url = new URL(request.url);
+  return LARGE_CSS_ASSETS.some(asset => url.pathname.includes(asset));
+}
 
 // Helper function to determine if request is for static asset
 function isStaticAsset(request) {

@@ -52,8 +52,8 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="images/logo.png" as="image">
-<link rel="preload" href="doctor.png" as="image">
+  <link rel="preload" href="images/logo.webp" as="image">
+  <link rel="preload" href="doctor.webp" as="image">
 
   <!-- Cache Optimization Meta Tags -->
   <meta http-equiv="Cache-Control" content="public, max-age=31536000">
@@ -163,11 +163,13 @@
     @media (max-width:768px){.hero-title{font-size:2rem}.hero-subtitle{font-size:1rem}.btn_submit{padding:10px 20px;font-size:14px}}
   </style>
   
-  <!-- Non-Critical CSS - Load Asynchronously -->
+  <!-- Non-Critical CSS - Load Asynchronously After Page Load -->
   <link rel="preload" href="css/font-display-optimization.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/uicons-solid-rounded.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/style.ultra-min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Defer Large CSS Files Until Needed -->
   <link rel="preload" href="css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/jquery.fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -977,7 +979,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="f_box_by_n">
         <div class="header_progley">
           <div class="logo_progley">
-            <img src="images/logo.png" alt="">
+            <picture>
+              <source srcset="images/logo.webp" type="image/webp">
+              <img src="images/logo.png" alt="">
+            </picture>
           </div>
           <div class="flobtns_by_n">
             <a href="tel:7982113707">
@@ -1022,7 +1027,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </div>
           <div class="nd_box_img">
-            <img src="doctor.png" alt="">
+            <picture>
+              <source media="(max-width: 768px)" srcset="doctor.webp" type="image/webp">
+              <source media="(max-width: 768px)" srcset="doctor.png">
+              <source srcset="doctor.webp" type="image/webp">
+              <img src="doctor.png" alt="" width="154" height="160">
+            </picture>
           </div>
         </div>
 
@@ -1394,7 +1404,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="d-flex justify-content-between testAddedListIteminner">
                       <div class="d-flex leftPart">
                         <div class="thumanil">
-                          <img src="images/test.jpg" loading="lazy" class="img-fluid " alt="">
+                          <picture>
+                            <source srcset="images/test.webp" type="image/webp">
+                            <img src="images/test.jpg" loading="lazy" class="img-fluid " alt="">
+                          </picture>
                         </div>
                         <div class="content">
                           <h4 class="title">MRI Brain(MRI)</h4>
@@ -1481,7 +1494,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <div class="swiper-slide">
                 <div class="partnerLogoBox">
-                  <img src="images/redclif-labs.png" loading="lazy" class="img-fluid" alt="Redclif Labs" width="120" height="60">
+                  <picture>
+                    <source srcset="images/redclif-labs.webp" type="image/webp">
+                    <img src="images/redclif-labs.png" loading="lazy" class="img-fluid" alt="Redclif Labs" width="120" height="60">
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1491,12 +1507,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <div class="swiper-slide">
                 <div class="partnerLogoBox">
-                  <img src="images/logo%20%281%29.png" loading="lazy" class="img-fluid" alt="Partner Logo" width="120" height="60">
+                  <picture>
+                    <source srcset="images/logo%20%281%29.webp" type="image/webp">
+                    <img src="images/logo%20%281%29.png" loading="lazy" class="img-fluid" alt="Partner Logo" width="120" height="60">
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="partnerLogoBox">
-                  <img src="images/logo_1.png" loading="lazy" class="img-fluid" alt="Partner Logo" width="120" height="60">
+                  <picture>
+                    <source media="(max-width: 768px)" srcset="images/logo_1.webp" type="image/webp">
+                    <source media="(max-width: 768px)" srcset="images/logo_1.png">
+                    <source srcset="images/logo_1.webp" type="image/webp">
+                    <img src="images/logo_1.png" loading="lazy" class="img-fluid" alt="Partner Logo" width="120" height="60">
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1703,43 +1727,117 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }, 5000);
   </script>
   
-  <!-- Font Optimization Strategy -->
+  <!-- Image Optimization Script -->
   <script>
-    // Font optimization to reduce payload
+    // Optimize image delivery and WebP support
     (function() {
       'use strict';
       
-      // Load fonts only when needed
-      function loadFontsOnDemand() {
-        // Check if Font Awesome fonts are actually needed
-        var fontAwesomeElements = document.querySelectorAll('[class*="fa-"], [class*="fas"], [class*="fab"]');
-        
-        if (fontAwesomeElements.length > 0) {
-          // Load Font Awesome fonts only when elements are present
-          var fontLinks = [
-            'css/fonts/fa-solid-900.woff2',
-            'css/fonts/fa-brands-400.woff2'
-          ];
-          
-          fontLinks.forEach(function(fontUrl) {
-            var link = document.createElement('link');
-            link.rel = 'preload';
-            link.href = fontUrl;
-            link.as = 'font';
-            link.type = 'font/woff2';
-            link.crossOrigin = 'anonymous';
-            document.head.appendChild(link);
-          });
-        }
+      // Check WebP support
+      function supportsWebP() {
+        var canvas = document.createElement('canvas');
+        canvas.width = 1;
+        canvas.height = 1;
+        return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
       }
       
-      // Load fonts after page load
-      window.addEventListener('load', function() {
-        setTimeout(loadFontsOnDemand, 2000);
-      });
+      // Optimize images for better delivery
+      function optimizeImages() {
+        var images = document.querySelectorAll('img[src]');
+        images.forEach(function(img) {
+          // Add proper dimensions to prevent layout shift
+          if (!img.hasAttribute('width') && !img.hasAttribute('height')) {
+            img.setAttribute('width', 'auto');
+            img.setAttribute('height', 'auto');
+          }
+          
+          // Add loading optimization
+          if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+          }
+          
+          // Add fetchpriority for above-the-fold images
+          if (img.src.includes('logo') || img.src.includes('doctor')) {
+            img.setAttribute('fetchpriority', 'high');
+          }
+        });
+      }
       
-      // Fallback: load fonts after 5 seconds
-      setTimeout(loadFontsOnDemand, 5000);
+      // Run image optimization after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', optimizeImages);
+      } else {
+        optimizeImages();
+      }
+      
+      // Log WebP support
+      if (supportsWebP()) {
+        console.log('WebP supported - using optimized images');
+      } else {
+        console.log('WebP not supported - using fallback images');
+      }
+    })();
+  </script>
+  
+  <!-- CSS Loading Optimization Script -->
+  <script>
+    // Optimize CSS loading to reduce unused CSS
+    (function() {
+      'use strict';
+      
+      // Load CSS files only when needed
+      function loadCSSOnDemand() {
+        var cssFiles = [
+          'css/all.css',
+          'css/font-awesome.min.css',
+          'css/jquery.fancybox.css',
+          'css/swiper.min.css',
+          'css/swiper-bundle.min.css',
+          'css/slick.css',
+          'css/slick-theme.css',
+          'css/rs-spacing-min.css',
+          'css/owl.carousel.min.css',
+          'css/jquery-ui.min.css',
+          'css/animate.min.css'
+        ];
+        
+        // Load CSS files after page load
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            cssFiles.forEach(function(cssFile) {
+              var link = document.createElement('link');
+              link.rel = 'stylesheet';
+              link.href = cssFile;
+              link.setAttribute('data-loaded', 'true');
+              document.head.appendChild(link);
+            });
+          }, 2000); // Load after 2 seconds
+        });
+      }
+      
+      // Load CSS on user interaction
+      function loadCSSOnInteraction() {
+        var cssLoaded = false;
+        var loadCSS = function() {
+          if (!cssLoaded) {
+            cssLoaded = true;
+            loadCSSOnDemand();
+          }
+        };
+        
+        // Load on user interaction
+        ['scroll', 'click', 'keydown', 'touchstart'].forEach(function(event) {
+          document.addEventListener(event, loadCSS, { once: true });
+        });
+      }
+      
+      // Start CSS optimization
+      loadCSSOnInteraction();
+      
+      // Fallback: load CSS after 5 seconds
+      setTimeout(function() {
+        loadCSSOnDemand();
+      }, 5000);
     })();
   </script>
   
