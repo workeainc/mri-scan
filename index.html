@@ -63,6 +63,23 @@
       font-display: swap;
     }
     
+    /* Critical Font Awesome 6 Pro @font-face Declarations - Inlined */
+    @font-face {
+      font-family: "Font Awesome 6 Pro";
+      src: url('css/fonts/fa-solid-900.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap; /* Critical optimization for fa-solid-900.woff2 */
+    }
+    
+    @font-face {
+      font-family: "Font Awesome 6 Brands";
+      src: url('css/fonts/fa-brands-400.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap; /* Critical optimization for fa-brands-400.woff2 */
+    }
+    
     /* Critical Font Awesome 6 Pro Optimization */
     .fa-solid, .fas, .fa-solid-900 {
       font-family: "Font Awesome 6 Pro", "FontAwesome", sans-serif !important;
