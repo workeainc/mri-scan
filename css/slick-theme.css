@@ -11,6 +11,7 @@
     font-family: 'slick';
     font-weight: normal;
     font-style: normal;
+    font-display: swap; /* Critical optimization - shows fallback immediately */
 
     src: url('../fonts/slick.eot');
     src: url('../fonts/slick.eot#iefix') format('embedded-opentype'), url('../fonts/slick.woff') format('woff'), url('../fonts/slick.ttf') format('truetype'), url('../images/slick.svg#slick') format('svg');

@@ -3,6 +3,7 @@ font-family: "uicons-solid-rounded";
 src: url("../fonts/uicons-solid-rounded.eot#iefix") format("embedded-opentype"),
 url("../fonts/uicons-solid-rounded.woff2") format("woff2"),
 url("../fonts/uicons-solid-rounded.woff") format("woff");
+font-display: swap; /* Critical optimization - shows fallback immediately */
 }
 
     i[class^="fi-sr-"]:before, i[class*=" fi-sr-"]:before, span[class^="fi-sr-"]:before, span[class*="fi-sr-"]:before {
