@@ -9,6 +9,7 @@ const DYNAMIC_CACHE = 'dynamic-v1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
+  '/css/font-display-optimization.css',
   '/css/bootstrap.min.css',
   '/css/style.css',
   '/css/responsive.css',
