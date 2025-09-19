@@ -14,10 +14,12 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
     j.async=true;
     j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    // Add cache optimization for GTM
+    j.setAttribute('data-cache', 'long-term');
     f.parentNode.insertBefore(j,f);
   };
   
-  // Load GTM after page load and user interaction
+  // Load GTM after page load and user interaction with cache optimization
   window.addEventListener('load', function() {
     setTimeout(loadGTM, 2000); // Delay GTM by 2 seconds
   });
@@ -38,13 +40,29 @@
 <link rel="preload" href="images/logo.png" as="image">
 <link rel="preload" href="doctor.png" as="image">
 
-<!-- Resource Hints for Performance -->
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-<link rel="dns-prefetch" href="//ipapi.co">
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preconnect" href="https://ipapi.co" crossorigin>
+  <!-- Cache Optimization Meta Tags -->
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+  <meta http-equiv="Expires" content="31536000">
+  
+  <!-- Resource Hints for Performance -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//ipapi.co">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//scripts.clarity.ms">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://ipapi.co" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://scripts.clarity.ms" crossorigin>
+
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="img1.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="js/jquery-3.6.4.min.js" as="script">
+  <link rel="preload" href="js/main.js" as="script">
+  
+  <!-- Preload External Analytics with Long Cache -->
+  <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=GTM-NTRTC8SG" as="script" crossorigin>
 
   
   
@@ -130,13 +148,14 @@
       font-weight: 600;
     }
   </style>
+  <link rel="stylesheet" href="css/critical.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
   
   <!-- Non-Critical CSS - Load Asynchronously -->
   <link rel="preload" href="css/font-display-optimization.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/responsive.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="css/uicons-solid-rounded.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="css/uicons-solid-rounded.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/jquery.fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -153,7 +172,7 @@
   <noscript>
     <link rel="stylesheet" href="css/font-display-optimization.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/uicons-solid-rounded.css">
+    <link rel="stylesheet" href="css/uicons-solid-rounded.min.css">
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
@@ -1045,7 +1064,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="classname_by_n" id="slideshow">
         <!-- Slide 1 -->
         <div class="classname_by_n_slide classname_by_n_slide--1 active">
-          <img src="img1.webp" loading="lazy" alt="Image 1">
+          <img src="img1.webp" loading="eager" fetchpriority="high" alt="Image 1" width="400" height="300">
         </div>
         <!-- Slide 2 -->
         <div class="classname_by_n_slide classname_by_n_slide--2">
@@ -1629,6 +1648,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script src="js/main.js"></script>
   <script src="js/performance-monitor.js"></script>
   
+  <!-- Cache Optimization Script -->
+  <script>
+    // Enhanced cache optimization for better performance
+    (function() {
+      'use strict';
+      
+      // Cache optimization for external scripts
+      function optimizeExternalScripts() {
+        // Add cache headers to dynamically loaded scripts
+        var scripts = document.querySelectorAll('script[src]');
+        scripts.forEach(function(script) {
+          if (script.src.includes('googletagmanager.com') || 
+              script.src.includes('clarity.ms') ||
+              script.src.includes('analytics')) {
+            script.setAttribute('data-cache', 'long-term');
+          }
+        });
+      }
+      
+      // Optimize cache for images
+      function optimizeImageCaching() {
+        var images = document.querySelectorAll('img[src]');
+        images.forEach(function(img) {
+          // Add cache optimization attributes
+          if (img.src.includes('.webp') || img.src.includes('.png') || img.src.includes('.jpg')) {
+            img.setAttribute('data-cache', 'long-term');
+          }
+        });
+      }
+      
+      // Run optimizations after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          optimizeExternalScripts();
+          optimizeImageCaching();
+        });
+      } else {
+        optimizeExternalScripts();
+        optimizeImageCaching();
+      }
+      
+      // Service Worker registration with cache optimization
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('Service Worker registered with enhanced caching');
+            })
+            .catch(function(error) {
+              console.log('Service Worker registration failed');
+            });
+        });
+      }
+    })();
+  </script>
+  
   <!-- Optimized JavaScript Loading Strategy -->
   <script>
     // Load non-critical scripts only when needed
@@ -1663,7 +1738,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
       };
       
-      // Load scripts on scroll or after 3 seconds
+      // Load scripts on scroll or after 5 seconds (increased delay)
       var hasLoaded = false;
       window.addEventListener('scroll', function() {
         if (!hasLoaded) {
@@ -1672,13 +1747,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
       }, { once: true });
       
-      // Fallback: load after 3 seconds
+      // Fallback: load after 5 seconds to avoid blocking critical path
       setTimeout(function() {
         if (!hasLoaded) {
           hasLoaded = true;
           loadScriptsOnInteraction();
         }
-      }, 3000);
+      }, 5000);
       
       // Load SweetAlert2 from CDN only when needed
       setTimeout(function() {
@@ -1686,7 +1761,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         sweetAlert.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
         sweetAlert.async = true;
         document.head.appendChild(sweetAlert);
-      }, 5000);
+      }, 7000);
     });
   </script>
 
@@ -1860,19 +1935,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   $(document).ready(function () {
 
+    // Optimized IP location detection - Non-blocking approach
     let userCity = "";
-
-    // Defer IP location detection to avoid blocking initial render
-    setTimeout(function() {
-      $.get("https://ipapi.co/json/", function (data) {
-        userCity = data.city + ", " + data.region;
-        // Frontend pe show karna
-        $("#userLocation").html("📍 Your Location: " + userCity);
-      }).fail(function() {
-        // Fallback if IP detection fails
-        $("#userLocation").html("📍 Your Location: Delhi, Delhi");
-      });
-    }, 1000); // Delay by 1 second
+    
+    // Use requestIdleCallback for non-blocking IP detection
+    function detectUserLocation() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+          fetch("https://ipapi.co/json/")
+            .then(response => response.json())
+            .then(data => {
+              userCity = data.city + ", " + data.region;
+              $("#userLocation").html("📍 Your Location: " + userCity);
+            })
+            .catch(function() {
+              // Fallback if IP detection fails
+              $("#userLocation").html("📍 Your Location: Delhi, Delhi");
+            });
+        });
+      } else {
+        // Fallback for browsers without requestIdleCallback
+        setTimeout(function() {
+          fetch("https://ipapi.co/json/")
+            .then(response => response.json())
+            .then(data => {
+              userCity = data.city + ", " + data.region;
+              $("#userLocation").html("📍 Your Location: " + userCity);
+            })
+            .catch(function() {
+              $("#userLocation").html("📍 Your Location: Delhi, Delhi");
+            });
+        }, 3000); // Delay by 3 seconds to avoid blocking critical path
+      }
+    }
+    
+    // Start IP detection after page is fully loaded
+    window.addEventListener('load', detectUserLocation);
 
     // Handle form submission
     $('#appointmentForm').on('submit', function (e) {
