@@ -17,7 +17,16 @@
        url('../images/fontawesome-webfont.svg#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* Critical optimization - shows fallback immediately */
+  font-display: swap; /* Critical optimization for fontawesome-webfont.woff2 */
+}
+
+/* Additional Font Awesome 4.7.0 .woff2 Optimization */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Specific optimization for fontawesome-webfont.woff2 */
 }
 
 /* UIcons Solid Rounded Optimization */
@@ -59,19 +68,52 @@
   font-display: swap; /* Ensure all Font Awesome icons use swap */
 }
 
-/* Font Awesome 6 Pro Optimization */
+/* Font Awesome 6 Pro Optimization - Specific Files */
 @font-face {
   font-family: "Font Awesome 6 Pro";
-  font-display: swap;
+  src: url('../fonts/fa-solid-900.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; /* Critical optimization for fa-solid-900.woff2 */
 }
 
 @font-face {
   font-family: "Font Awesome 6 Brands";
-  font-display: swap;
+  src: url('../fonts/fa-brands-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Critical optimization for fa-brands-400.woff2 */
 }
 
 @font-face {
   font-family: "Font Awesome 6 Duotone";
+  src: url('../fonts/fa-duotone-900.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Light";
+  src: url('../fonts/fa-light-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Regular";
+  src: url('../fonts/fa-regular-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Thin";
+  src: url('../fonts/fa-thin-100.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -84,4 +126,25 @@
 .font-preload {
   font-display: swap;
   font-family: "Plus Jakarta Sans", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Critical Font Display Overrides - Force font-display: swap */
+/* These overrides ensure the specific problematic fonts use swap */
+.fa-solid, .fas {
+  font-family: "Font Awesome 6 Pro", "FontAwesome", sans-serif !important;
+  font-display: swap !important;
+}
+
+.fa-brands, .fab {
+  font-family: "Font Awesome 6 Brands", "FontAwesome", sans-serif !important;
+  font-display: swap !important;
+}
+
+.fa, .fa-classic, .fa-light, .fa-regular, .fa-thin, .fa-duotone, .fa-sharp {
+  font-display: swap !important;
+}
+
+/* Force font-display on all Font Awesome elements */
+[class*="fa-"] {
+  font-display: swap !important;
 }
