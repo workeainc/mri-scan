@@ -17,23 +17,28 @@ const CACHE_LIFETIMES = {
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/css/critical.css',
-  '/css/style.min.css',
+  '/css/style.ultra-min.css',
   '/css/uicons-solid-rounded.min.css',
   '/css/font-display-optimization.css',
   '/css/bootstrap.min.css',
-  '/css/style.css',
   '/css/responsive.css',
-  '/js/jquery-3.6.4.min.js',
-  '/js/bootstrap.bundle.min.js',
   '/js/main.js',
+  '/js/performance-monitor.js',
   '/images/logo.png',
-  '/doctor.png',
   '/images/mri.png',
   '/images/discount.png',
   '/images/guarantee.png',
   '/img1.webp',
   '/img2.webp'
+];
+
+// Large assets to cache on-demand only
+const LARGE_ASSETS = [
+  '/images/logo_1.png',
+  '/doctor.png',
+  '/images/redclif-labs.png',
+  '/css/fonts/fa-solid-900.woff2',
+  '/css/fonts/fa-brands-400.woff2'
 ];
 
 // Long-term cacheable assets (fonts, images, etc.)
