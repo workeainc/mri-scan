@@ -148,3 +148,14 @@
 [class*="fa-"] {
   font-display: swap !important;
 }
+
+/* Additional aggressive overrides for Font Awesome 6 Pro */
+.fa-solid, .fas, .fa-solid-900 {
+  font-family: "Font Awesome 6 Pro", "FontAwesome", sans-serif !important;
+  font-display: swap !important;
+}
+
+/* Force font-display on all Font Awesome elements */
+[class*="fa-"] {
+  font-display: swap !important;
+}
