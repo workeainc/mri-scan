@@ -61,7 +61,10 @@ $(".navbar-toggler").click(function () {
 
 
 
-$('.productListingSlider').owlCarousel({
+$(document).ready(function() {
+  // Initialize Owl Carousel only when DOM is ready and Owl Carousel is loaded
+  if (typeof $.fn.owlCarousel !== 'undefined') {
+    $('.productListingSlider').owlCarousel({
     nav:false,
     margin:10,
 	autoplay:false,
@@ -99,6 +102,10 @@ $('.productListingSlider').owlCarousel({
       }
     }
   });
+  } else {
+    console.log('Owl Carousel not loaded yet');
+  }
+});
 
 
 

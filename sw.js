@@ -63,18 +63,21 @@ const LONG_TERM_ASSETS = [
 self.addEventListener('install', event => {
   console.log('Service Worker: Installing with enhanced caching...');
   event.waitUntil(
-    Promise.all([
-      // Cache static assets
-      caches.open(STATIC_CACHE).then(cache => {
-        console.log('Service Worker: Caching static assets');
-        return cache.addAll(STATIC_ASSETS);
-      }),
-      // Cache long-term assets
-      caches.open(LONG_TERM_CACHE).then(cache => {
-        console.log('Service Worker: Preparing long-term cache');
+    caches.open(STATIC_CACHE).then(cache => {
+      console.log('Service Worker: Caching static assets');
+      // Cache only existing files to avoid errors
+      const existingAssets = STATIC_ASSETS.filter(asset => {
+        // Skip assets that might not exist
+        return !asset.includes('logo.webp') && 
+               !asset.includes('fa-solid-900.woff2') && 
+               !asset.includes('fa-brands-400.woff2');
+      });
+      return cache.addAll(existingAssets).catch(err => {
+        console.log('Service Worker: Some assets failed to cache', err);
+        // Continue even if some assets fail
         return Promise.resolve();
-      })
-    ])
+      });
+    })
   );
   self.skipWaiting();
 });
@@ -104,43 +107,60 @@ self.addEventListener('fetch', event => {
   
   const url = new URL(event.request.url);
   
+  // Skip problematic requests that cause errors
+  if (url.protocol === 'chrome-extension:' || 
+      url.hostname === 'ipapi.co' ||
+      url.hostname === 'www.googletagmanager.com') {
+    return; // Skip these requests entirely
+  }
+  
   // Handle different types of requests with appropriate caching
   event.respondWith(
     caches.match(event.request)
       .then(response => {
         // Return cached version if available
         if (response) {
-          // Check cache age for dynamic content
-          if (response.headers.get('sw-cache-date')) {
-            const cacheDate = new Date(response.headers.get('sw-cache-date'));
-            const now = new Date();
-            const age = now - cacheDate;
-            
-            // For dynamic content, check if cache is still valid
-            if (age > CACHE_LIFETIMES.DYNAMIC && url.pathname.includes('api')) {
-              // Cache expired, fetch fresh content
-              return fetchAndCache(event.request);
-            }
-          }
           return response;
         }
         
-        // Determine caching strategy based on request type
-        if (isStaticAsset(event.request)) {
-          return fetchAndCache(event.request, STATIC_CACHE);
-        } else if (isLargeCSSAsset(event.request)) {
-          return fetchAndCache(event.request, DYNAMIC_CACHE);
-        } else if (isLongTermAsset(event.request)) {
-          return fetchAndCache(event.request, LONG_TERM_CACHE);
-        } else {
-          return fetchAndCache(event.request, DYNAMIC_CACHE);
-        }
+        // Fetch and cache with error handling
+        return fetch(event.request)
+          .then(fetchResponse => {
+            // Don't cache if not a valid response
+            if (!fetchResponse || fetchResponse.status !== 200 || fetchResponse.type !== 'basic') {
+              return fetchResponse;
+            }
+            
+            // Clone the response
+            const responseToCache = fetchResponse.clone();
+            
+            // Cache the response with error handling
+            caches.open(DYNAMIC_CACHE)
+              .then(cache => {
+                cache.put(event.request, responseToCache);
+              })
+              .catch(err => {
+                console.log('Service Worker: Cache put failed', err);
+              });
+            
+            return fetchResponse;
+          })
+          .catch(err => {
+            console.log('Service Worker: Fetch failed', err);
+            // Return offline page for navigation requests
+            if (event.request.destination === 'document') {
+              return caches.match('/index.html');
+            }
+            throw err;
+          });
       })
-      .catch(() => {
+      .catch(err => {
+        console.log('Service Worker: Cache match failed', err);
         // Return offline page for navigation requests
         if (event.request.destination === 'document') {
           return caches.match('/index.html');
         }
+        throw err;
       })
   );
 });
