@@ -1707,7 +1707,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           // Initialize jQuery-dependent functionality
           if (typeof $ !== 'undefined') {
             $(document).ready(function() {
-              // jQuery-dependent code here
+              // Initialize Owl Carousel immediately when jQuery is ready
+              setTimeout(function() {
+                if (typeof $.fn.owlCarousel !== 'undefined') {
+                  $('.reviewTestimonialSlider').owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: true,
+                    dots: true,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    autoplayHoverPause: true,
+                    responsive: {
+                      0: { items: 1 },
+                      768: { items: 2 },
+                      1024: { items: 3 }
+                    }
+                  });
+                  console.log('Owl Carousel initialized immediately after jQuery load');
+                }
+              }, 1000); // Small delay to ensure Owl Carousel script is loaded
             });
           }
         });
@@ -1900,34 +1919,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.head.appendChild(sweetAlert);
       }, 7000);
       
-      // Initialize Owl Carousel after scripts are loaded
-      setTimeout(function() {
-        if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
-          $('.reviewTestimonialSlider').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            dots: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            responsive: {
-              0: {
-                items: 1
-              },
-              768: {
-                items: 2
-              },
-              1024: {
-                items: 3
-              }
-            }
-          });
-        }
-      }, 6000); // Initialize after scripts are loaded
-      
-      // Fallback initialization for Owl Carousel
-      setTimeout(function() {
+      // Initialize Owl Carousel after jQuery and scripts are loaded
+      function initializeOwlCarousel() {
         if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
           if (!$('.reviewTestimonialSlider').hasClass('owl-loaded')) {
             $('.reviewTestimonialSlider').owlCarousel({
@@ -1950,9 +1943,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
               }
             });
+            console.log('Owl Carousel initialized successfully');
           }
+        } else {
+          console.log('jQuery or Owl Carousel not ready yet');
         }
-      }, 8000); // Fallback after 8 seconds
+      }
+      
+      // Try to initialize Owl Carousel multiple times
+      setTimeout(initializeOwlCarousel, 7000); // First attempt at 7 seconds
+      setTimeout(initializeOwlCarousel, 9000); // Second attempt at 9 seconds
+      setTimeout(initializeOwlCarousel, 11000); // Third attempt at 11 seconds
+      
+      // Also try on user interaction
+      ['scroll', 'click', 'touchstart'].forEach(function(event) {
+        document.addEventListener(event, function() {
+          setTimeout(initializeOwlCarousel, 1000);
+        }, { once: true });
+      });
     });
   </script>
 
