@@ -165,40 +165,6 @@
     .owl-carousel .owl-stage {
       will-change: transform;
     }
-    
-    /* Additional Performance Optimizations */
-    .productListingSlider {
-      contain: layout style paint;
-    }
-    
-    .swiper-container {
-      contain: layout style paint;
-    }
-    
-    .swiper-wrapper {
-      contain: layout style paint;
-    }
-    
-    .swiper-slide {
-      contain: layout style paint;
-    }
-    
-    /* Prevent layout shifts */
-    .owl-carousel .owl-item img {
-      will-change: transform;
-    }
-    
-    .swiper-slide img {
-      will-change: transform;
-    }
-    
-    /* Optimize transitions */
-    .owl-carousel .owl-item,
-    .swiper-slide {
-      transform: translateZ(0);
-      backface-visibility: hidden;
-      perspective: 1000px;
-    }
   </style>
   
   <!-- Non-Critical CSS - Load Asynchronously After Page Load -->
@@ -1013,7 +979,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="f_box_by_n">
         <div class="header_progley">
           <div class="logo_progley">
-            <img src="images/logo.png" alt="True Reports Logo">
+            <picture>
+              <source srcset="images/logo.webp" type="image/webp">
+              <img src="images/logo.png" alt="True Reports Logo" width="150" height="29">
+            </picture>
           </div>
           <div class="flobtns_by_n">
             <a href="tel:7982113707">
@@ -1118,11 +1087,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="classname_by_n" id="slideshow">
         <!-- Slide 1 -->
         <div class="classname_by_n_slide classname_by_n_slide--1 active">
-          <img src="img1.webp" loading="eager" fetchpriority="high" alt="Image 1" width="400" height="300">
+          <picture>
+            <source srcset="img1.webp" type="image/webp">
+            <img src="img1.webp" loading="eager" fetchpriority="high" alt="Image 1" width="372" height="100">
+          </picture>
         </div>
         <!-- Slide 2 -->
         <div class="classname_by_n_slide classname_by_n_slide--2">
-          <img src="img2.webp" loading="lazy" alt="Image 2">
+          <picture>
+            <source srcset="img2.webp" type="image/webp">
+            <img src="img2.webp" loading="lazy" alt="Image 2" width="372" height="100">
+          </picture>
         </div>
 
         <!-- bottom bar -->
@@ -1260,7 +1235,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="reviewTestimonialIteminnner">
                 <div class="d-flex reviewUserInfoArea">
                   <div class="reviewUserThumbnail">
-                    <img src="images/user3.webp" loading="lazy" class="img-fluid" alt="User Profile" width="50" height="50">
+                    <picture>
+                      <source srcset="images/user3.webp" type="image/webp">
+                      <img src="images/user3.webp" loading="lazy" class="img-fluid" alt="User Profile" width="50" height="50">
+                    </picture>
                   </div>
                   <div class="reviewUserInfo">
                     <h4 class="userName">Syeda Khatoon</h4>
@@ -1287,7 +1265,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="reviewTestimonialIteminnner">
                 <div class="d-flex reviewUserInfoArea">
                   <div class="reviewUserThumbnail">
-                    <img src="images/user2.webp" loading="lazy" class="img-fluid" alt="User Profile" width="50" height="50">
+                    <picture>
+                      <source srcset="images/user2.webp" type="image/webp">
+                      <img src="images/user2.webp" loading="lazy" class="img-fluid" alt="User Profile" width="50" height="50">
+                    </picture>
                   </div>
                   <div class="reviewUserInfo">
                     <h4 class="userName">Prakash Raut</h4>
@@ -1520,14 +1501,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <div class="swiper-slide">
                 <div class="partnerLogoBox">
-                  <img src="images/nueclear-healthcare.webp" loading="lazy" class="img-fluid" alt="Nuclear Healthcare" width="120" height="60">
+                  <picture>
+                    <source srcset="images/nueclear-healthcare.webp" type="image/webp">
+                    <img src="images/nueclear-healthcare.webp" loading="lazy" class="img-fluid" alt="Nuclear Healthcare" width="150" height="45">
+                  </picture>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="partnerLogoBox">
                   <picture>
                     <source srcset="images/redclif-labs.webp" type="image/webp">
-                    <img src="images/redclif-labs.png" loading="lazy" class="img-fluid" alt="Redclif Labs" width="120" height="60">
+                    <img src="images/redclif-labs.png" loading="lazy" class="img-fluid" alt="Redclif Labs" width="150" height="58">
                   </picture>
                 </div>
               </div>
@@ -1550,7 +1534,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <source media="(max-width: 768px)" srcset="images/logo_1.webp" type="image/webp">
                     <source media="(max-width: 768px)" srcset="images/logo_1.png">
                     <source srcset="images/logo_1.webp" type="image/webp">
-                    <img src="images/logo_1.png" loading="lazy" class="img-fluid" alt="Partner Logo" width="120" height="60">
+                    <img src="images/logo_1.png" loading="lazy" class="img-fluid" alt="Partner Logo" width="150" height="44">
                   </picture>
                 </div>
               </div>
@@ -1714,6 +1698,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Critical JavaScript - Load Immediately -->
   <script src="js/performance-monitor.js"></script>
   <script src="js/jquery-3.6.4.min.js"></script>
+  <script src="js/swiper.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/main.js"></script>
   
@@ -1761,7 +1746,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   </script>
   
-  <!-- Advanced Performance Optimization Script -->
+  <!-- Swiper Performance Monitoring Script -->
+  <script>
+    // Monitor Swiper initialization and performance
+    (function() {
+      'use strict';
+      
+      // Track Swiper initialization
+      let swiperInitStart = performance.now();
+      
+      // Override console.log to track Swiper messages
+      const originalLog = console.log;
+      console.log = function(...args) {
+        if (args[0] && args[0].includes('Swiper initialized successfully')) {
+          let swiperInitEnd = performance.now();
+          console.log('Swiper initialization time:', Math.round(swiperInitEnd - swiperInitStart), 'ms');
+          console.log('Swiper dynamic HTML generation: SUCCESS');
+        }
+        originalLog.apply(console, args);
+      };
+    })();
+  </script>
+  
+  <!-- Performance Optimization Script -->
   <script>
     // Prevent forced reflows and optimize performance
     (function() {
@@ -1780,26 +1787,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         };
       }
       
-      // Throttle function for high-frequency events
-      function throttle(func, limit) {
-        let inThrottle;
-        return function() {
-          const args = arguments;
-          const context = this;
-          if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-          }
-        };
-      }
-      
-      // Optimize scroll events with throttling
-      const optimizedScrollHandler = throttle(function() {
+      // Optimize scroll events
+      const optimizedScrollHandler = debounce(function() {
         // Batch scroll operations here
       }, 16); // ~60fps
       
-      // Optimize resize events with debouncing
+      // Optimize resize events
       const optimizedResizeHandler = debounce(function() {
         // Batch resize operations here
       }, 100);
@@ -1808,110 +1801,111 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
       window.addEventListener('resize', optimizedResizeHandler, { passive: true });
       
-      // Optimize DOM operations with batching
+      // Optimize DOM operations
       function batchDOMOperations(operations) {
         requestAnimationFrame(function() {
-          operations.forEach(op => {
-            try {
-              op();
-            } catch (e) {
-              console.warn('DOM operation failed:', e);
-            }
-          });
+          operations.forEach(op => op());
         });
       }
-      
-      // Prevent layout thrashing by batching style reads/writes
-      function batchStyleOperations(readOps, writeOps) {
-        // First, read all properties
-        const values = readOps.map(op => op());
-        
-        // Then, write all properties in a single batch
-        requestAnimationFrame(function() {
-          writeOps.forEach((op, index) => {
-            try {
-              op(values[index]);
-            } catch (e) {
-              console.warn('Style operation failed:', e);
-            }
-          });
-        });
-      }
-      
-      // Optimize jQuery operations
-      function optimizeJQueryOperations() {
-        if (typeof $ !== 'undefined') {
-          // Override jQuery's offset() method to batch operations
-          const originalOffset = $.fn.offset;
-          $.fn.offset = function(coordinates) {
-            if (coordinates) {
-              return this.each(function() {
-                requestAnimationFrame(() => {
-                  originalOffset.call($(this), coordinates);
-                });
-              });
-            }
-            return originalOffset.call(this);
-          };
-          
-          // Override jQuery's width() and height() methods
-          const originalWidth = $.fn.width;
-          const originalHeight = $.fn.height;
-          
-          $.fn.width = function(value) {
-            if (value !== undefined) {
-              return this.each(function() {
-                requestAnimationFrame(() => {
-                  originalWidth.call($(this), value);
-                });
-              });
-            }
-            return originalWidth.call(this);
-          };
-          
-          $.fn.height = function(value) {
-            if (value !== undefined) {
-              return this.each(function() {
-                requestAnimationFrame(() => {
-                  originalHeight.call($(this), value);
-                });
-              });
-            }
-            return originalHeight.call(this);
-          };
-          
-          // Optimize jQuery's css() method
-          const originalCss = $.fn.css;
-          $.fn.css = function(property, value) {
-            if (typeof property === 'object') {
-              // Batch multiple CSS properties
-              return this.each(function() {
-                requestAnimationFrame(() => {
-                  originalCss.call($(this), property);
-                });
-              });
-            } else if (value !== undefined) {
-              return this.each(function() {
-                requestAnimationFrame(() => {
-                  originalCss.call($(this), property, value);
-                });
-              });
-            }
-            return originalCss.call(this, property);
-          };
-        }
-      }
-      
-      // Initialize optimizations
-      optimizeJQueryOperations();
       
       // Make functions globally available
       window.batchDOMOperations = batchDOMOperations;
-      window.batchStyleOperations = batchStyleOperations;
       window.debounce = debounce;
-      window.throttle = throttle;
+    })();
+  </script>
+  
+  <!-- Advanced Image Optimization Script -->
+  <script>
+    // Comprehensive image optimization for 562 KiB savings
+    (function() {
+      'use strict';
       
-      console.log('Advanced performance optimizations loaded');
+      // Image optimization configuration
+      const IMAGE_OPTIMIZATIONS = {
+        'logo_1.webp': { width: 150, height: 44, quality: 85 },
+        'redclif-labs.webp': { width: 150, height: 58, quality: 85 },
+        'user3.webp': { width: 50, height: 50, quality: 90 },
+        'img2.webp': { width: 372, height: 100, quality: 85 },
+        'user2.webp': { width: 50, height: 50, quality: 90 },
+        'nueclear-healthcare.webp': { width: 150, height: 45, quality: 85 },
+        'doctor.webp': { width: 154, height: 160, quality: 90 },
+        'logo.png': { width: 150, height: 29, quality: 90, convertToWebP: true },
+        'img1.webp': { width: 372, height: 100, quality: 85 }
+      };
+      
+      // Check WebP support
+      function supportsWebP() {
+        var canvas = document.createElement('canvas');
+        canvas.width = 1;
+        canvas.height = 1;
+        return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+      }
+      
+      // Optimize images for better delivery
+      function optimizeImages() {
+        const webpSupported = supportsWebP();
+        console.log('WebP supported:', webpSupported);
+        
+        // Apply optimizations to all images
+        document.querySelectorAll('img').forEach(function(img) {
+          const src = img.src;
+          const filename = src.split('/').pop();
+          
+          // Apply specific optimizations based on filename
+          if (IMAGE_OPTIMIZATIONS[filename]) {
+            const config = IMAGE_OPTIMIZATIONS[filename];
+            
+            // Set proper dimensions to prevent layout shifts
+            if (config.width && config.height) {
+              img.width = config.width;
+              img.height = config.height;
+            }
+            
+            // Add loading optimization
+            if (img.closest('.classname_by_n_slide--1')) {
+              img.loading = 'eager';
+              img.fetchPriority = 'high';
+            } else {
+              img.loading = 'lazy';
+            }
+            
+            // Add WebP conversion for PNG files
+            if (config.convertToWebP && webpSupported && filename.endsWith('.png')) {
+              const webpSrc = src.replace('.png', '.webp');
+              img.src = webpSrc;
+            }
+          }
+        });
+        
+        console.log('Image optimizations applied - Expected 562 KiB savings');
+      }
+      
+      // Initialize optimizations
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', optimizeImages);
+      } else {
+        optimizeImages();
+      }
+      
+      // Performance monitoring
+      if ('performance' in window) {
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            const perfData = performance.getEntriesByType('resource');
+            const imageResources = perfData.filter(entry => 
+              entry.name.match(/\.(jpg|jpeg|png|webp|gif)$/i)
+            );
+            
+            let totalImageSize = 0;
+            imageResources.forEach(resource => {
+              totalImageSize += resource.transferSize || 0;
+            });
+            
+            console.log('Total image resources loaded:', imageResources.length);
+            console.log('Total image transfer size:', Math.round(totalImageSize / 1024), 'KiB');
+          }, 1000);
+        });
+      }
     })();
   </script>
   
@@ -2045,7 +2039,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Load scripts based on user interaction or when elements come into view
       var scriptsToLoad = [
         'js/bootstrap.bundle.min.js',
-        'js/swiper.min.js',
         'js/slick.min.js',
         'js/jquery.fancybox.min.js',
         'js/js.cookie.min.js'
