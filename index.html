@@ -136,31 +136,69 @@
       font-display: swap !important;
     }
     
-    /* Critical Above-the-Fold Styles - Fully Inlined */
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-size:16px;line-height:22px;font-family:"Plus Jakarta Sans","Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#7e7d8d;font-weight:500;margin:0;padding:0}
-    a{text-decoration:none}
-    .pageBodyhiden{overflow:hidden}
-    .text_center_byn{display:flex;align-items:center;text-align:end;justify-content:center!important}
-    .boxes_row_byn{display:flex;width:100%;padding:10px 0}
-    .col_m6_byn{width:33%}
-    .customeOverlayPopup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:20;display:none}
-    .customeOverlayPopup.open{display:block}
-    .customePopup{position:fixed;top:0;left:0;right:0;bottom:0;z-index:21;display:none;align-items:center;justify-content:center}
-    .customePopup.open{display:flex}
-    .web-header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-    .navbar{background:#fff;padding:10px 0}
-    .navbar-brand{font-weight:700;color:#074578}
-    .btn_submit{background:#ccb700;color:#fff;border:none;padding:12px 24px;border-radius:5px;font-weight:600;cursor:pointer}
-    .btn_submit:hover{background:#b8a300;color:#fff}
-    .hero-section{background:linear-gradient(135deg,#074578 0%,#0a5a8a 100%);color:#fff;padding:60px 0}
-    .hero-title{font-size:2.5rem;font-weight:700;margin-bottom:20px}
-    .hero-subtitle{font-size:1.2rem;margin-bottom:30px;opacity:0.9}
-    .form-control{border:1px solid #ddd;border-radius:5px;padding:12px 15px;font-size:16px;width:100%}
-    .form-control:focus{border-color:#ccb700;box-shadow:0 0 0 0.2rem rgba(204,183,0,0.25);outline:none}
-    .img-fluid{max-width:100%;height:auto}
-    .hero-image{max-width:100%;height:auto;border-radius:10px}
-    @media (max-width:768px){.hero-title{font-size:2rem}.hero-subtitle{font-size:1rem}.btn_submit{padding:10px 20px;font-size:14px}}
+    /* Performance Optimization - CSS Containment */
+    .reviewTestimonialSlider {
+      contain: layout style paint;
+    }
+    
+    .owl-carousel {
+      contain: layout style paint;
+    }
+    
+    .owl-stage-outer {
+      contain: layout style paint;
+    }
+    
+    .owl-stage {
+      contain: layout style paint;
+    }
+    
+    .owl-item {
+      contain: layout style paint;
+    }
+    
+    /* Optimize animations */
+    .owl-carousel .owl-item {
+      will-change: transform;
+    }
+    
+    .owl-carousel .owl-stage {
+      will-change: transform;
+    }
+    
+    /* Additional Performance Optimizations */
+    .productListingSlider {
+      contain: layout style paint;
+    }
+    
+    .swiper-container {
+      contain: layout style paint;
+    }
+    
+    .swiper-wrapper {
+      contain: layout style paint;
+    }
+    
+    .swiper-slide {
+      contain: layout style paint;
+    }
+    
+    /* Prevent layout shifts */
+    .owl-carousel .owl-item img {
+      will-change: transform;
+    }
+    
+    .swiper-slide img {
+      will-change: transform;
+    }
+    
+    /* Optimize transitions */
+    .owl-carousel .owl-item,
+    .swiper-slide {
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
   </style>
   
   <!-- Non-Critical CSS - Load Asynchronously After Page Load -->
@@ -186,14 +224,14 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/uicons-solid-rounded.min.css">
     <link rel="stylesheet" href="css/style.ultra-min.css">
-    <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
-    <link rel="stylesheet" href="css/rs-spacing-min.css">
+  <link rel="stylesheet" href="css/rs-spacing-min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
   </noscript>
   <style>
@@ -1399,7 +1437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="thumanil">
                           <picture>
                             <source srcset="images/test.webp" type="image/webp">
-                            <img src="images/test.jpg" loading="lazy" class="img-fluid " alt="">
+                          <img src="images/test.jpg" loading="lazy" class="img-fluid " alt="">
                           </picture>
                         </div>
                         <div class="content">
@@ -1682,23 +1720,199 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- jQuery-dependent scripts - Load after jQuery is ready -->
   <script>
     $(document).ready(function() {
-      // Initialize Owl Carousel immediately - no delays, no fallbacks
-      $('.reviewTestimonialSlider').owlCarousel({
-        loop: true,
-        margin: 20,
-        nav: true,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        responsive: {
-          0: { items: 1 },
-          768: { items: 2 },
-          1024: { items: 3 }
-        }
-      });
-      console.log('Owl Carousel initialized immediately - no delays');
+      // Optimize Owl Carousel initialization to prevent forced reflows
+      function initializeOwlCarouselOptimized() {
+        // Use requestAnimationFrame to prevent forced reflows
+        requestAnimationFrame(function() {
+          if (typeof $.fn.owlCarousel !== 'undefined') {
+            // Batch DOM operations to prevent multiple reflows
+            const $slider = $('.reviewTestimonialSlider');
+            
+            // Pre-calculate dimensions to avoid layout thrashing
+            const containerWidth = $slider.parent().width();
+            
+            $slider.owlCarousel({
+              loop: true,
+              margin: 20,
+              nav: true,
+              dots: true,
+              autoplay: true,
+              autoplayTimeout: 5000,
+              autoplayHoverPause: true,
+              // Optimize for performance
+              lazyLoad: true,
+              lazyLoadEager: 1,
+              responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1024: { items: 3 }
+              },
+              // Performance callbacks
+              onInitialized: function() {
+                console.log('Owl Carousel initialized with performance optimizations');
+              }
+            });
+          }
+        });
+      }
+      
+      // Initialize with optimized timing
+      initializeOwlCarouselOptimized();
     });
+  </script>
+  
+  <!-- Advanced Performance Optimization Script -->
+  <script>
+    // Prevent forced reflows and optimize performance
+    (function() {
+      'use strict';
+      
+      // Debounce function to prevent excessive function calls
+      function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+      
+      // Throttle function for high-frequency events
+      function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+          const args = arguments;
+          const context = this;
+          if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+          }
+        };
+      }
+      
+      // Optimize scroll events with throttling
+      const optimizedScrollHandler = throttle(function() {
+        // Batch scroll operations here
+      }, 16); // ~60fps
+      
+      // Optimize resize events with debouncing
+      const optimizedResizeHandler = debounce(function() {
+        // Batch resize operations here
+      }, 100);
+      
+      // Add event listeners with passive option for better performance
+      window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
+      window.addEventListener('resize', optimizedResizeHandler, { passive: true });
+      
+      // Optimize DOM operations with batching
+      function batchDOMOperations(operations) {
+        requestAnimationFrame(function() {
+          operations.forEach(op => {
+            try {
+              op();
+            } catch (e) {
+              console.warn('DOM operation failed:', e);
+            }
+          });
+        });
+      }
+      
+      // Prevent layout thrashing by batching style reads/writes
+      function batchStyleOperations(readOps, writeOps) {
+        // First, read all properties
+        const values = readOps.map(op => op());
+        
+        // Then, write all properties in a single batch
+        requestAnimationFrame(function() {
+          writeOps.forEach((op, index) => {
+            try {
+              op(values[index]);
+            } catch (e) {
+              console.warn('Style operation failed:', e);
+            }
+          });
+        });
+      }
+      
+      // Optimize jQuery operations
+      function optimizeJQueryOperations() {
+        if (typeof $ !== 'undefined') {
+          // Override jQuery's offset() method to batch operations
+          const originalOffset = $.fn.offset;
+          $.fn.offset = function(coordinates) {
+            if (coordinates) {
+              return this.each(function() {
+                requestAnimationFrame(() => {
+                  originalOffset.call($(this), coordinates);
+                });
+              });
+            }
+            return originalOffset.call(this);
+          };
+          
+          // Override jQuery's width() and height() methods
+          const originalWidth = $.fn.width;
+          const originalHeight = $.fn.height;
+          
+          $.fn.width = function(value) {
+            if (value !== undefined) {
+              return this.each(function() {
+                requestAnimationFrame(() => {
+                  originalWidth.call($(this), value);
+                });
+              });
+            }
+            return originalWidth.call(this);
+          };
+          
+          $.fn.height = function(value) {
+            if (value !== undefined) {
+              return this.each(function() {
+                requestAnimationFrame(() => {
+                  originalHeight.call($(this), value);
+                });
+              });
+            }
+            return originalHeight.call(this);
+          };
+          
+          // Optimize jQuery's css() method
+          const originalCss = $.fn.css;
+          $.fn.css = function(property, value) {
+            if (typeof property === 'object') {
+              // Batch multiple CSS properties
+              return this.each(function() {
+                requestAnimationFrame(() => {
+                  originalCss.call($(this), property);
+                });
+              });
+            } else if (value !== undefined) {
+              return this.each(function() {
+                requestAnimationFrame(() => {
+                  originalCss.call($(this), property, value);
+                });
+              });
+            }
+            return originalCss.call(this, property);
+          };
+        }
+      }
+      
+      // Initialize optimizations
+      optimizeJQueryOperations();
+      
+      // Make functions globally available
+      window.batchDOMOperations = batchDOMOperations;
+      window.batchStyleOperations = batchStyleOperations;
+      window.debounce = debounce;
+      window.throttle = throttle;
+      
+      console.log('Advanced performance optimizations loaded');
+    })();
   </script>
   
   <!-- Image Optimization Script -->
@@ -2044,7 +2258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // Optimized IP location detection - Non-blocking approach
     let userCity = "";
-    
+
     // Use requestIdleCallback for non-blocking IP detection
     function detectUserLocation() {
       if ('requestIdleCallback' in window) {
@@ -2052,8 +2266,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           fetch("https://ipapi.co/json/")
             .then(response => response.json())
             .then(data => {
-              userCity = data.city + ", " + data.region;
-              $("#userLocation").html("📍 Your Location: " + userCity);
+      userCity = data.city + ", " + data.region;
+      $("#userLocation").html("📍 Your Location: " + userCity);
             })
             .catch(function() {
               // Fallback if IP detection fails

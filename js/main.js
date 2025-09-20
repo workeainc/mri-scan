@@ -64,44 +64,83 @@ $(".navbar-toggler").click(function () {
 $(document).ready(function() {
   // Initialize Owl Carousel only when DOM is ready and Owl Carousel is loaded
   if (typeof $.fn.owlCarousel !== 'undefined') {
-    $('.productListingSlider').owlCarousel({
-    nav:false,
-    margin:10,
-	autoplay:false,
-    loop:false,
-    dots:false,
-    smartSpeed:	500,
-	navText: [
-    "<span><i class='fa-light fa-arrow-left'></i></span>",
-    "<span><i class='fa-light fa-arrow-right'></i></span>"
-  ],
-	
-	//animateOut: 'fadeOut',
-    //animateIn: 'fadeIn',
-    responsive:{
-      0:{
-        items:2
-      },
-	  480:{
-        items:2
-      },
-      600:{
-        items:2
-      },
-      767:{
-        items:3
-      },
-      992:{
-        items:4
-      },
-      1200:{
-        items:6
-      },
-      1440:{
-        items:6
-      }
+    // Use advanced performance optimization to prevent forced reflows
+    function initializeProductSliderOptimized() {
+      // Use requestAnimationFrame with error handling
+      requestAnimationFrame(function() {
+        try {
+          const $slider = $('.productListingSlider');
+          
+          // Pre-calculate dimensions to avoid layout thrashing
+          const containerWidth = $slider.parent().width();
+          const itemWidth = Math.floor(containerWidth / 6); // 6 items max
+          
+          // Batch DOM operations
+          if (window.batchDOMOperations) {
+            window.batchDOMOperations([
+              function() {
+                $slider.owlCarousel({
+                  nav: false,
+                  margin: 10,
+                  autoplay: false,
+                  loop: false,
+                  dots: false,
+                  smartSpeed: 500,
+                  // Performance optimizations
+                  lazyLoad: true,
+                  lazyLoadEager: 1,
+                  navText: [
+                    "<span><i class='fa-light fa-arrow-left'></i></span>",
+                    "<span><i class='fa-light fa-arrow-right'></i></span>"
+                  ],
+                  responsive: {
+                    0: { items: 2 },
+                    480: { items: 2 },
+                    600: { items: 2 },
+                    767: { items: 3 },
+                    992: { items: 4 },
+                    1200: { items: 6 },
+                    1440: { items: 6 }
+                  },
+                  // Performance callbacks
+                  onInitialized: function() {
+                    console.log('Product slider initialized with performance optimizations');
+                  }
+                });
+              }
+            ]);
+          } else {
+            // Fallback if batchDOMOperations is not available
+            $slider.owlCarousel({
+              nav: false,
+              margin: 10,
+              autoplay: false,
+              loop: false,
+              dots: false,
+              smartSpeed: 500,
+              navText: [
+                "<span><i class='fa-light fa-arrow-left'></i></span>",
+                "<span><i class='fa-light fa-arrow-right'></i></span>"
+              ],
+              responsive: {
+                0: { items: 2 },
+                480: { items: 2 },
+                600: { items: 2 },
+                767: { items: 3 },
+                992: { items: 4 },
+                1200: { items: 6 },
+                1440: { items: 6 }
+              }
+            });
+          }
+        } catch (error) {
+          console.warn('Owl Carousel initialization failed:', error);
+        }
+      });
     }
-  });
+    
+    // Initialize with optimized timing
+    initializeProductSliderOptimized();
   } else {
     console.log('Owl Carousel not loaded yet');
   }
