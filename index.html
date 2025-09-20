@@ -52,7 +52,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="images/logo.webp" as="image">
+  <link rel="preload" href="images/logo%20%281%29.webp" as="image">
   <link rel="preload" href="doctor.webp" as="image">
 
   <!-- Cache Optimization Meta Tags -->
@@ -179,7 +179,6 @@
   <link rel="preload" href="css/slick-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/rs-spacing-min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="css/owl.carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="css/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   
   <!-- Fallback for browsers that don't support onload -->
   <noscript>
@@ -196,7 +195,6 @@
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/rs-spacing-min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
   </noscript>
   <style>
     * {
@@ -1679,33 +1677,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
   
   <!-- Critical JavaScript - Load Immediately -->
-  <script src="js/main.js"></script>
   <script src="js/performance-monitor.js"></script>
   <script src="js/jquery-3.6.4.min.js"></script>
+  <script src="js/main.js"></script>
   
   <!-- jQuery-dependent scripts - Load after jQuery is ready -->
   <script>
     $(document).ready(function() {
       // Initialize Owl Carousel immediately when jQuery is ready
-      setTimeout(function() {
-        if (typeof $.fn.owlCarousel !== 'undefined') {
-          $('.reviewTestimonialSlider').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            dots: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            responsive: {
-              0: { items: 1 },
-              768: { items: 2 },
-              1024: { items: 3 }
-            }
-          });
-          console.log('Owl Carousel initialized immediately');
-        }
-      }, 1000); // Small delay to ensure Owl Carousel script is loaded
+      if (typeof $.fn.owlCarousel !== 'undefined') {
+        $('.reviewTestimonialSlider').owlCarousel({
+          loop: true,
+          margin: 20,
+          nav: true,
+          dots: true,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          responsive: {
+            0: { items: 1 },
+            768: { items: 2 },
+            1024: { items: 3 }
+          }
+        });
+        console.log('Owl Carousel initialized immediately');
+      } else {
+        // Fallback: try again after a short delay
+        setTimeout(function() {
+          if (typeof $.fn.owlCarousel !== 'undefined') {
+            $('.reviewTestimonialSlider').owlCarousel({
+              loop: true,
+              margin: 20,
+              nav: true,
+              dots: true,
+              autoplay: true,
+              autoplayTimeout: 5000,
+              autoplayHoverPause: true,
+              responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1024: { items: 3 }
+              }
+            });
+            console.log('Owl Carousel initialized with fallback');
+          }
+        }, 500);
+      }
     });
   </script>
   
@@ -1778,8 +1795,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           'css/slick.css',
           'css/slick-theme.css',
           'css/rs-spacing-min.css',
-          'css/owl.carousel.min.css',
-          'css/animate.min.css'
+          'css/owl.carousel.min.css'
         ];
         
         // Load CSS files after page load
@@ -2361,7 +2377,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       $('#overlay_' + id).removeClass('open');
       $('body').removeClass('pageBodyhiden');
     };
-        });
 
     // ───── Highlight selected tests in the grid ─────
     function highlightSelectedTests(sessionIds) {
