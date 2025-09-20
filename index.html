@@ -1676,50 +1676,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Critical JavaScript - Load Immediately -->
   <script src="js/performance-monitor.js"></script>
   <script src="js/jquery-3.6.4.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
   <script src="js/main.js"></script>
   
   <!-- jQuery-dependent scripts - Load after jQuery is ready -->
   <script>
     $(document).ready(function() {
-      // Initialize Owl Carousel immediately when jQuery is ready
-      if (typeof $.fn.owlCarousel !== 'undefined') {
-        $('.reviewTestimonialSlider').owlCarousel({
-          loop: true,
-          margin: 20,
-          nav: true,
-          dots: true,
-          autoplay: true,
-          autoplayTimeout: 5000,
-          autoplayHoverPause: true,
-          responsive: {
-            0: { items: 1 },
-            768: { items: 2 },
-            1024: { items: 3 }
-          }
-        });
-        console.log('Owl Carousel initialized immediately');
-      } else {
-        // Fallback: try again after a short delay
-        setTimeout(function() {
-          if (typeof $.fn.owlCarousel !== 'undefined') {
-            $('.reviewTestimonialSlider').owlCarousel({
-              loop: true,
-              margin: 20,
-              nav: true,
-              dots: true,
-              autoplay: true,
-              autoplayTimeout: 5000,
-              autoplayHoverPause: true,
-              responsive: {
-                0: { items: 1 },
-                768: { items: 2 },
-                1024: { items: 3 }
-              }
-            });
-            console.log('Owl Carousel initialized with fallback');
-          }
-        }, 500);
-      }
+      // Initialize Owl Carousel immediately - no delays, no fallbacks
+      $('.reviewTestimonialSlider').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 2 },
+          1024: { items: 3 }
+        }
+      });
+      console.log('Owl Carousel initialized immediately - no delays');
     });
   </script>
   
@@ -1854,7 +1832,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var scriptsToLoad = [
         'js/bootstrap.bundle.min.js',
         'js/swiper.min.js',
-        'js/owl.carousel.min.js',
         'js/slick.min.js',
         'js/jquery.fancybox.min.js',
         'js/js.cookie.min.js'
@@ -1892,49 +1869,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         sweetAlert.async = true;
         document.head.appendChild(sweetAlert);
       }, 7000);
-      
-      // Initialize Owl Carousel after jQuery and scripts are loaded
-      function initializeOwlCarousel() {
-        if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
-          if (!$('.reviewTestimonialSlider').hasClass('owl-loaded')) {
-            $('.reviewTestimonialSlider').owlCarousel({
-              loop: true,
-              margin: 20,
-              nav: true,
-              dots: true,
-              autoplay: true,
-              autoplayTimeout: 5000,
-              autoplayHoverPause: true,
-              responsive: {
-                0: {
-                  items: 1
-                },
-                768: {
-                  items: 2
-                },
-                1024: {
-                  items: 3
-                }
-              }
-            });
-            console.log('Owl Carousel initialized successfully');
-          }
-        } else {
-          console.log('jQuery or Owl Carousel not ready yet');
-        }
-      }
-      
-      // Try to initialize Owl Carousel multiple times
-      setTimeout(initializeOwlCarousel, 7000); // First attempt at 7 seconds
-      setTimeout(initializeOwlCarousel, 9000); // Second attempt at 9 seconds
-      setTimeout(initializeOwlCarousel, 11000); // Third attempt at 11 seconds
-      
-      // Also try on user interaction
-      ['scroll', 'click', 'touchstart'].forEach(function(event) {
-        document.addEventListener(event, function() {
-          setTimeout(initializeOwlCarousel, 1000);
-        }, { once: true });
-      });
     });
   </script>
 
@@ -2222,7 +2156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           } else {
             openPopupById('alertPopup');
             $("#alertPopup .para").text(res.message);
-            loadLatest();
+            // loadLatest(); // Removed - function not defined
           }
         })
         .fail(() => Swal.fire('', 'Could not update selection.', 'error'));
@@ -2245,7 +2179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           _token: "NJGeIpwRF4zt0b8vYbuOTJamGLyplB95IJekCWtA",
           test_id: pendingTestId
         });
-        loadLatest();
+        // loadLatest(); // Removed - function not defined
         updateCartCount();
         closePopupById('alertPopup');
       } catch (err) {
@@ -2360,7 +2294,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
 
     // ───── Initial load ─────
-    loadLatest();
+    // loadLatest(); // Removed - function not defined
     updateCartCount();
 
     // ───── Popup helpers ─────
