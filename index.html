@@ -52,6 +52,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="css/owl.carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="images/logo.webp" as="image">
   <link rel="preload" href="doctor.webp" as="image">
 
@@ -1860,12 +1861,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var scriptsToLoad = [
         'js/bootstrap.bundle.min.js',
         'js/swiper.min.js',
-        'js/owl.carousel.min.js',
         'js/slick.min.js',
         'js/jquery.fancybox.min.js',
         'js/jquery-ui.min.js',
         'js/js.cookie.min.js'
       ];
+      
+      // Load Owl Carousel immediately for reviews section
+      var loadOwlCarousel = function() {
+        loadScript('js/owl.carousel.min.js').then(function() {
+          // Initialize Owl Carousel for reviews
+          if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
+            $('.reviewTestimonialSlider').owlCarousel({
+              loop: true,
+              margin: 20,
+              nav: true,
+              dots: true,
+              autoplay: true,
+              autoplayTimeout: 5000,
+              autoplayHoverPause: true,
+              responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1024: { items: 3 }
+              }
+            });
+          }
+        }).catch(function(err) {
+          console.log('Failed to load Owl Carousel:', err);
+        });
+      };
       
       var loadScriptsOnInteraction = function() {
         scriptsToLoad.forEach(function(src) {
@@ -1875,7 +1900,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
       };
       
-      // Load scripts on scroll or after 5 seconds (increased delay)
+      // Load Owl Carousel immediately after jQuery is ready
+      $(document).ready(function() {
+        loadOwlCarousel();
+      });
+      
+      // Load other scripts on scroll or after 5 seconds
       var hasLoaded = false;
       window.addEventListener('scroll', function() {
         if (!hasLoaded) {
