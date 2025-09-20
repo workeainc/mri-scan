@@ -1698,7 +1698,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     }
     
-    // Load jQuery on user interaction or after 5 seconds
+    // Load jQuery immediately for reviews section, then defer other jQuery features
     var jqueryLoaded = false;
     var loadJQueryOnInteraction = function() {
       if (!jqueryLoaded) {
@@ -1733,17 +1733,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     };
     
+    // Load jQuery immediately for reviews section (critical for user experience)
+    setTimeout(function() {
+      if (!jqueryLoaded) {
+        loadJQueryOnInteraction();
+      }
+    }, 2000); // Load jQuery after 2 seconds instead of 5
+    
     // Load on user interaction
     ['scroll', 'click', 'keydown', 'touchstart'].forEach(function(event) {
       document.addEventListener(event, loadJQueryOnInteraction, { once: true });
     });
     
-    // Fallback: load after 5 seconds
+    // Fallback: load after 3 seconds (reduced from 5 seconds)
     setTimeout(function() {
       if (!jqueryLoaded) {
         loadJQueryOnInteraction();
       }
-    }, 5000);
+    }, 3000);
   </script>
   
   <!-- Image Optimization Script -->
